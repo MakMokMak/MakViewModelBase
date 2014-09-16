@@ -30,11 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>InfrastructureAssemblies\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>InfrastructureAssemblies\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,21 +53,40 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\DialogTransferDataAction.cs" />
+    <Compile Include="Behaviors\DisplayModeAction.cs" />
+    <Compile Include="Behaviors\Interfaces\IDialogTransferContainer.cs" />
+    <Compile Include="Behaviors\Interfaces\IMessageDialogActionParameter.cs" />
+    <Compile Include="Behaviors\Interfaces\IViewModelStatus.cs" />
+    <Compile Include="Behaviors\MessageDialogAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DialogViewModelBase.cs" />
     <Compile Include="ViewModels\INotifyWeakPropertyChanged.cs" />
     <Compile Include="ViewModels\IPropertyChangedWeakEventListener.cs" />
+    <Compile Include="ViewModels\IReceiveFinished.cs" />
+    <Compile Include="ViewModels\ITransContainer.cs" />
     <Compile Include="ViewModels\IValidationDictionary.cs" />
+    <Compile Include="ViewModels\IWindowCloseCommand.cs" />
+    <Compile Include="ViewModels\MessageDialogActionParameter.cs" />
+    <Compile Include="ViewModels\ModalViewModelBase.cs" />
     <Compile Include="ViewModels\NotifyObject.cs" />
     <Compile Include="ViewModels\PropertyChangedWeakEventListener.cs" />
     <Compile Include="ViewModels\PropertyHelper.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\TransitionContainerBase.cs" />
+    <Compile Include="ViewModels\TransitionViewModelBase.cs" />
     <Compile Include="ViewModels\ValidateConditionalAttribute.cs" />
     <Compile Include="ViewModels\Validations\ValidationDictionary.cs" />
     <Compile Include="ViewModels\ValidationViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelUtility.cs" />
     <Compile Include="ViewModels\WeakEventViewModelBase.cs" />
+    <Compile Include="ViewModels\WindowPendingProcessException.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="InfrastructureAssemblies\Microsoft.Expression.Interactions.dll" />
+    <Content Include="InfrastructureAssemblies\System.Windows.Interactivity.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
