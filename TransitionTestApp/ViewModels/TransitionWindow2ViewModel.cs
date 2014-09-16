@@ -1,0 +1,111 @@
+﻿using System;
+using System.Windows.Input;
+
+using MakCraft.Behaviors.Interfaces;
+using MakCraft.ViewModels;
+
+using TransitionTestApp.ViewModels.Container;
+
+namespace TransitionTestApp.ViewModels
+{
+    class TransitionWindow2ViewModel : TransitionViewModelBase
+    {
+        public TransitionWindow2ViewModel()
+        {
+        }
+
+        private string _trans1Text;
+        public string Trans1Text
+        {
+            get { return _trans1Text; }
+            set
+            {
+                _trans1Text = value;
+                base.RaisePropertyChanged(() => Trans1Text);
+            }
+        }
+
+        private string _trans2Text;
+        public string Trans2Text
+        {
+            get { return _trans2Text; }
+            set
+            {
+                _trans2Text = value;
+                base.RaisePropertyChanged(() => Trans2Text);
+            }
+        }
+
+        private object _modelessKick;
+        /// <summary>
+        /// モードレスダイアログの表示のキック用
+        /// </summary>
+        public object ModelessKick
+        {
+            get { return _modelessKick; }
+            set
+            {
+                _modelessKick = value;
+                base.RaisePropertyChanged(() => ModelessKick);
+            }
+        }
+
+        private void showTransitionWindow3Execute()
+        {
+            base.DialogType = typeof(TransitionWindow3);
+            // コンテナに前画面のビューモデルを記録
+            ((TransitionContainer)base.Container).PreviousViewModel = this;
+            ((TransitionContainer)base.Container).Transition2Text = _trans2Text;
+            base.CommunicationDialog = base.Container;
+            ModelessKick = new object();
+            base.DisplayMode = WindowAction.Hide;
+        }
+        private bool showTransitionWindow3CanExecute(object param)
+        {
+            return !string.IsNullOrEmpty(Trans2Text);
+        }
+        private ICommand _showTransitionWindow3Command;
+        public ICommand ShowTransitionWindow3Command
+        {
+            get
+            {
+                if (_showTransitionWindow3Command == null)
+                    _showTransitionWindow3Command = new RelayCommand(
+                        showTransitionWindow3Execute,
+                        showTransitionWindow3CanExecute);
+                return _showTransitionWindow3Command;
+            }
+        }
+
+        private void gcExecute()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+        }
+        private ICommand _gcCommand;
+        public ICommand GcCoomand
+        {
+            get
+            {
+                if (_gcCommand == null)
+                    _gcCommand = new RelayCommand(gcExecute);
+                return _gcCommand;
+            }
+        }
+
+        // Transition1ViewModelBase から渡されてきたデータをセット
+        protected override void OnContainerReceived(object container)
+        {
+            Trans1Text = ((TransitionContainer)container).Transition1Text;
+
+            base.OnContainerReceived(container);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            System.Diagnostics.Debug.WriteLine("** TransitionWindowViewModel2 disposed.");
+            base.Dispose(disposing);
+        }
+    }
+}

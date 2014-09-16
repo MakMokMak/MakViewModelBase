@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeakEventViewModelBaseTestA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationTestApp", "ValidationTestApp\ValidationTestApp.csproj", "{FF07E2E0-6DA1-48D8-90D0-CA30B1C94386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransitionTestApp", "TransitionTestApp\TransitionTestApp.csproj", "{873979D6-FC0A-4769-AD5B-D5BC93156057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FF07E2E0-6DA1-48D8-90D0-CA30B1C94386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF07E2E0-6DA1-48D8-90D0-CA30B1C94386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF07E2E0-6DA1-48D8-90D0-CA30B1C94386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873979D6-FC0A-4769-AD5B-D5BC93156057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873979D6-FC0A-4769-AD5B-D5BC93156057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873979D6-FC0A-4769-AD5B-D5BC93156057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873979D6-FC0A-4769-AD5B-D5BC93156057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -84,8 +84,12 @@
     <Compile Include="ViewModels\WindowPendingProcessException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="InfrastructureAssemblies\Microsoft.Expression.Interactions.dll" />
-    <Content Include="InfrastructureAssemblies\System.Windows.Interactivity.dll" />
+    <Content Include="InfrastructureAssemblies\Microsoft.Expression.Interactions.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InfrastructureAssemblies\System.Windows.Interactivity.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
