@@ -32,7 +32,9 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,10 +46,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\INotifyWeakPropertyChanged.cs" />
     <Compile Include="ViewModels\IPropertyChangedWeakEventListener.cs" />
+    <Compile Include="ViewModels\IValidationDictionary.cs" />
     <Compile Include="ViewModels\NotifyObject.cs" />
     <Compile Include="ViewModels\PropertyChangedWeakEventListener.cs" />
     <Compile Include="ViewModels\PropertyHelper.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\ValidateConditionalAttribute.cs" />
+    <Compile Include="ViewModels\Validations\ValidationDictionary.cs" />
+    <Compile Include="ViewModels\ValidationViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WeakEventViewModelBase.cs" />
   </ItemGroup>
