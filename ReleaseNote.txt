@@ -1,0 +1,54 @@
+Version 4.4 2014/02/22
+生成されたダイアログの親ウィンドウの設定を行うように変更
+データ検証を行う条件を限定する機能の追加
+- データ検証を行う条件を設定する属性 ValidateConditionalAttribute を追加
+- protected void RaisePropertyChangedWithRemoveItemValidationError<T>(Expression<Func<T>> e) メソッドを追加
+- protected virtual void RaisePropertyChangedWithRemoveItemValidationError(string propertyName) メソッドを追加
+- protected void RaisePropertyChangedWithoutRemoveItemValidationError<T>(Expression<Func<T>> e) メソッドを削除
+- protected virtual void RaisePropertyChangedWithoutRemoveItemValidationError(string propertyName) メソッドを削除
+
+Version 4.3.2 2014/02/11
+GetViewModels メソッドの戻り値の型を List<ViewModelBase> から IReadOnlyList<ViewModelBase> へ変更
+
+Version 4.3.1 2014/01/27
+モーダルダイアログのコールバック Action デリゲートの引数の型を object から bool? へ変更(Window.ShowDialog メソッドの戻り値 System.Nullable<Boolean> に型を合わせる)
+
+Version 4.3.0 2014/01/26
+メッセージボックス表示を DialogViewModelBase に含めるように変更
+
+Version 4.2 2014/01/25
+ModalViewModelBase の OkExecute() メソッドを仮想化
+TransitionViewModelBase の WindowCloseCanExecute メソッドを仮想化
+
+Version 4.1 2014/01/24
+DataAnnotations の検証属性以外のデータ検証時の検証エラーがビューに表示されない不具合への対応を行った(ValidationTestApp 参照 )。
+- protected void RaisePropertyChangedWithoutRemoveItemValidationError<T>(Expression<Func<T>> e) メソッドを追加
+- protected virtual void RaisePropertyChangedWithoutRemoveItemValidationError(string propertyName) メソッドを追加
+
+Version 4.0 2014/01/23
+TransitionViewModelBase クラスを追加
+
+Version 3.1 2014/01/21
+RaisePropertyChanged(string propertyName) メソッドを仮想メソッドへ変更
+RaisePropertyChanged(string propertyName) メソッドをオーバーライドしプロパティ変更通知まえに当該プロパティの検証エラーを削除するように変更
+
+Version 3.0 2014/01/17
+対象のフレームワークを .NET Framework 4 から 4.5 に変更
+
+Version 2.3 2013/12/29
+パラメータ付きのコマンドを実装
+RemoveItemValidationError<T>(Expression<Func<T>> propertyName) メソッドと IsPropertyAnnotationError<T>(Expression<Func<T>> propertyName) メソッドを追加
+
+Version 2.2 2013/09/01
+ViewModelBase クラスに IDisposable インターフェイスを付加
+ValidationViewModelBase が WeakEventViewModelBase クラスを継承するように変更(WeakEventViewModelBase 関連のソースはリンク参照)
+ターゲットフレームワークを .NET Framework 4.0 へ変更
+
+Version 2.1 2013/05/11
+Property 変更通知を UI スレッドで行うようにした。
+
+Version 2.0 2013/03/03
+サービス層からのプロパティ変更のイベント通知を受け取る WeakEventViewModelBase クラス等を追加
+
+Version 1.0.4 2012/12/06
+ValidationViewModelBase をブログに公開
