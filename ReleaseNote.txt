@@ -1,3 +1,7 @@
+Version 5.0 2014/09/26
+ViewModelBase, ValidationViewModelBase, TransitionViewModelBase のソースを統合
+プロジェクトにクラス等の仕様を記した HTML ファイルを統合
+
 Version 4.4 2014/02/22
 生成されたダイアログの親ウィンドウの設定を行うように変更
 データ検証を行う条件を限定する機能の追加
