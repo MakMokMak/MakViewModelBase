@@ -11,6 +11,7 @@ WPF を利用した MVVM なシステム作成に利用できる ViewModelBase です。ViewModelBase
 ## ライセンス
 
 修正BSDライセンス(三条項BSDライセンス)
+
 New BSD License(3-clause BSD license)
 
 ## 仕様
