@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="utf-8" />
+  <title>TransitionViewModelBase クラス関連の仕様</title>
+  <link rel="stylesheet" href="spec.css" type="text/css" />
+</head>
+<body>
+  <h1>TransitionViewModelBase クラス関連の仕様</h1>
+
+  <hr />
+  
+  <h2 id="TransitionViewModelBase">TransitionViewModelBase</h2>
+  <p>データ検証と画面遷移及び表示状態設定機能を持つビューモデルの基底クラス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public abstract class TransitionViewModelBase : <a href="#DialogViewModelBase">DialogViewModelBase</a>, <a href="#IWindowCloseCommand">IWindowCloseCommand</a>, <a href="#IViewModelStatus">IViewModelStatus</a>, <a href="#IReceiveFinished">IReceiveFinished</a></code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public <a href="#WindowAction">WindowAction</a> DisplayMode { get; protected set; }</code></pre>
+    </dt>
+    <dd>ウィンドウの表示状態を取得・設定します。<br />View 側で PropertyChangedTrigger の Binding と DisplayModeAction の DisplayMode にバインドしてください。</dd>
+    <dt>
+      <pre><code>protected <a href="#TransitionViewModelBase">TransitionViewModelBase</a> PreviousViewModel { get; }</code></pre>
+    </dt>
+    <dd>前画面のビューモデルを取得します。</dd>
+    <dt>
+      <pre><code>public override object Container {get; set; }</code></pre>
+    </dt>
+    <dd>ウィンドウ作成元からのデータ受け取り用プロパティ</dd>
+    <dt>
+      <pre><code>public bool CanCloseWindow { get; }</code></pre>
+    </dt>
+    <dd>ウィンドウを閉じることが可能かを取得します。</dd>
+    <dt>
+      <pre><code>public <a href="#ViewModelStatus">ViewModelStatus</a> CurrentStatus { get; set; }</code></pre>
+    </dt>
+    <dd>ビューモデルの処理状態を取得・設定します。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>protected virtual bool WindowCloseCanExecute(object param)</code></pre>
+    </dt>
+    <dd>ウィンドウが閉じることの出来る状態かどうかを返します。<br />仮想メソッドは常に 'true' を返します。制御が必要な場合はオーバーライドしてください。</dd>
+    <dt>
+      <pre><code>protected virtual void OnWindowClosed()</code></pre>
+    </dt>
+    <dd>ウィンドウがクローズされた際の操作</dd>
+    <dt>
+      <pre><code>protected virtual void TransitionComplete()</code></pre>
+    </dt>
+    <dd>一連の画面遷移の完了を設定します。</dd>
+    <dt>
+      <pre><code>public virtual void WindowClose()</code></pre>
+    </dt>
+    <dd>ビューモデルからウィンドウへ Close を通知するメソッドです。</dd>
+    <dt>
+      <pre><code>public virtual void OnFinished(ITransContainer container)</code></pre>
+    </dt>
+    <dd>画面遷移完了時に実行する処理です。</dd>
+  </dl>
+
+  <h3>コマンド</h3>
+  <dl>
+    <dt>
+      <pre><code>public ICommand WindowCloseCommand { get; }</code></pre>
+    </dt>
+    <dd>ウィンドウを閉じるコマンド</dd>
+    <dt>
+      <pre><code>public ICommand WindowClosedCommand { get; }</code></pre>
+    </dt>
+    <dd>ウィンドウがクローズされた際の操作コマンド<br />ウィンドウの Closed イベントが発生した際に呼び出されるようにしてください。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="DialogViewModelBase">DialogViewModelBase</h2>
+  <p>データ検証とダイアログ表示の基本機能を提供するビューモデルの基底クラス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public abstract class DialogViewModelBase : <a href="./ValidationViewModelBase.html#ValidationViewModelBase">ValidationViewModelBase</a>, <a href="#IDialogTransferContainer">IDialogTransferContainer</a></code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public object CommunicationDialog { get; protected set; }</code></pre>
+    </dt>
+    <dd>作成する Dialog に渡すデータを取得・設定します。<br />View 側で DialogTransferDataAction の Parameter にバインドしてください。</dd>
+    <dt>
+      <pre><code>public Type DialogType { get; protected set; }</code></pre>
+    </dt>
+    <dd>表示するカスタムダイアログボックスの型の情報<br />View 側で DialogTransferDataAction の DialogType にバインドしてください。</dd>
+    <dt>
+      <pre><code>public virtual object Container { get; set; }</code></pre>
+    </dt>
+    <dd>ウィンドウ作成元から渡されたデータの受取用</dd>
+    <dt>
+      <pre><code>public Action&lt;bool?&gt; DialogActionCallback { get; protected set; }</code></pre>
+    </dt>
+    <dd>ダイアログが閉じられた後に実行するコールバックを取得・設定します。<br />View 側で DialogTransferDataAction の ActionCallBack にバインドしてください。</dd>
+    <dt>
+      <pre><code>public object ResultViewModel { get; set; }</code></pre>
+    </dt>
+    <dd>ダイアログ表示で生成されたダイアログのビューモデルへの参照を取得・設定します。<br />(ダイアログで設定された値の参照用)<br />
+        View 側で DialogTransferDataAction の ResultViewModel にバインドしてください。</dd>
+    <dt>
+      <pre><code>public <a href="#MessageDialogActionParameter">MessageDialogActionParameter</a> MessageDialogActionParam { get; set; }</code></pre>
+    </dt>
+    <dd>MessageDialogActionに渡すパラメーター<br />View 側で PropertyChangedTrigger の Binding と MessageDialogAction の Parameter にバインドしてください。</dd>
+    <dt>
+      <pre><code>public Action&lt;MessageBoxResult&gt; MessageDialogActionCallback { get; set; }</code></pre>
+    </dt>
+    <dd>MessageDialogActionの実行後に呼ばれるCallBack<br />View 側で MessageDialogAction の ActionCallBack にバインドしてください。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>protected virtual void OnContainerReceived(object container)</code></pre>
+    </dt>
+    <dd>ウィンドウ作成元からのデータを受け取った際に行う処理</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="ModalViewModelBase">ModalViewModelBase</h2>
+  <p>データ検証とモーダルダイアログ表示機能を持つビューモデルの基底クラス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public abstract class ModalViewModelBase : <a href="#DialogViewModelBase">DialogViewModelBase</a></code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public bool? Result { get; set; }</code></pre>
+    </dt>
+    <dd>View 側の DialogResult セット用の PropertyChangedTrigger へバインドします。<br />
+    View 側で PropertyChangedTrigger の Binding と ChangePropertyAction の Value にバインドしてください。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>protected virtual void OkExecute()</code></pre>
+    </dt>
+    <dd>モーダルダイアログの OK ボタンクリック時の処理<br />
+    仮想メソッドは Window の DialogResult プロパティに true をセットする動作のみです。制御が必要な場合はオーバーライドしてください。</dd>
+    <dt>
+      <pre><code>protected virtual bool OkCanExecute(object param)</code></pre>
+    </dt>
+    <dd>OkCommand の 有効/無効 を返します。<br />
+    データ検証エラーの有無を返します。データ検証エラーを用いないで判断したい場合はオーバーライドしてください。</dd>
+  </dl>
+
+  <h3>コマンド</h3>
+  <dl>
+    <dt>
+      <pre><code>public ICommand OkCommand { get; }</code></pre>
+    </dt>
+    <dd>OK ボタン用のコマンドです。<br />
+    ボタンの有効・無効をコントロールするため、コマンドで Window の DialogResult を設定します。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="TransitionContainerBase">TransitionContainerBase</h2>
+  <p>画面遷移の際のデータコンテナの基底クラス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public class TransitionContainerBase : <a href="#ITransContainer">ITransContainer</a></code></pre>
+
+  <h3>コンストラクタ</h3>
+  <dl>
+    <dt><pre><code>public TransitionContainerBase(string key, <a href="#TransitionViewModelBase">TransitionViewModelBase</a> viewModel)</code></pre></dt>
+    <dd>画面遷移のキー及び遷移開始元ビューモデルを設定して画面遷移の際のデータコンテナを作成します。</dd>
+  </dl>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public string Key { get; }</code></pre>
+    </dt>
+    <dd>遷移を区別するためのキーを取得します。</dd>
+    <dt>
+      <pre><code>public <a href="#TransitionViewModelBase">TransitionViewModelBase</a> TransStartViewModel { get; }</code></pre>
+    </dt>
+    <dd>遷移動作の開始元ビューモデルを取得します。</dd>
+    <dt>
+      <pre><code>public <a href="#TransitionViewModelBase">TransitionViewModelBase</a> PreviousViewModel { get; set; }</code></pre>
+    </dt>
+    <dd>前画面のビューモデルを取得・設定します。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="ITransContainer">ITransContainer</h2>
+  <p>画面遷移の際のデータコンテナのインターフェイス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public interface ITransContainer</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>string Key { get; }</code></pre>
+    </dt>
+    <dd>遷移を区別するためのキーを取得します。</dd>
+    <dt>
+      <pre><code><a href="#TransitionViewModelBase">TransitionViewModelBase</a> TransStartViewModel { get; }</code></pre>
+    </dt>
+    <dd>遷移動作の開始元ビューモデルを取得します。</dd>
+    <dt>
+      <pre><code><a href="#TransitionViewModelBase">TransitionViewModelBase</a> PreviousViewModel { get; set; }</code></pre>
+    </dt>
+    <dd>前画面のビューモデルを取得・設定します。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="ViewModelUtility">ViewModelUtility</h2>
+  <p>ViewModel 関連のユーティリティクラス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public static class ViewModelUtility</code></pre>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>public static <a href="./ViewModelBase.html#ViewModelBase">ViewModelBase</a> GetMainWindowViewModel()</code></pre>
+    </dt>
+    <dd>MainWindow となっている Window の ViewModel を返します。</dd>
+    <dt>
+      <pre><code>public static int Count(Type type)</code></pre>
+    </dt>
+    <dd>指定されたビューモデルのインスタンスの数を返します。</dd>
+    <dt>
+      <pre><code>public static IReadOnlyList&lt;<a href="./ViewModelBase.html#ViewModelBase">ViewModelBase</a>&gt; GetViewModels(Type type)</code></pre>
+    </dt>
+    <dd>指定されたビューモデルのインスタンスの一覧を返します。</dd>
+    <dt>
+      <pre><code>public static void CloseViewModels(Type type)</code></pre>
+    </dt>
+    <dd>指定されたビューモデルのインスタンスの IWindowCloseCommand インターフェイス のWindowClose メソッドを実行します。</dd>
+    <dt>
+      <pre><code>public static bool IsReadyCloseAllWindows</code></pre>
+    </dt>
+    <dd>すべてのウィンドウが閉じることが可能か確認します。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="DialogTransferDataAction">DialogTransferDataAction</h2>
+  <p>データを渡してモードレス ダイアログ ウィンドウを表示するアクション<br />ダイアログ側のビューモデルにデータ受取り用の「public object Container」プロパティが必要</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public class DialogTransferDataAction : TriggerAction&lt;FrameworkElement&gt;</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public object Parameter { get; set; }</code></pre>
+    </dt>
+    <dd>ダイアログウィンドウに渡すデータを格納</dd>
+    <dt>
+      <pre><code>public Type DialogType { get; set; }</code></pre>
+    </dt>
+    <dd>表示するダイアログのクラス名</dd>
+    <dt>
+      <pre><code>public DialogModes DialogMode { get; set; }</code></pre>
+    </dt>
+    <dd>ダイアログの表示種別</dd>
+    <dt>
+      <pre><code>public Action&lt;bool?&gt; ActionCallBack { get; set; }</code></pre>
+    </dt>
+    <dd>ダイアログを閉じた際に実行するコールバック</dd>
+    <dt>
+      <pre><code>public object ResultViewModel { get; set; }</code></pre>
+    </dt>
+    <dd>作成したウィンドウのビューモデルオブジェクトへの参照<br />ダイアログ側で設定したデータの参照用</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="DialogModes">DialogModes</h2>
+  <p>ダイアログの表示種別</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public enum DialogModes</code></pre>
+
+  <h3>メンバー</h3>
+  <dl>
+    <dt>Modal</dt>
+    <dd>モーダル ダイアログとして表示する。</dd>
+    <dt>Modeless</dt>
+    <dd>モードレス ダイアログとして表示する。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="DisplayModeAction">DisplayModeAction</h2>
+  <p>モードレス ウィンドウの表示変更アクション</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public class DisplayModeAction : TriggerAction&lt;FrameworkElement&gt;</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public <a href="#WindowAction">WindowAction</a> DisplayMode { get; set; }</code></pre>
+    </dt>
+    <dd>変更する表示状態</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="ViewModelStatus">ViewModelStatus</h2>
+  <p>画面遷移を行うビューモデルの処理状況を表す列挙型です。</p>
+
+  <h3>構文</h3>
+  <pre>
+    <code>public enum ViewModelStatus</code>
+  </pre>
+
+  <dl>
+    <dt>Completed</dt>
+    <dd>完了</dd>
+    <dt>Halfway</dt>
+    <dd>未完了</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="WindowAction">WindowAction</h2>
+  <p>画面遷移を行うビューモデルへセットするウィンドウの状態を表す列挙型です。</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public enum WindowAction</code></pre>
+
+  <h3>メンバー</h3>
+  <dl>
+    <dt>Show</dt>
+    <dd>表示する</dd>
+    <dt>Hide</dt>
+    <dd>非表示にする</dd>
+    <dt>Close</dt>
+    <dd>閉じる</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="MessageDialogAction">MessageDialogAction</h2>
+  <p>MessageBox を表示するアクション</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public class MessageDialogAction : TriggerAction&lt;FrameworkElement&gt;</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public <a href="#IMessageDialogActionParameter">IMessageDialogActionParameter</a> Parameter { get; set; }</code></pre>
+    </dt>
+    <dd>メッセージボックスやダイアログを出すために必要となる情報を受け取る</dd>
+    <dt>
+      <pre><code>public Action&lt;MessageBoxResult&gt; ActionCallBack</code></pre>
+    </dt>
+    <dd>ダイアログでの選択結果をViewModelに通知するコールバックメソッド</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="MessageDialogActionParameter">MessageDialogActionParameter</h2>
+  <p>MessageDialogAction へ渡すパラメーター<br />
+    IsDialog が false のときには Button の設定は反映されません。
+  </p>
+
+  <h3>構文</h3>
+  <pre><code>public class MessageDialogActionParameter : <a href="#IMessageDialogActionParameter">IMessageDialogActionParameter</a></code></pre>
+
+  <h3>コンストラクタ</h3>
+  <pre><code>public MessageDialogActionParameter(string message, string caption) : this(message, caption, MessageBoxButton.OK, false)</code></pre>
+  <pre><code>public MessageDialogActionParameter(string message, string caption, MessageBoxButton button) : this(message, caption, button, true)</code></pre>
+  <pre><code>public MessageDialogActionParameter(string message, string caption, MessageBoxButton button, bool isDialog)</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public string Message { get; protected set; }</code></pre>
+    </dt>
+    <dd>MessageBoxに表示するメッセージ</dd>
+    <dt>
+      <pre><code>public string Caption { get; protected set; }</code></pre>
+    </dt>
+    <dd>MessageBox に表示するタイトル</dd>
+    <dt>
+      <pre><code>public MessageBoxButton Button { get; protected set; }</code></pre>
+    </dt>
+    <dd>MessageBox に表示するボタン</dd>
+    <dt>
+      <pre><code>public bool IsDialog { get; protected set; }</code></pre>
+    </dt>
+    <dd>true:ダイアログ(ユーザ応答を処理する)、false:メッセージ</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="IDialogTransferContainer">IDialogTransferContainer</h2>
+  <p>生成元ウィンドウからのデータの受取用プロパティのインターフェイス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public interface IDialogTransferContainer</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt><pre><code>object Container { get; set; }</code></pre></dt>
+    <dd>生成元ウィンドウからのデータの受取用プロパティ</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="IMessageDialogActionParameter">IMessageDialogActionParameter</h2>
+  <p>MessageDialogAction へ渡すパラメーターのインターフェイス<br />IsDialog が false のときには Button の設定は反映されません。</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public interface IMessageDialogActionParameter</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>string Message { get; }</code></pre>
+    </dt>
+    <dd>MessageBoxに表示するメッセージ</dd>
+    <dt>
+      <pre><code>string Caption { get; }</code></pre>
+    </dt>
+    <dd>MessageBox に表示するタイトル</dd>
+    <dt>
+      <pre><code>MessageBoxButton Button { get; }</code></pre>
+    </dt>
+    <dd>MessageBox に表示するボタン</dd>
+    <dt>
+      <pre><code>bool IsDialog { get; }</code></pre>
+    </dt>
+    <dd>true:ダイアログ(ユーザ応答を処理する)、false:メッセージ</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="IReceiveFinished">IReceiveFinished</h2>
+  <p>画面遷移完了時の操作に用いるインターフェイスです。</p>
+
+  <h3>構文</h3>
+  <pre><code>interface IReceiveFinished</code></pre>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>void OnFinished(<a href="#ITransContainer">ITransContainer</a> container)</code></pre>
+    </dt>
+    <dd>画面遷移操作完了時に実行されるメソッド</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="ITransContainer">ITransContainer</h2>
+  <p>画面遷移の際のデータコンテナのインターフェイス</p>
+
+  <h3>構文</h3>
+  <pre><code>public interface ITransContainer</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>string Key { get; }</code></pre>
+    </dt>
+    <dd>遷移を区別するためのキーを取得します。<br />
+      一つのビューモデルで複数の画面遷移を持つ場合の処理の分岐用
+    </dd>
+    <dt>
+      <pre><code><a href="#TransitionViewModelBase">TransitionViewModelBase</a> TransStartViewModel { get; }</code></pre>
+    </dt>
+    <dd>遷移動作の開始元ビューモデルを取得します。</dd>
+    <dt>
+      <pre><code><a href="#TransitionViewModelBase">TransitionViewModelBase</a> PreviousViewModel { get; set; }</code></pre>
+    </dt>
+    <dd>前画面のビューモデルを取得・設定します。</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="IViewModelStatus">IViewModelStatus</h2>
+  <p>画面遷移を行うビューモデルの処理状況のプロパティのインターフェイス</p>
+
+  <h3>構文</h3>
+  <pre><code>public interface IViewModelStatus</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code><a href="#ViewModelStatus">ViewModelStatus</a> CurrentStatus { get; set; }</code></pre>
+    </dt>
+    <dd>画面遷移を行うビューモデルの処理状況</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="IWindowCloseCommand">IWindowCloseCommand</h2>
+  <p>ウィンドウを閉じるためのビューモデルのインターフェイスです。</p>
+
+  <h3>構文</h3>
+  <pre><code>public interface IWindowCloseCommand</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>bool CanCloseWindow { get; }</code></pre>
+    </dt>
+    <dd>ウィンドウがクローズできる状態かを返します。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>void WindowClose()</code></pre>
+    </dt>
+    <dd>ビューモデルからウィンドウへ Close を通知するメソッドです。</dd>
+  </dl>
+
+</body>
+</html>

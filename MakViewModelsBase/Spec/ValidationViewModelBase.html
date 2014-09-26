@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="utf-8" />
+  <title>ValidationViewModelBase クラス関連の仕様</title>
+  <link rel="stylesheet" href="spec.css" type="text/css" />
+</head>
+<body>
+  <h1>ValidationViewModelBase クラス関連の仕様</h1>
+
+  <hr />
+  
+  <h2 id="ValidationViewModelBase">ValidationViewModelBase</h2>
+  <p>プロパティ変更通知及びデータ検証を実装したビューモデルの基底クラス</p>
+ 
+  <h3>構文</h3>
+  <pre><code>public abstract class ValidationViewModelBase : <a href="./WeakEventViewModelBase.html#WeakEventViewModelBase">WeakEventViewModelBase</a>, IDataErrorInfo</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt><pre><code>public bool IsValid</code></pre></dt>
+    <dd>データ検証エラーの発生の有無を取得します。</dd>
+    <dt>
+      <pre><code>public <a href="#ValidationDictionary">ValidationDictionary</a> ViewModelState</code></pre>
+    </dt>
+    <dd>ビューモデルの状態及びバインディングの検証の状態を格納するビューモデル状態ディクショナリ オブジェクトを取得します。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt><pre><code>public void RemoveItemValidationError&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; propertyName)</code></pre></dt>
+    <dd>propertyName に設定されている検証エラーメッセージを削除します。</dd>
+    <dt><pre><code>public void RemoveItemValidationError(string propertyName)</code></pre></dt>
+    <dd>propertyName に設定されている検証エラーメッセージを削除します。</dd>
+    <dt><pre><code>public bool IsPropertyAnnotationError&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; propertyName)</code></pre></dt>
+    <dd>指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。</dd>
+    <dt><pre><code>public bool IsPropertyAnnotationError(string propertyName)</code></pre></dt>
+    <dd>指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。</dd>
+    <dt><pre><code>protected void RaisePropertyChangedWithRemoveItemValidationError&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e)</code></pre></dt>
+    <dd>PropertyChanged イベントを発火します。<br />プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。</dd>
+    <dt><pre><code>protected virtual void RaisePropertyChangedWithRemoveItemValidationError(string propertyName)</code></pre></dt>
+    <dd>PropertyChanged イベントを発火します。<br />プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="ValidationDictionary">ValidationDictionary</h2>
+  <p>データ検証に用いるディクショナリ</p>
+
+  <h3>構文</h3>
+  <pre><code>class ValidationDictionary : <a href="#IValidationDictionary">IValidationDictionary</a></code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre>
+        <code>bool IsValid { get; }</code>
+      </pre>
+    </dt>
+    <dd>データ検証エラーの発生の有無を取得する。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>void AddError(string key, string errorMessage)</code></pre>
+    </dt>
+    <dd>データ検証エラーメッセージを追加する。</dd>
+    <dt>
+      <pre><code>public void RemoveErrorByKey(string propertyName)</code></pre>
+    </dt>
+    <dd>propertyName に設定されているエラーメッセージを削除します。</dd>
+    <dt>
+      <pre><code>public string GetValidationError(string propertyName)</code></pre>
+    </dt>
+    <dd>propertyName に対するエラーメッセージを返します。エラーがない場合は null を返します。</dd>
+    <dt>
+      <pre><code>IEnumerator&lt;KeyValuePair&lt;string, ModelState&gt;&gt; GetEnumerator()</code></pre>
+    </dt>
+    <dd>コレクションを反復処理するために使用できる列挙子を返します。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="ValidateConditionalAttribute">ValidateConditionalAttribute</h2>
+  <p>データ検証を行う条件を指定します。</p>
+
+  <h3>構文</h3>
+  <pre><code>[AttributeUsage(AttributeTargets.Property)]
+public class ValidateConditionalAttribute : Attribute</code></pre>
+
+  <h3>コンストラクタ</h3>
+  <dl>
+    <dt>
+      <pre><code>public ValidateConditionalAttribute(string comparedProperty, object value)</code></pre>
+    </dt>
+    <dd></dd>
+  </dl>
+  
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>public string ComparedProperty</code></pre>
+    </dt>
+    <dd>条件の比較対象となるプロパティ名を取得します。</dd>
+    <dt>
+      <pre><code>public object Value</code></pre>
+    </dt>
+    <dd>条件となる値を取得します。</dd>
+  </dl>
+
+  <hr />
+  
+  <h2 id="IValidationDictionary">IValidationDictionary</h2>
+  <p>データ検証のインターフェイス</p>
+
+  <h3>構文</h3>
+  <pre><code>public interface IValidationDictionary</code></pre>
+
+  <h3>プロパティ</h3>
+  <dl>
+    <dt>
+      <pre><code>bool IsValid { get; }</code></pre>
+    </dt>
+    <dd>データ検証エラーの発生の有無を取得する。</dd>
+  </dl>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>void AddError(string key, string errorMessage)</code></pre>
+    </dt>
+    <dd>データ検証エラーメッセージを追加する。</dd>
+    <dt>
+      <pre><code>void RemoveErrorByKey(string propertyName)</code></pre>
+    </dt>
+    <dd>propertyName に設定されているエラーメッセージを削除します。</dd>
+    <dt>
+      <pre><code>IEnumerator&lt;KeyValuePair&lt;string, ModelState&gt;&gt; GetEnumerator()</code></pre>
+    </dt>
+    <dd>コレクションを反復処理するために使用できる列挙子を返します。</dd>
+  </dl>
+</body>
+</html>

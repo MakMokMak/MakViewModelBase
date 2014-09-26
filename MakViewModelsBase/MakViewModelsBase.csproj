@@ -90,6 +90,11 @@
     <Content Include="InfrastructureAssemblies\System.Windows.Interactivity.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Spec\spec.css" />
+    <Content Include="Spec\TransitionViewModelBase.html" />
+    <Content Include="Spec\ValidationViewModelBase.html" />
+    <Content Include="Spec\ViewModelBase.html" />
+    <Content Include="Spec\WeakEventViewModelBase.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

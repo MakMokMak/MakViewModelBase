@@ -6,6 +6,9 @@ using System.Web.ModelBinding;
 
 namespace MakCraft.ViewModels.Validations
 {
+    /// <summary>
+    /// データ検証に用いるディクショナリ
+    /// </summary>
     class ValidationDictionary : IValidationDictionary
     {
         private readonly Dictionary<string, ModelState> _innerDic = new Dictionary<string, ModelState>(StringComparer.OrdinalIgnoreCase);
@@ -33,11 +36,19 @@ namespace MakCraft.ViewModels.Validations
 
         #region IvalidationDictionary Members
 
+        /// <summary>
+        /// データ検証エラーの発生の有無を取得する。
+        /// </summary>
         public bool IsValid
         {
             get { return Values.All(modelState => modelState.Errors.Count == 0); }
         }
 
+        /// <summary>
+        /// データ検証エラーメッセージを追加する。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="errorMessage"></param>
         public void AddError(string key, string errorMessage)
         {
             getModelStateForKey(key).Errors.Add(errorMessage);

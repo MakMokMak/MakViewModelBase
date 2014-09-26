@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="utf-8" />
+  <title>WeakEventViewModelBase クラス関連の仕様</title>
+  <link rel="stylesheet" href="spec.css" type="text/css" />
+</head>
+<body>
+  <h1>WeakEventViewModelBase クラス関連の仕様</h1>
+  
+  <hr />
+  
+  <h2 id="WeakEventViewModelBase">WeakEventViewModelBase</h2>
+  <p>弱いイベントパターンを用いたリスナー登録機能を持つビューモデルベースです。</p>
+
+  <h3>構文</h3>
+  <pre><code>public abstract class WeakEventViewModelBase : <a href="./ViewModelBase.html#ViewModelBase">ViewModelBase</a></code></pre>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>public void AddListener(INotifyPropertyChanged notifyObject, IWeakEventListener weakEventListener)</code></pre>
+    </dt>
+    <dd>PropertyChangedEventManager へ弱いイベントのリスナーを登録します。</dd>
+    <dt>
+      <pre><code>public void RemoveListener(INotifyPropertyChanged notifyObject, IWeakEventListener weakEventListener)</code></pre>
+    </dt>
+    <dd>
+      PropertyChangedEventManager から弱いイベントのリスナーを削除します。<br />
+      (明示的に削除を行わなくてもメモリーリークは発生しません)
+    </dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="PropertyChangedWeakEventListener">PropertyChangedWeakEventListener</h2>
+  <p>弱いイベントパターンのリスナです。</p>
+
+  <h3>構文</h3>
+  <pre><code>public class PropertyChangedWeakEventListener : <a href="#IPropertyChangedWeakEventListener">IPropertyChangedWeakEventListener</a></code></pre>
+
+  <h3>メソッド</h3>
+  <dl>
+    <dt>
+      <pre><code>public bool ReceiveWeakEvent(Type managerType, object sender, EventArgs e)</code></pre>
+    </dt>
+    <dd>イベント マネージャーからイベントを受信します。</dd>
+  </dl>
+
+  <h3>イベント</h3>
+  <dl>
+    <dt>
+      <pre><code>public event PropertyChangedEventHandler WeakPropertyChanged</code></pre>
+    </dt>
+    <dd>弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラ</dd>
+  </dl>
+
+  <hr />
+
+  <h2 id="IPropertyChangedWeakEventListener">IPropertyChangedWeakEventListener</h2>
+  <p>弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラを持つ WeakEventListner のインターフェイス</p>
+
+  <h3>構文</h3>
+  <pre><code>public interface IPropertyChangedWeakEventListener : IWeakEventListener, <a href="#INotifyWeakPropertyChanged">INotifyWeakPropertyChanged</a></code></pre>
+
+  <hr />
+
+  <h2 id="INotifyWeakPropertyChanged">INotifyWeakPropertyChanged</h2>
+  <p>弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラを持つ NotifyWeakPropertyChanged のインターフェイス。</p>
+
+  <h3>構文</h3>
+  <pre><code>public interface INotifyWeakPropertyChanged</code></pre>
+
+  <h3>イベント</h3>
+  <dl>
+    <dt>
+      <pre><code>event PropertyChangedEventHandler WeakPropertyChanged</code></pre>
+    </dt>
+    <dd>弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラ</dd>
+  </dl>
+
+</body>
+</html>
