@@ -23,3 +23,11 @@ New BSD License(3-clause BSD license)
 * [ValidationViewModelBase クラス関連の仕様](http://www.makcraft.com/specification/32-validationviewmodelbaseclassspecs.html)
 * [TransitionViewModelBase クラス関連の仕様](http://www.makcraft.com/specification/33-transitionviewmodelbaseclassspecs.html)
 
+## 利用例
+
+それぞれの ViewModelBase の利用例は、ソリューション中の次のプロジェクトを御覧ください。
+
+* ViewModelBase: ViewModelBaseTestApp
+* WeakEventViewModelBase: WeakEventViewModelBaseTestApp
+* ValidationViewModelBase: ValidationTestApp
+* TransitionViewModelBase: TransitionTestApp
