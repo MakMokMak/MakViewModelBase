@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MakCraft.ViewModels
 {
@@ -15,6 +16,21 @@ namespace MakCraft.ViewModels
         /// コンストラクタ
         /// </summary>
         public ViewModelBase() { }
+
+        /// <summary>
+        /// CommandManager.RequerySuggested イベントを強制的に発火させます(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。
+        /// </summary>
+        protected void InvalidateRequerySuggested()
+        {
+            if (base.IsUiThread())
+            {
+                CommandManager.InvalidateRequerySuggested();
+            }
+            else
+            {
+                UiDispatcher.Invoke(CommandManager.InvalidateRequerySuggested);
+            }
+        }
 
         #region IDisposable
 

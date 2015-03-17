@@ -36,7 +36,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// PropertyChanged イベントを発火します。
+        /// PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="e"></param>
@@ -46,7 +46,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// PropertyChanged イベントを発火します。
+        /// PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。
         /// </summary>
         /// <param name="propertyName"></param>
         protected virtual void RaisePropertyChanged(string propertyName)
@@ -54,7 +54,7 @@ namespace MakCraft.ViewModels
             var handler = PropertyChanged;
             if (handler != null)
             {
-                if (isUiThread())
+                if (IsUiThread())
                 {   // UI スレッドなら、そのまま実行
                     handler(this, new PropertyChangedEventArgs(propertyName));
                 }
@@ -65,8 +65,11 @@ namespace MakCraft.ViewModels
             }
         }
 
-        // UI スレッドからのアクセスかどうかを判定する
-        private bool isUiThread()
+        /// <summary>
+        /// UI スレッドからのアクセスかどうかを判定する
+        /// </summary>
+        /// <returns></returns>
+        protected bool IsUiThread()
         {
             // 今のスレッドと UI スレッドを比較
             return UiDispatcher.Thread == Thread.CurrentThread;
