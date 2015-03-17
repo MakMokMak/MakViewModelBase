@@ -42,9 +42,9 @@
   <h3>メソッド</h3>
   <dl>
     <dt><pre><code>protected void RaisePropertyChanged&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します。</dd>
+    <dd>PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
     <dt><pre><code>protected virtual void RaisePropertyChanged(string propertyName)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します。</dd>
+    <dd>PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
   </dl>
 
   <h3>イベント</h3>
