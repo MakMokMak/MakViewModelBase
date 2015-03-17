@@ -1,3 +1,6 @@
+Version 5.1 2015/03/17
+CommandManager.RequerySuggested イベントを強制的に発火させる(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行) ViewModelBase.InvalidateRequerySuggested() メソッドを実装
+
 Version 5.0 2014/09/26
 ViewModelBase, ValidationViewModelBase, TransitionViewModelBase のソースを統合
 プロジェクトにクラス等の仕様を記した HTML ファイルを統合
