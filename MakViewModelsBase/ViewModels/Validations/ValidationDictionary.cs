@@ -57,7 +57,7 @@ namespace MakCraft.ViewModels.Validations
         /// <summary>
         /// propertyName に設定されているエラーメッセージを削除します。
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="propertyName"></param>
         public void RemoveErrorByKey(string propertyName)
         {
             if (_innerDic.ContainsKey(propertyName))

@@ -7,6 +7,9 @@ namespace MakCraft.ViewModels
     /// </summary>
     public abstract class ModalViewModelBase : DialogViewModelBase
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public ModalViewModelBase() { }
 
         private bool? _result;

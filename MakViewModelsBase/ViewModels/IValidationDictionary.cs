@@ -23,7 +23,7 @@ namespace MakCraft.ViewModels
         /// <summary>
         /// propertyName に設定されているエラーメッセージを削除します。
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="propertyName"></param>
         void RemoveErrorByKey(string propertyName);
 
         /// <summary>

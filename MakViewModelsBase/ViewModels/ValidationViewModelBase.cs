@@ -16,6 +16,9 @@ namespace MakCraft.ViewModels
     {
         private IValidationDictionary _validationDic;
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public ValidationViewModelBase()
         {
             _validationDic = new ValidationDictionary();

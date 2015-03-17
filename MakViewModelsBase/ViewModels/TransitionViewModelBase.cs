@@ -10,6 +10,9 @@ namespace MakCraft.ViewModels
     /// </summary>
     public abstract class TransitionViewModelBase : DialogViewModelBase, IWindowCloseCommand, IViewModelStatus, IReceiveFinished
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public TransitionViewModelBase() { }
 
         private WindowAction _windowAction;

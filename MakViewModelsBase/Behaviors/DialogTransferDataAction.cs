@@ -10,6 +10,7 @@ namespace MakCraft.Behaviors
     /// <summary>
     /// データを渡してダイアログ ウィンドウを表示するアクション
     /// ダイアログ側のビューモデルにデータ受取り用の「public object Container」プロパティが必要
+    /// </summary>
     public class DialogTransferDataAction : TriggerAction<FrameworkElement>
     {
         /// <summary>
@@ -19,7 +20,9 @@ namespace MakCraft.Behaviors
             "Parameter", typeof(object), typeof(DialogTransferDataAction),
             new UIPropertyMetadata(null)
             );
-
+        /// <summary>
+        /// ダイアログウィンドウに渡すデータを格納
+        /// </summary>
         public object Parameter
         {
             get { return (object)GetValue(ParameterProperty); }
@@ -33,7 +36,9 @@ namespace MakCraft.Behaviors
             "DialogType", typeof(Type), typeof(DialogTransferDataAction),
             new UIPropertyMetadata()
             );
-
+        /// <summary>
+        /// 表示するダイアログのクラス名
+        /// </summary>
         public Type DialogType
         {
             get { return (Type)GetValue(DialogTypeProperty); }
@@ -47,7 +52,9 @@ namespace MakCraft.Behaviors
             "DialogMode", typeof(DialogModes), typeof(DialogTransferDataAction),
             new UIPropertyMetadata()
             );
-
+        /// <summary>
+        /// ダイアログの表示種別
+        /// </summary>
         public DialogModes DialogMode
         {
             get { return (DialogModes)GetValue(DialogModeProperty); }
@@ -61,7 +68,9 @@ namespace MakCraft.Behaviors
             "ActionCallBack", typeof(Action<bool?>), typeof(DialogTransferDataAction),
             new UIPropertyMetadata()
             );
-
+        /// <summary>
+        /// ダイアログを閉じた際に実行するコールバック
+        /// </summary>
         public Action<bool?> ActionCallBack
         {
             get { return (Action<bool?>)GetValue(ActionCallBackProperty); }
@@ -76,13 +85,20 @@ namespace MakCraft.Behaviors
             "ResultViewModel", typeof(object), typeof(DialogTransferDataAction),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
             );
-
+        /// <summary>
+        /// 作成したウィンドウのビューモデルオブジェクトへの参照
+        /// ダイアログ側で設定したデータの参照用
+        /// </summary>
         public object ResultViewModel
         {
             get { return GetValue(ResultViewModelProperty); }
             set { SetValue(ResultViewModelProperty, value); }
         }
 
+        /// <summary>
+        /// Invokes the action. 
+        /// </summary>
+        /// <param name="parameter"></param>
         protected override void Invoke(object parameter)
         {
             Mouse.OverrideCursor = Cursors.Wait;

@@ -10,6 +10,9 @@ namespace MakCraft.ViewModels
     /// </summary>
     public abstract class DialogViewModelBase : ValidationViewModelBase, IDialogTransferContainer
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public DialogViewModelBase() { }
 
         /// <summary>

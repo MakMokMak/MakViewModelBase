@@ -9,9 +9,26 @@ namespace MakCraft.ViewModels
     [Serializable]
     public class WindowPendingProcessException : Exception
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public WindowPendingProcessException() : base() { }
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="message"></param>
         public WindowPendingProcessException(string message) : base(message) { }
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="inner"></param>
         public WindowPendingProcessException(string message, Exception inner) : base(message, inner) { }
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="context"></param>
         public WindowPendingProcessException(SerializationInfo info, StreamingContext context) { }
     }
 }

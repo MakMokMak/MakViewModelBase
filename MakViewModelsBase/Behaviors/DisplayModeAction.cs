@@ -19,13 +19,19 @@ namespace MakCraft.Behaviors
             {
                 DefaultValue = WindowAction.Show
             });
-
+        /// <summary>
+        /// 変更する表示状態
+        /// </summary>
         public WindowAction DisplayMode
         {
             get { return (WindowAction)GetValue(DisplayModeProperty); }
             set { SetValue(DisplayModeProperty, value); }
         }
 
+        /// <summary>
+        /// Invokes the action. 
+        /// </summary>
+        /// <param name="parameter"></param>
         protected override void Invoke(object parameter)
         {
             if (AssociatedObject == null) return;
