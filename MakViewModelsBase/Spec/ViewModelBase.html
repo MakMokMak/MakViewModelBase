@@ -19,6 +19,8 @@
 
   <h3>メソッド</h3>
   <dl>
+    <dt><pre><code>protected void InvalidateRequerySuggested()</code></pre></dt>
+    <dd>CommandManager.RequerySuggested イベントを強制的に発火させます(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
     <dt><pre><code>public void Dispose()</code></pre></dt>
     <dd>リソースの開放を行います。</dd>
     <dt><pre><code>protected virtual void Dispose(bool disposing)</code></pre></dt>
@@ -45,6 +47,8 @@
     <dd>PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
     <dt><pre><code>protected virtual void RaisePropertyChanged(string propertyName)</code></pre></dt>
     <dd>PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
+    <dt><pre><code>protected bool IsUiThread()</code></pre></dt>
+    <dd>UI スレッドからのアクセスかどうかを判定する</dd>
   </dl>
 
   <h3>イベント</h3>
