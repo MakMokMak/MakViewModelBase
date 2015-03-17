@@ -123,7 +123,7 @@ namespace ViewModelBaseTestApp
                 if (_displaySec <= 0)
                 {
                     stopTimer();
-                    CommandManager.InvalidateRequerySuggested();
+                    base.InvalidateRequerySuggested();
                 }
             }
         }
