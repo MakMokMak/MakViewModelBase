@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace MakCraft.ViewModels
 {
@@ -15,14 +13,54 @@ namespace MakCraft.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public ViewModelBase() { }
+        public ViewModelBase()
+        {
+            // インスタンスが作られたときの Diapatcher を取得
+            _uiDispatcher = Dispatcher.CurrentDispatcher;
+        }
+
+
+        private readonly Dispatcher _uiDispatcher;
+        /// <summary>
+        /// UI スレッドのディスパッチャ
+        /// </summary>
+        protected Dispatcher UiDispatcher
+        {
+            get { return _uiDispatcher; }
+        }
+
+        /// <summary>
+        /// UI スレッドからのアクセスかどうかを判定する
+        /// </summary>
+        /// <returns></returns>
+        protected bool IsUiThread()
+        {
+            // 今のスレッドと UI スレッドを比較
+            return UiDispatcher.Thread == Thread.CurrentThread;
+        }
+
+        /// <summary>
+        /// PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected override void RaisePropertyChanged(string propertyName)
+        {
+            if (IsUiThread())
+            {   // UI スレッドなら、そのまま実行
+                base.RaisePropertyChanged(propertyName);
+            }
+            else
+            {   // UI スレッドじゃなかったら、Dispatcher に依頼
+                UiDispatcher.Invoke(new Action(() => base.RaisePropertyChanged(propertyName)));
+            }
+        }
 
         /// <summary>
         /// CommandManager.RequerySuggested イベントを強制的に発火させます(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。
         /// </summary>
         protected void InvalidateRequerySuggested()
         {
-            if (base.IsUiThread())
+            if (IsUiThread())
             {
                 CommandManager.InvalidateRequerySuggested();
             }
