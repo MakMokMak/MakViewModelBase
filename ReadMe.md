@@ -1,4 +1,4 @@
-# MakViewModelBase version 5.1.0
+# MakViewModelBase version 5.1.2
 
 ## ŠT—v
 
