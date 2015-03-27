@@ -45,14 +45,7 @@ namespace MakCraft.ViewModels
         /// <param name="propertyName"></param>
         protected override void RaisePropertyChanged(string propertyName)
         {
-            if (IsUiThread())
-            {   // UI スレッドなら、そのまま実行
-                base.RaisePropertyChanged(propertyName);
-            }
-            else
-            {   // UI スレッドじゃなかったら、Dispatcher に依頼
-                UiDispatcher.Invoke(new Action(() => base.RaisePropertyChanged(propertyName)));
-            }
+            invokeOnUiThread(new Action(() => base.RaisePropertyChanged(propertyName)));
         }
 
         /// <summary>
@@ -60,13 +53,19 @@ namespace MakCraft.ViewModels
         /// </summary>
         protected void InvalidateRequerySuggested()
         {
+            invokeOnUiThread(CommandManager.InvalidateRequerySuggested);
+        }
+
+        // UI スレッドで actoin を呼び出す
+        private void invokeOnUiThread(Action action)
+        {
             if (IsUiThread())
-            {
-                CommandManager.InvalidateRequerySuggested();
+            {   // UI スレッドなら、そのまま実行
+                action();
             }
             else
-            {
-                UiDispatcher.Invoke(CommandManager.InvalidateRequerySuggested);
+            {   // UI スレッドじゃなかったら、Dispatcher に依頼
+                UiDispatcher.Invoke(action);
             }
         }
 
