@@ -41,8 +41,9 @@ namespace ViewModelBaseTestApp
             get { return _itemX; }
             set
             {
+                // RaisePropertyChanged の引数を文字列で指定する例
                 _itemX = value;
-                base.RaisePropertyChanged(PropertyHelper.GetName(() => ItemX));
+                base.RaisePropertyChanged(nameof(ItemX));
             }
         }
 
@@ -51,6 +52,7 @@ namespace ViewModelBaseTestApp
             get { return _itemY; }
             set
             {
+                // RaisePropertyChanged の引数を PropertyHelper.GetName<T>(Expression<Func<T>> e) を用いて 指定する例
                 _itemY = value;
                 base.RaisePropertyChanged(() => ItemY);
             }
@@ -61,8 +63,9 @@ namespace ViewModelBaseTestApp
             get { return _output; }
             private set
             {
+                // RaisePropertyChanged の引数を省略する例
                 _output = value;
-                base.RaisePropertyChanged(() => Output);
+                base.RaisePropertyChanged();
             }
         }
 
@@ -72,12 +75,11 @@ namespace ViewModelBaseTestApp
             get { return _countdownSec; }
             set
             {
-                _countdownSec = value;
+                base.SetProperty(ref _countdownSec, value);
                 if (int.TryParse(value, out _countdownSecInt))
                 {
                     DisplaySec = _countdownSecInt;
                 }
-                base.RaisePropertyChanged(() => CountdownSec);
             }
         }
 
@@ -87,8 +89,7 @@ namespace ViewModelBaseTestApp
             get { return _isEditTime; }
             set
             {
-                _isEditTime = value;
-                base.RaisePropertyChanged(() => IsEditTime);
+                base.SetProperty(ref _isEditTime, value);
                 if (_isEditTime)
                 {
                     StartButtonText = "Start";
@@ -106,8 +107,7 @@ namespace ViewModelBaseTestApp
             get { return _startButtonText; }
             set
             {
-                _startButtonText = value;
-                base.RaisePropertyChanged(() => StartButtonText);
+                base.SetProperty(ref _startButtonText, value);
             }
         }
 
@@ -117,8 +117,8 @@ namespace ViewModelBaseTestApp
             get { return _displaySec; }
             set
             {
-                _displaySec = value;
-                base.RaisePropertyChanged(() => DisplaySec);
+                // SetProperty メソッドを利用する(PropertyName は省略)例
+                base.SetProperty(ref _displaySec, value);
 
                 if (_displaySec <= 0)
                 {

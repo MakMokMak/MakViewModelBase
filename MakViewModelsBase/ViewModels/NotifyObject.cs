@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 namespace MakCraft.ViewModels
 {
@@ -20,6 +21,22 @@ namespace MakCraft.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// プロパティ名 property を value の値で書き換え、PropertyChanged イベントを発火します。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="property"></param>
+        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        protected void SetProperty<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
+        {
+            if(!Equals(property, value))
+            {
+                property = value;
+                RaisePropertyChanged(propertyName);
+            }
+        }
+
+        /// <summary>
         /// PropertyChanged イベントを発火します。
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -31,9 +48,10 @@ namespace MakCraft.ViewModels
 
         /// <summary>
         /// PropertyChanged イベントを発火します。
+        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
         /// </summary>
         /// <param name="propertyName"></param>
-        protected virtual void RaisePropertyChanged(string propertyName)
+        protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
             var handler = PropertyChanged;
             if (handler != null)

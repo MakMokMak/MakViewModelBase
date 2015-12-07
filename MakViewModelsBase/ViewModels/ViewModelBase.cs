@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -41,9 +42,10 @@ namespace MakCraft.ViewModels
 
         /// <summary>
         /// PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。
+        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
         /// </summary>
         /// <param name="propertyName"></param>
-        protected override void RaisePropertyChanged(string propertyName)
+        protected override void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
             invokeOnUiThread(new Action(() => base.RaisePropertyChanged(propertyName)));
         }
