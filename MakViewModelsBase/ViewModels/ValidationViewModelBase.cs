@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 using MakCraft.ViewModels.Validations;
 
@@ -42,9 +43,10 @@ namespace MakCraft.ViewModels
         }
         /// <summary>
         /// propertyName に設定されている検証エラーメッセージを削除します。
+        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
         /// </summary>
         /// <param name="propertyName"></param>
-        public void RemoveItemValidationError(string propertyName)
+        public void RemoveItemValidationError([CallerMemberName] string propertyName = null)
         {
             _validationDic.RemoveErrorByKey(propertyName);
         }
@@ -60,10 +62,11 @@ namespace MakCraft.ViewModels
         }
         /// <summary>
         /// 指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。
+        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
         /// </summary>
         /// <param name="propertyName"></param>
         /// <returns>検証エラーが発生していれば true</returns>
-        public bool IsPropertyAnnotationError(string propertyName)
+        public bool IsPropertyAnnotationError([CallerMemberName] string propertyName = null)
         {
             return (this[propertyName] != null);
         }
@@ -90,14 +93,32 @@ namespace MakCraft.ViewModels
         /// <summary>
         /// PropertyChanged イベントを発火します。
         /// プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。
+        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
         /// </summary>
         /// <param name="propertyName"></param>
-        protected virtual void RaisePropertyChangedWithRemoveItemValidationError(string propertyName)
+        protected virtual void RaisePropertyChangedWithRemoveItemValidationError([CallerMemberName] string propertyName = null)
         {
             // プロパティ変更通知まえに検証エラーを削除しておく
             RemoveItemValidationError(propertyName);
 
             base.RaisePropertyChanged(propertyName);
+        }
+
+        /// <summary>
+        /// プロパティ名 property を value の値で書き換え、PropertyChanged イベントを発火します。
+        /// プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。
+        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="property"></param>
+        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        protected void SetPropertyWithRemoveItemValidationError<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
+        {
+            // プロパティ変更通知まえに検証エラーを削除しておく
+            RemoveItemValidationError(propertyName);
+
+            base.SetProperty(ref property, value);
         }
 
         #region IDataErrorInfo Members

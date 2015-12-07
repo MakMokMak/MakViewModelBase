@@ -44,15 +44,14 @@ namespace ValidationTestApp.ViewModels
             get { return _title; }
             set
             {
-                // set アクセサの先頭で検証エラーの削除を行っておく
-                base.RemoveItemValidationError(() => MemoTitle);
-                // 本文中にタイトルが書かれているかのチェックを行う。
-                _service.CheckTitleNote(PropertyHelper.GetName(() => MemoTitle), MemoNote, value);
-                _title = value;
+                // set アクセサの先頭で検証エラーの削除を行っておく(PropertyHelper.GetName メソッドでプロパティの名前を得る例)
+                base.RemoveItemValidationError(PropertyHelper.GetName(() => MemoTitle));
+                // 本文中にタイトルが書かれているかのチェックを行う(nameof 演算子を利用してプロパティの名前を得る例)
+                _service.CheckTitleNote(nameof(MemoTitle), MemoNote, value);
+                // プロパティの変更及び変更通知を行う
+                base.SetProperty(ref _title, value);
                 // 関連チェックを行っている関連プロパティの set アクセサを通す
                 doRelation(operateProperty.MemoTitle);
-                // set アクセサの最後でプロパティ変更通知を行う
-                base.RaisePropertyChanged(() => MemoTitle);
             }
         }
 
@@ -63,15 +62,14 @@ namespace ValidationTestApp.ViewModels
             get { return _note; }
             set
             {
-                // set アクセサの先頭で検証エラーの削除を行っておく
-                base.RemoveItemValidationError(() => MemoNote);
+                // set アクセサの先頭で検証エラーの削除を行っておく(propertyName を省略する例)
+                base.RemoveItemValidationError();
                 // 本文中にタイトルが書かれているかのチェックを行う。
-                _service.CheckTitleNote(PropertyHelper.GetName(() => MemoNote), value, MemoTitle);
-                _note = value;
+                _service.CheckTitleNote(nameof(MemoNote), value, MemoTitle);
+                // プロパティの変更及び変更通知を行う
+                base.SetProperty(ref _note, value);
                 // 関連チェックを行っている関連プロパティの set アクセサを通す
                 doRelation(operateProperty.MemoNote);
-                // set アクセサの最後でプロパティ変更通知を行う
-                base.RaisePropertyChanged(() => MemoNote);
             }
         }
 
@@ -102,7 +100,8 @@ namespace ValidationTestApp.ViewModels
             {
                 _age = value;
                 // 属性での検証のみであれば、検証エラー削除付きのプロパティ変更通知が使える
-                base.RaisePropertyChangedWithRemoveItemValidationError(() => MemoAge);
+                // propertyName は省略
+                base.RaisePropertyChangedWithRemoveItemValidationError();
             }
         }
 
@@ -112,9 +111,9 @@ namespace ValidationTestApp.ViewModels
             get { return _option; }
             set
             {
-                _option = value;
-                Remark = Remark;
-                base.RaisePropertyChanged(() => Option);
+                base.SetProperty(ref _option, value);
+                // Remark プロパティの検証条件が変わるため、変更通知を行う
+                base.RaisePropertyChanged(nameof(Remark));
             }
         }
 
@@ -128,9 +127,8 @@ namespace ValidationTestApp.ViewModels
             get { return _remark; }
             set
             {
-                _remark = value;
-                // 属性での検証のみであれば、検証エラー削除付きのプロパティ変更通知が使える
-                base.RaisePropertyChangedWithRemoveItemValidationError(() => Remark);
+                // 属性での検証のみであれば、検証エラー削除付きのプロパティ変更が使える
+                base.SetPropertyWithRemoveItemValidationError(ref _remark, value);
             }
         }
 
