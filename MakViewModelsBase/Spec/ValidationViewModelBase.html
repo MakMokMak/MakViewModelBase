@@ -30,17 +30,27 @@
   <h3>メソッド</h3>
   <dl>
     <dt><pre><code>public void RemoveItemValidationError&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; propertyName)</code></pre></dt>
-    <dd>propertyName に設定されている検証エラーメッセージを削除します。</dd>
-    <dt><pre><code>public void RemoveItemValidationError(string propertyName)</code></pre></dt>
-    <dd>propertyName に設定されている検証エラーメッセージを削除します。</dd>
+    <dd>propertyName に設定されている検証エラーメッセージを削除します。<br />
+      PropertyHelper.GetName&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e) を用いてプロパティ名を取り出します。</dd>
+    <dt><pre><code>public void RemoveItemValidationError([CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>propertyName に設定されている検証エラーメッセージを削除します。<br />
+        propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。</dd>
     <dt><pre><code>public bool IsPropertyAnnotationError&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; propertyName)</code></pre></dt>
-    <dd>指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。</dd>
-    <dt><pre><code>public bool IsPropertyAnnotationError(string propertyName)</code></pre></dt>
-    <dd>指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。</dd>
+    <dd>指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。<br />
+      PropertyHelper.GetName&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e) を用いてプロパティ名を取り出します。</dd>
+    <dt><pre><code>public bool IsPropertyAnnotationError([CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>指定されたプロパティの System.ComponentModel.DataAnnotations のデータ検証アトリビュート検査の結果を確認します。<br />
+        propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。</dd>
     <dt><pre><code>protected void RaisePropertyChangedWithRemoveItemValidationError&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します。<br />プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。</dd>
-    <dt><pre><code>protected virtual void RaisePropertyChangedWithRemoveItemValidationError(string propertyName)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します。<br />プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。</dd>
+    <dd>PropertyChanged イベントを発火します。<br />プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。<br />
+      PropertyHelper.GetName&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e) を用いてプロパティ名を取り出します。</dd>
+    <dt><pre><code>protected virtual void RaisePropertyChangedWithRemoveItemValidationError([CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>PropertyChanged イベントを発火します。<br />プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。<br />
+        propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。</dd>
+    <dt><pre><code>protected void SetPropertyWithRemoveItemValidationError&lt;T&gt;(ref T property, T value, [CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>プロパティ名 property を value の値で書き換え、PropertyChanged イベントを発火します。<br />
+        プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。<br />
+        propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。</dd>
   </dl>
 
   <hr />
