@@ -21,8 +21,9 @@
   <dl>
     <dt><pre><code>protected bool IsUiThread()</code></pre></dt>
     <dd>UI スレッドからのアクセスかどうかを判定する</dd>
-    <dt><pre><code>protected override void RaisePropertyChanged(string propertyName)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
+    <dt><pre><code>protected override void RaisePropertyChanged([CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>PropertyChanged イベントを発火します(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。<br />
+        propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。</dd>
     <dt><pre><code>protected void InvalidateRequerySuggested()</code></pre></dt>
     <dd>CommandManager.RequerySuggested イベントを強制的に発火させます(呼び出し元のスレッドが UI スレッドでない場合には、UI スレッドにて実行を行います)。</dd>
     <dt><pre><code>public void Dispose()</code></pre></dt>
@@ -47,10 +48,14 @@
 
   <h3>メソッド</h3>
   <dl>
+    <dt><pre><code>protected void SetProperty&lt;T&gt;(ref T property, T value, [CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>プロパティ名 property を value の値で書き換え、PropertyChanged イベントを発火します。</dd>
     <dt><pre><code>protected void RaisePropertyChanged&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します(RaisePropertyChanged(string propertyName)を呼び出します)。</dd>
-    <dt><pre><code>protected virtual void RaisePropertyChanged(string propertyName)</code></pre></dt>
-    <dd>PropertyChanged イベントを発火します。</dd>
+    <dd>PropertyChanged イベントを発火します(RaisePropertyChanged(string propertyName)を呼び出します)。<br />
+        PropertyHelper.GetName&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; e) を用いてプロパティ名を取り出します。</dd>
+    <dt><pre><code>protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)</code></pre></dt>
+    <dd>PropertyChanged イベントを発火します。<br />
+        propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。</dd>
   </dl>
 
   <h3>イベント</h3>
