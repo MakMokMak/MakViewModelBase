@@ -37,13 +37,15 @@ namespace WeakEventViewModelBaseTestApp.Services
         {
             _repository.Add(book);
 
-            base.RaisePropertyChanged(() => Books);
+            // nameof 演算子でプロパティの名前を得る例
+            base.RaisePropertyChanged(nameof(Books));
         }
 
         public void UpdateBook(Models.Book book)
         {
             _repository.Update(book);
 
+            // PropertyHelper.GetName メソッドでプロパティの名前を得る例
             base.RaisePropertyChanged(() => Books);
         }
 

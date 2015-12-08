@@ -58,7 +58,9 @@ namespace WeakEventViewModelBaseTestApp.ViewModels
 
         private void onWeakListenerPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.RaisePropertyChanged(() => BooksCount);
+            // nameof 演算子でプロパティの名前を得る例
+            base.RaisePropertyChanged(nameof(BooksCount));
+            // PropertyHelper.GetName メソッドでプロパティの名前を得る例
             base.RaisePropertyChanged(() => Books);
         }
     }
