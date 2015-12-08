@@ -22,6 +22,7 @@ namespace MakCraft.ViewModels
 
         /// <summary>
         /// プロパティ名 property を value の値で書き換え、PropertyChanged イベントを発火します。
+        /// propertyName パラメータが省略された場合、呼び出し元のプロパティの名前を用います。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="property"></param>

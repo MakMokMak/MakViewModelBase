@@ -93,7 +93,7 @@ namespace MakCraft.ViewModels
         /// <summary>
         /// PropertyChanged イベントを発火します。
         /// プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。
-        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
+        /// propertyName が省略された場合、呼び出し元のプロパティの名前を用います。
         /// </summary>
         /// <param name="propertyName"></param>
         protected virtual void RaisePropertyChangedWithRemoveItemValidationError([CallerMemberName] string propertyName = null)
@@ -107,7 +107,7 @@ namespace MakCraft.ViewModels
         /// <summary>
         /// プロパティ名 property を value の値で書き換え、PropertyChanged イベントを発火します。
         /// プロパティ変更通知まえに当該プロパティの検証エラーの削除を行います。
-        /// propertyName が省略された場合、呼び出し元のメソッドまたはプロパティの名前を用います。
+        /// propertyName が省略された場合、呼び出し元のプロパティの名前を用います。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="property"></param>
