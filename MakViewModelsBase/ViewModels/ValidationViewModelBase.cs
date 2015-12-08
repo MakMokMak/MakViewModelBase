@@ -118,7 +118,7 @@ namespace MakCraft.ViewModels
             // プロパティ変更通知まえに検証エラーを削除しておく
             RemoveItemValidationError(propertyName);
 
-            base.SetProperty(ref property, value);
+            base.SetProperty(ref property, value, propertyName);
         }
 
         #region IDataErrorInfo Members
