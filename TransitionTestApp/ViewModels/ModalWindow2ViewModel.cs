@@ -17,8 +17,9 @@ namespace TransitionTestApp.ViewModels
             get { return _books; }
             set
             {
-                _books = value;
-                base.RaisePropertyChanged(() => Books);
+                // NotifyObject.SetProperty メソッドを利用してプロパティの変更・変更通知を行う例
+                // SetProperty メソッドの呼び出しは、propertyName の指定を省略しています
+                base.SetProperty(ref _books, value);
             }
         }
 
@@ -28,8 +29,10 @@ namespace TransitionTestApp.ViewModels
             get { return _selectedBook; }
             set
             {
+                // プロパティの実装コードでプロパティの変更を行い、NotifyObject.RaisePropertyChanged メソッドを
+                // 利用してプロパティ変更通知を行う例(プロパティ名の取得に nameof 演算子を利用)
                 _selectedBook = value;
-                base.RaisePropertyChanged(() => SelectedBook);
+                base.RaisePropertyChanged(nameof(SelectedBook));
             }
         }
 

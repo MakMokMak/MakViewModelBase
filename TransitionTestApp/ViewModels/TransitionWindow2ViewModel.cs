@@ -20,8 +20,7 @@ namespace TransitionTestApp.ViewModels
             get { return _trans1Text; }
             set
             {
-                _trans1Text = value;
-                base.RaisePropertyChanged(() => Trans1Text);
+                base.SetProperty(ref _trans1Text, value);
             }
         }
 
@@ -31,8 +30,7 @@ namespace TransitionTestApp.ViewModels
             get { return _trans2Text; }
             set
             {
-                _trans2Text = value;
-                base.RaisePropertyChanged(() => Trans2Text);
+                base.SetProperty(ref _trans2Text, value);
             }
         }
 
@@ -45,8 +43,7 @@ namespace TransitionTestApp.ViewModels
             get { return _modelessKick; }
             set
             {
-                _modelessKick = value;
-                base.RaisePropertyChanged(() => ModelessKick);
+                base.SetProperty(ref _modelessKick, value);
             }
         }
 

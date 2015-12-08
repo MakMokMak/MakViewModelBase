@@ -20,8 +20,9 @@ namespace TransitionTestApp.ViewModels
             get { return _items; }
             set
             {
-                _items = value;
-                base.RaisePropertyChanged(() => Items);
+                // NotifyObject.SetProperty メソッドを利用してプロパティの変更・変更通知を行う例
+                // SetProperty メソッドの呼び出しは、propertyName の指定を省略しています
+                base.SetProperty(ref _items, value);
             }
         }
 
@@ -31,8 +32,10 @@ namespace TransitionTestApp.ViewModels
             get { return _selectedItem; }
             set
             {
+                // プロパティの実装コードでプロパティの変更を行い、NotifyObject.RaisePropertyChanged メソッドを
+                // 利用してプロパティ変更通知を行う例(プロパティ名の取得に nameof 演算子を利用)
                 _selectedItem = value;
-                base.RaisePropertyChanged(() => SelectedItem);
+                base.RaisePropertyChanged(nameof(SelectedItem));
             }
         }
 

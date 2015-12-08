@@ -19,8 +19,7 @@ namespace TransitionTestApp.ViewModels
             get { return _selectedItem; }
             set
             {
-                _selectedItem = value;
-                base.RaisePropertyChanged(() => SelectedItem);
+                base.SetProperty(ref _selectedItem, value);
             }
         }
 
