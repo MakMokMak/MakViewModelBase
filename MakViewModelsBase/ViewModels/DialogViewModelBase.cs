@@ -67,11 +67,16 @@ namespace MakCraft.ViewModels
         #endregion DialogTransferContainer
 
         #region MessageDialogAction
+        private IMessageDialogActionParameter _messageDialogActionParam;
         /// <summary>
         /// MessageDialogActionに渡すパラメーター
         /// View 側で PropertyChangedTrigger の Binding と MessageDialogAction の Parameter にバインドしてください。
         /// </summary>
-        public MessageDialogActionParameter MessageDialogActionParam { get; set; }
+        public IMessageDialogActionParameter MessageDialogActionParam
+        {
+            get { return _messageDialogActionParam; }
+            set { base.SetProperty(ref _messageDialogActionParam, value); }
+        }
 
         /// <summary>
         /// MessageDialogActionの実行後に呼ばれるCallBack

@@ -72,7 +72,6 @@ namespace TransitionTestApp.ViewModels
             // MessageDialogAction ビヘイビアを使用してメッセージボックスを出す
             base.MessageDialogActionParam = new MessageDialogActionParameter("クリックされました。",
                                         "メッセージ", MessageBoxButton.YesNo, true);
-            base.RaisePropertyChanged(() => MessageDialogActionParam);
         }
         private ICommand _messageCommand;
         public ICommand MessageCommand
@@ -104,7 +103,6 @@ namespace TransitionTestApp.ViewModels
             // MessageDialogAction ビヘイビアを使用してメッセージボックスを出す
             base.MessageDialogActionParam = new MessageDialogActionParameter("クリックされました。",
                                         "メッセージ", MessageBoxButton.OKCancel, true);
-            base.RaisePropertyChanged(() => MessageDialogActionParam);
         }
         private ICommand _message2Command;
         public ICommand Message2Command
