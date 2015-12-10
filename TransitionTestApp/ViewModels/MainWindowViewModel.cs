@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 
 using MakCraft.ViewModels;
@@ -280,6 +282,44 @@ namespace TransitionTestApp.ViewModels
             }
 
             base.WindowClose();
+        }
+
+        private void checkCanCloseExecute(EventArgs e)
+        {
+            var cancelEventArgs = e as CancelEventArgs;
+            if (cancelEventArgs == null)
+            {
+                return;
+            }
+
+            // 閉じることのできないウィンドウがあるかを確認
+            if (!ViewModelUtility.IsReadyCloseAllWindows)
+            {
+                base.MessageDialogActionCallback = result =>
+                {
+                    if (result == MessageBoxResult.No)
+                    {
+                        // 'いいえ' が選択されていたら Window のクローズのキャンセルをセット
+                        cancelEventArgs.Cancel = true;
+                    }
+                };
+                // メッセージボックスを表示
+                base.MessageDialogActionParam = new MessageDialogActionParameter(
+                    "処理途中のウィンドウがあります。強制終了しますか?",
+                    "終了しますか?",
+                    System.Windows.MessageBoxButton.YesNo,
+                    true);
+            }
+        }
+        private RelayCommand<EventArgs> _checkCanCloseCommand;
+        public ICommand CheckCanCloseCommand
+        {
+            get
+            {
+                if (_checkCanCloseCommand == null)
+                    _checkCanCloseCommand = new RelayCommand<EventArgs>(checkCanCloseExecute);
+                return _checkCanCloseCommand;
+            }
         }
 
         private enum transitionName

@@ -10,6 +10,10 @@
         <vm:MainWindowViewModel />
     </Window.DataContext>
     <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <mb:EventCommandAction Command="{Binding CheckCanCloseCommand}" />
+        </i:EventTrigger>
+        
         <ei:PropertyChangedTrigger Binding="{Binding ModelessKick}">
             <mb:DialogTransferDataAction
                 Parameter="{Binding CommunicationDialog}" DialogType="{Binding DialogType}" DialogMode="Modeless" />
@@ -24,6 +28,7 @@
         <ei:PropertyChangedTrigger Binding="{Binding DisplayMode}">
             <mb:DisplayModeAction DisplayMode="{Binding DisplayMode}" />
         </ei:PropertyChangedTrigger>
+
         <ei:PropertyChangedTrigger Binding="{Binding MessageDialogActionParam}">
             <mb:MessageDialogAction
                 Parameter="{Binding MessageDialogActionParam}"

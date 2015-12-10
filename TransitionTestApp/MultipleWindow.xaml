@@ -10,6 +10,14 @@
         <vm:MultipleWindowViewModel />
     </Window.DataContext>
     <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <mb:EventCommandAction Command="{Binding CheckCanCloseCommand}" />
+        </i:EventTrigger>
+        <ei:PropertyChangedTrigger Binding="{Binding MessageDialogActionParam}">
+            <mb:MessageDialogAction
+                Parameter="{Binding MessageDialogActionParam}"
+                ActionCallBack="{Binding MessageDialogActionCallback}" />
+        </ei:PropertyChangedTrigger>
         <ei:PropertyChangedTrigger Binding="{Binding DisplayMode}">
             <mb:DisplayModeAction DisplayMode="{Binding DisplayMode}" />
         </ei:PropertyChangedTrigger>
