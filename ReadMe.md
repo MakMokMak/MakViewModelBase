@@ -1,4 +1,4 @@
-# MakViewModelBase version 5.1.2
+# MakViewModelBase version 5.1.3
 
 ## ŠT—v
 
@@ -31,3 +31,6 @@ New BSD License(3-clause BSD license)
 * WeakEventViewModelBase: WeakEventViewModelBaseTestApp
 * ValidationViewModelBase: ValidationTestApp
 * TransitionViewModelBase: TransitionTestApp
+
+## XV—š—ğ
+[blog ‚ğ‚²——‚­‚¾‚³‚¢](http://www.makcraft.com/blog/meditation/category/viewmodelbase/)
