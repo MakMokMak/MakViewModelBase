@@ -1,68 +1,89 @@
+Version 5.1.3 2015/12/10
+ã‚¤ãƒ™ãƒ³ãƒˆç™ºç”Ÿæ™‚ã«ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ EventCommandAction ã‚’å®Ÿè£…
+
+ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£å¤‰æ›´æ“ä½œã«ã¦ Caller Info å±æ€§ã‚’åˆ©ç”¨ã™ã‚‹ãŸã‚ã®ä»•æ§˜ã®è¿½åŠ ãƒ»å¤‰æ›´
+NotifyObject ã‚¯ãƒ©ã‚¹
+(è¿½åŠ )
+- protected void SetProperty<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
+(å¤‰æ›´)
+- protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+
+ViewModlBase ã‚¯ãƒ©ã‚¹
+(å¤‰æ›´)
+- protected override void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+
+ValidationViewModelBase ã‚¯ãƒ©ã‚¹
+(å¤‰æ›´)
+- public void RemoveItemValidationError([CallerMemberName] string propertyName = null)
+- public bool IsPropertyAnnotationError([CallerMemberName] string propertyName = null)
+- protected virtual void RaisePropertyChangedWithRemoveItemValidationError([CallerMemberName] string propertyName = null)
+- protected void SetPropertyWithRemoveItemValidationError<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
+
 Version 5.1.2 2015/03/18
-UI ƒXƒŒƒbƒh ‚ÉŠÖ‚í‚éƒvƒƒpƒeƒB‚Æƒƒ\ƒbƒh‚ğ NotifyObject ƒNƒ‰ƒX‚©‚ç ViewModelBase ƒNƒ‰ƒX‚ÖˆÚ‚·
-- NotifyObject ƒNƒ‰ƒX‚ÍƒT[ƒrƒX‘w“™‚Åg‚í‚ê‚é‚±‚Æ‚à‚ ‚èAUI ƒXƒŒƒbƒh‚ÉŠÖŒW‚·‚éƒNƒ‰ƒX‚Í ViewModel ‘w‚Å‚ ‚é‚±‚Æ‚©‚çAˆÚ“®‚ğs‚¤
+UI ã‚¹ãƒ¬ãƒƒãƒ‰ ã«é–¢ã‚ã‚‹ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã¨ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ NotifyObject ã‚¯ãƒ©ã‚¹ã‹ã‚‰ ViewModelBase ã‚¯ãƒ©ã‚¹ã¸ç§»ã™
+- NotifyObject ã‚¯ãƒ©ã‚¹ã¯ã‚µãƒ¼ãƒ“ã‚¹å±¤ç­‰ã§ä½¿ã‚ã‚Œã‚‹ã“ã¨ã‚‚ã‚ã‚Šã€UI ã‚¹ãƒ¬ãƒƒãƒ‰ã«é–¢ä¿‚ã™ã‚‹ã‚¯ãƒ©ã‚¹ã¯ ViewModel å±¤ã§ã‚ã‚‹ã“ã¨ã‹ã‚‰ã€ç§»å‹•ã‚’è¡Œã†
 
 Version 5.1.1 2015/03/17
-XML ƒRƒƒ“ƒg‚ğo—Í‚·‚é‚æ‚¤‚Éİ’è‚ğ•ÏX
+XML ã‚³ãƒ¡ãƒ³ãƒˆã‚’å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«è¨­å®šã‚’å¤‰æ›´
 
 Version 5.1 2015/03/17
-CommandManager.RequerySuggested ƒCƒxƒ“ƒg‚ğ‹­§“I‚É”­‰Î‚³‚¹‚é(ŒÄ‚Ño‚µŒ³‚ÌƒXƒŒƒbƒh‚ª UI ƒXƒŒƒbƒh‚Å‚È‚¢ê‡‚É‚ÍAUI ƒXƒŒƒbƒh‚É‚ÄÀs) ViewModelBase.InvalidateRequerySuggested() ƒƒ\ƒbƒh‚ğÀ‘•
+CommandManager.RequerySuggested ã‚¤ãƒ™ãƒ³ãƒˆã‚’å¼·åˆ¶çš„ã«ç™ºç«ã•ã›ã‚‹(å‘¼ã³å‡ºã—å…ƒã®ã‚¹ãƒ¬ãƒƒãƒ‰ãŒ UI ã‚¹ãƒ¬ãƒƒãƒ‰ã§ãªã„å ´åˆã«ã¯ã€UI ã‚¹ãƒ¬ãƒƒãƒ‰ã«ã¦å®Ÿè¡Œ) ViewModelBase.InvalidateRequerySuggested() ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè£…
 
 Version 5.0 2014/09/26
-ViewModelBase, ValidationViewModelBase, TransitionViewModelBase ‚Ìƒ\[ƒX‚ğ“‡
-ƒvƒƒWƒFƒNƒg‚ÉƒNƒ‰ƒX“™‚Ìd—l‚ğ‹L‚µ‚½ HTML ƒtƒ@ƒCƒ‹‚ğ“‡
+ViewModelBase, ValidationViewModelBase, TransitionViewModelBase ã®ã‚½ãƒ¼ã‚¹ã‚’çµ±åˆ
+ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã«ã‚¯ãƒ©ã‚¹ç­‰ã®ä»•æ§˜ã‚’è¨˜ã—ãŸ HTML ãƒ•ã‚¡ã‚¤ãƒ«ã‚’çµ±åˆ
 
 Version 4.4 2014/02/22
-¶¬‚³‚ê‚½ƒ_ƒCƒAƒƒO‚ÌeƒEƒBƒ“ƒhƒE‚Ìİ’è‚ğs‚¤‚æ‚¤‚É•ÏX
-ƒf[ƒ^ŒŸØ‚ğs‚¤ğŒ‚ğŒÀ’è‚·‚é‹@”\‚Ì’Ç‰Á
-- ƒf[ƒ^ŒŸØ‚ğs‚¤ğŒ‚ğİ’è‚·‚é‘®« ValidateConditionalAttribute ‚ğ’Ç‰Á
-- protected void RaisePropertyChangedWithRemoveItemValidationError<T>(Expression<Func<T>> e) ƒƒ\ƒbƒh‚ğ’Ç‰Á
-- protected virtual void RaisePropertyChangedWithRemoveItemValidationError(string propertyName) ƒƒ\ƒbƒh‚ğ’Ç‰Á
-- protected void RaisePropertyChangedWithoutRemoveItemValidationError<T>(Expression<Func<T>> e) ƒƒ\ƒbƒh‚ğíœ
-- protected virtual void RaisePropertyChangedWithoutRemoveItemValidationError(string propertyName) ƒƒ\ƒbƒh‚ğíœ
+ç”Ÿæˆã•ã‚ŒãŸãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®è¦ªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¨­å®šã‚’è¡Œã†ã‚ˆã†ã«å¤‰æ›´
+ãƒ‡ãƒ¼ã‚¿æ¤œè¨¼ã‚’è¡Œã†æ¡ä»¶ã‚’é™å®šã™ã‚‹æ©Ÿèƒ½ã®è¿½åŠ 
+- ãƒ‡ãƒ¼ã‚¿æ¤œè¨¼ã‚’è¡Œã†æ¡ä»¶ã‚’è¨­å®šã™ã‚‹å±æ€§ ValidateConditionalAttribute ã‚’è¿½åŠ 
+- protected void RaisePropertyChangedWithRemoveItemValidationError<T>(Expression<Func<T>> e) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’è¿½åŠ 
+- protected virtual void RaisePropertyChangedWithRemoveItemValidationError(string propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’è¿½åŠ 
+- protected void RaisePropertyChangedWithoutRemoveItemValidationError<T>(Expression<Func<T>> e) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‰Šé™¤
+- protected virtual void RaisePropertyChangedWithoutRemoveItemValidationError(string propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‰Šé™¤
 
 Version 4.3.2 2014/02/11
-GetViewModels ƒƒ\ƒbƒh‚Ì–ß‚è’l‚ÌŒ^‚ğ List<ViewModelBase> ‚©‚ç IReadOnlyList<ViewModelBase> ‚Ö•ÏX
+GetViewModels ãƒ¡ã‚½ãƒƒãƒ‰ã®æˆ»ã‚Šå€¤ã®å‹ã‚’ List<ViewModelBase> ã‹ã‚‰ IReadOnlyList<ViewModelBase> ã¸å¤‰æ›´
 
 Version 4.3.1 2014/01/27
-ƒ‚[ƒ_ƒ‹ƒ_ƒCƒAƒƒO‚ÌƒR[ƒ‹ƒoƒbƒN Action ƒfƒŠƒQ[ƒg‚Ìˆø”‚ÌŒ^‚ğ object ‚©‚ç bool? ‚Ö•ÏX(Window.ShowDialog ƒƒ\ƒbƒh‚Ì–ß‚è’l System.Nullable<Boolean> ‚ÉŒ^‚ğ‡‚í‚¹‚é)
+ãƒ¢ãƒ¼ãƒ€ãƒ«ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ Action ãƒ‡ãƒªã‚²ãƒ¼ãƒˆã®å¼•æ•°ã®å‹ã‚’ object ã‹ã‚‰ bool? ã¸å¤‰æ›´(Window.ShowDialog ãƒ¡ã‚½ãƒƒãƒ‰ã®æˆ»ã‚Šå€¤ System.Nullable<Boolean> ã«å‹ã‚’åˆã‚ã›ã‚‹)
 
 Version 4.3.0 2014/01/26
-ƒƒbƒZ[ƒWƒ{ƒbƒNƒX•\¦‚ğ DialogViewModelBase ‚ÉŠÜ‚ß‚é‚æ‚¤‚É•ÏX
+ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒœãƒƒã‚¯ã‚¹è¡¨ç¤ºã‚’ DialogViewModelBase ã«å«ã‚ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
 Version 4.2 2014/01/25
-ModalViewModelBase ‚Ì OkExecute() ƒƒ\ƒbƒh‚ğ‰¼‘z‰»
-TransitionViewModelBase ‚Ì WindowCloseCanExecute ƒƒ\ƒbƒh‚ğ‰¼‘z‰»
+ModalViewModelBase ã® OkExecute() ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä»®æƒ³åŒ–
+TransitionViewModelBase ã® WindowCloseCanExecute ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä»®æƒ³åŒ–
 
 Version 4.1 2014/01/24
-DataAnnotations ‚ÌŒŸØ‘®«ˆÈŠO‚Ìƒf[ƒ^ŒŸØ‚ÌŒŸØƒGƒ‰[‚ªƒrƒ…[‚É•\¦‚³‚ê‚È‚¢•s‹ï‡‚Ö‚Ì‘Î‰‚ğs‚Á‚½(ValidationTestApp QÆ )B
-- protected void RaisePropertyChangedWithoutRemoveItemValidationError<T>(Expression<Func<T>> e) ƒƒ\ƒbƒh‚ğ’Ç‰Á
-- protected virtual void RaisePropertyChangedWithoutRemoveItemValidationError(string propertyName) ƒƒ\ƒbƒh‚ğ’Ç‰Á
+DataAnnotations ã®æ¤œè¨¼å±æ€§ä»¥å¤–ã®ãƒ‡ãƒ¼ã‚¿æ¤œè¨¼æ™‚ã®æ¤œè¨¼ã‚¨ãƒ©ãƒ¼ãŒãƒ“ãƒ¥ãƒ¼ã«è¡¨ç¤ºã•ã‚Œãªã„ä¸å…·åˆã¸ã®å¯¾å¿œã‚’è¡Œã£ãŸ(ValidationTestApp å‚ç…§ )ã€‚
+- protected void RaisePropertyChangedWithoutRemoveItemValidationError<T>(Expression<Func<T>> e) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’è¿½åŠ 
+- protected virtual void RaisePropertyChangedWithoutRemoveItemValidationError(string propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’è¿½åŠ 
 
 Version 4.0 2014/01/23
-TransitionViewModelBase ƒNƒ‰ƒX‚ğ’Ç‰Á
+TransitionViewModelBase ã‚¯ãƒ©ã‚¹ã‚’è¿½åŠ 
 
 Version 3.1 2014/01/21
-RaisePropertyChanged(string propertyName) ƒƒ\ƒbƒh‚ğ‰¼‘zƒƒ\ƒbƒh‚Ö•ÏX
-RaisePropertyChanged(string propertyName) ƒƒ\ƒbƒh‚ğƒI[ƒo[ƒ‰ƒCƒh‚µƒvƒƒpƒeƒB•ÏX’Ê’m‚Ü‚¦‚É“–ŠYƒvƒƒpƒeƒB‚ÌŒŸØƒGƒ‰[‚ğíœ‚·‚é‚æ‚¤‚É•ÏX
+RaisePropertyChanged(string propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä»®æƒ³ãƒ¡ã‚½ãƒƒãƒ‰ã¸å¤‰æ›´
+RaisePropertyChanged(string propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£å¤‰æ›´é€šçŸ¥ã¾ãˆã«å½“è©²ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã®æ¤œè¨¼ã‚¨ãƒ©ãƒ¼ã‚’å‰Šé™¤ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
 
 Version 3.0 2014/01/17
-‘ÎÛ‚ÌƒtƒŒ[ƒ€ƒ[ƒN‚ğ .NET Framework 4 ‚©‚ç 4.5 ‚É•ÏX
+å¯¾è±¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã‚’ .NET Framework 4 ã‹ã‚‰ 4.5 ã«å¤‰æ›´
 
 Version 2.3 2013/12/29
-ƒpƒ‰ƒ[ƒ^•t‚«‚ÌƒRƒ}ƒ“ƒh‚ğÀ‘•
-RemoveItemValidationError<T>(Expression<Func<T>> propertyName) ƒƒ\ƒbƒh‚Æ IsPropertyAnnotationError<T>(Expression<Func<T>> propertyName) ƒƒ\ƒbƒh‚ğ’Ç‰Á
+ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä»˜ãã®ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè£…
+RemoveItemValidationError<T>(Expression<Func<T>> propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã¨ IsPropertyAnnotationError<T>(Expression<Func<T>> propertyName) ãƒ¡ã‚½ãƒƒãƒ‰ã‚’è¿½åŠ 
 
 Version 2.2 2013/09/01
-ViewModelBase ƒNƒ‰ƒX‚É IDisposable ƒCƒ“ƒ^[ƒtƒFƒCƒX‚ğ•t‰Á
-ValidationViewModelBase ‚ª WeakEventViewModelBase ƒNƒ‰ƒX‚ğŒp³‚·‚é‚æ‚¤‚É•ÏX(WeakEventViewModelBase ŠÖ˜A‚Ìƒ\[ƒX‚ÍƒŠƒ“ƒNQÆ)
-ƒ^[ƒQƒbƒgƒtƒŒ[ƒ€ƒ[ƒN‚ğ .NET Framework 4.0 ‚Ö•ÏX
+ViewModelBase ã‚¯ãƒ©ã‚¹ã« IDisposable ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚’ä»˜åŠ 
+ValidationViewModelBase ãŒ WeakEventViewModelBase ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´(WeakEventViewModelBase é–¢é€£ã®ã‚½ãƒ¼ã‚¹ã¯ãƒªãƒ³ã‚¯å‚ç…§)
+ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã‚’ .NET Framework 4.0 ã¸å¤‰æ›´
 
 Version 2.1 2013/05/11
-Property •ÏX’Ê’m‚ğ UI ƒXƒŒƒbƒh‚Ås‚¤‚æ‚¤‚É‚µ‚½B
+Property å¤‰æ›´é€šçŸ¥ã‚’ UI ã‚¹ãƒ¬ãƒƒãƒ‰ã§è¡Œã†ã‚ˆã†ã«ã—ãŸã€‚
 
 Version 2.0 2013/03/03
-ƒT[ƒrƒX‘w‚©‚ç‚ÌƒvƒƒpƒeƒB•ÏX‚ÌƒCƒxƒ“ƒg’Ê’m‚ğó‚¯æ‚é WeakEventViewModelBase ƒNƒ‰ƒX“™‚ğ’Ç‰Á
+ã‚µãƒ¼ãƒ“ã‚¹å±¤ã‹ã‚‰ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£å¤‰æ›´ã®ã‚¤ãƒ™ãƒ³ãƒˆé€šçŸ¥ã‚’å—ã‘å–ã‚‹ WeakEventViewModelBase ã‚¯ãƒ©ã‚¹ç­‰ã‚’è¿½åŠ 
 
 Version 1.0.4 2012/12/06
-ValidationViewModelBase ‚ğƒuƒƒO‚ÉŒöŠJ
+ValidationViewModelBase ã‚’ãƒ–ãƒ­ã‚°ã«å…¬é–‹
