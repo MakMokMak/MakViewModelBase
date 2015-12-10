@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Behaviors\DialogTransferDataAction.cs" />
     <Compile Include="Behaviors\DisplayModeAction.cs" />
+    <Compile Include="Behaviors\EventCommandAction.cs" />
     <Compile Include="Behaviors\Interfaces\IDialogTransferContainer.cs" />
     <Compile Include="Behaviors\Interfaces\IMessageDialogActionParameter.cs" />
     <Compile Include="Behaviors\Interfaces\IViewModelStatus.cs" />

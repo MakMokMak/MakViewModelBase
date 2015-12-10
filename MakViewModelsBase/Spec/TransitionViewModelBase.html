@@ -406,6 +406,22 @@
     <dd>true:ダイアログ(ユーザ応答を処理する)、false:メッセージ</dd>
   </dl>
 
+    <hr />
+
+    <h2 id="EventCommandAction">EventCommandAction</h2>
+    <p>イベント発生時にコマンドを実行するアクション<br />実行するコマンドの引数に発生したイベントの EventArgs を設定します。</p>
+
+    <h3>構文</h3>
+    <pre><code>public class EventCommandAction : TriggerAction&lt;UIElement&gt;</code></pre>
+
+    <h3>プロパティ</h3>
+    <dl>
+        <dt>
+            <pre><code>public ICommand Command { get; set; }</code></pre>
+        </dt>
+        <dd>呼び出すコマンドを取得または設定します。</dd>
+    </dl>
+
   <hr />
   
   <h2 id="IDialogTransferContainer">IDialogTransferContainer</h2>
