@@ -26,7 +26,7 @@ namespace MakCraft.ViewModels
             protected set
             {
                 _windowAction = value;
-                base.RaisePropertyChanged(() => DisplayMode);
+                base.RaisePropertyChanged();
             }
         }
 
