@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="44e69e07-052b-4b29-8147-2bca139f953b" Title="MakCraft" Url="html/R_Project_Documentation.htm">
+    <HelpTOCNode Id="1d81ffca-d0f7-4414-9dd4-d5f8351a9a03" Title="MakCraft.Behaviors" Url="html/N_MakCraft_Behaviors.htm">
+      <HelpTOCNode Id="30c73f23-778a-4c5a-8235-1fdada8919b6" Title="DialogTransferDataAction Class" Url="html/T_MakCraft_Behaviors_DialogTransferDataAction.htm">
+        <HelpTOCNode Title="DialogTransferDataAction Constructor " Url="html/M_MakCraft_Behaviors_DialogTransferDataAction__ctor.htm" />
+        <HelpTOCNode Id="ac077ca2-189d-4e31-9d4a-707bccda12f3" Title="DialogTransferDataAction Fields" Url="html/Fields_T_MakCraft_Behaviors_DialogTransferDataAction.htm">
+          <HelpTOCNode Title="ActionCallBackProperty Field" Url="html/F_MakCraft_Behaviors_DialogTransferDataAction_ActionCallBackProperty.htm" />
+          <HelpTOCNode Title="DialogModeProperty Field" Url="html/F_MakCraft_Behaviors_DialogTransferDataAction_DialogModeProperty.htm" />
+          <HelpTOCNode Title="DialogTypeProperty Field" Url="html/F_MakCraft_Behaviors_DialogTransferDataAction_DialogTypeProperty.htm" />
+          <HelpTOCNode Title="ParameterProperty Field" Url="html/F_MakCraft_Behaviors_DialogTransferDataAction_ParameterProperty.htm" />
+          <HelpTOCNode Title="ResultViewModelProperty Field" Url="html/F_MakCraft_Behaviors_DialogTransferDataAction_ResultViewModelProperty.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0c694330-09f8-43ed-bf4b-9308fbd1735b" Title="DialogTransferDataAction Methods" Url="html/Methods_T_MakCraft_Behaviors_DialogTransferDataAction.htm">
+          <HelpTOCNode Title="Invoke Method " Url="html/M_MakCraft_Behaviors_DialogTransferDataAction_Invoke.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="efefddee-1255-467b-869b-3d8480f97d7d" Title="DialogTransferDataAction Properties" Url="html/Properties_T_MakCraft_Behaviors_DialogTransferDataAction.htm">
+          <HelpTOCNode Title="ActionCallBack Property " Url="html/P_MakCraft_Behaviors_DialogTransferDataAction_ActionCallBack.htm" />
+          <HelpTOCNode Title="DialogMode Property " Url="html/P_MakCraft_Behaviors_DialogTransferDataAction_DialogMode.htm" />
+          <HelpTOCNode Title="DialogType Property " Url="html/P_MakCraft_Behaviors_DialogTransferDataAction_DialogType.htm" />
+          <HelpTOCNode Title="Parameter Property " Url="html/P_MakCraft_Behaviors_DialogTransferDataAction_Parameter.htm" />
+          <HelpTOCNode Title="ResultViewModel Property " Url="html/P_MakCraft_Behaviors_DialogTransferDataAction_ResultViewModel.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="DialogTransferDataAction Events" Url="html/Events_T_MakCraft_Behaviors_DialogTransferDataAction.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="65ba0fac-b4d8-47c4-b7dc-11e52d8b47cc" Title="DisplayModeAction Class" Url="html/T_MakCraft_Behaviors_DisplayModeAction.htm">
+        <HelpTOCNode Title="DisplayModeAction Constructor " Url="html/M_MakCraft_Behaviors_DisplayModeAction__ctor.htm" />
+        <HelpTOCNode Id="e9b6dbab-fb0f-4cb6-9ab3-62cdadc2791c" Title="DisplayModeAction Fields" Url="html/Fields_T_MakCraft_Behaviors_DisplayModeAction.htm">
+          <HelpTOCNode Title="DisplayModeProperty Field" Url="html/F_MakCraft_Behaviors_DisplayModeAction_DisplayModeProperty.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="16a902b4-ad20-405c-8a0f-b67da227badd" Title="DisplayModeAction Methods" Url="html/Methods_T_MakCraft_Behaviors_DisplayModeAction.htm">
+          <HelpTOCNode Title="Invoke Method " Url="html/M_MakCraft_Behaviors_DisplayModeAction_Invoke.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e1cc392a-90de-4212-b11a-e3d870fa2a74" Title="DisplayModeAction Properties" Url="html/Properties_T_MakCraft_Behaviors_DisplayModeAction.htm">
+          <HelpTOCNode Title="DisplayMode Property " Url="html/P_MakCraft_Behaviors_DisplayModeAction_DisplayMode.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="DisplayModeAction Events" Url="html/Events_T_MakCraft_Behaviors_DisplayModeAction.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9dc5446a-1eab-4016-9e4d-c430faba86c3" Title="EventCommandAction Class" Url="html/T_MakCraft_Behaviors_EventCommandAction.htm">
+        <HelpTOCNode Title="EventCommandAction Constructor " Url="html/M_MakCraft_Behaviors_EventCommandAction__ctor.htm" />
+        <HelpTOCNode Id="3696e675-3afe-4205-b52d-d86a2831ae09" Title="EventCommandAction Fields" Url="html/Fields_T_MakCraft_Behaviors_EventCommandAction.htm">
+          <HelpTOCNode Title="CommandProperty Field" Url="html/F_MakCraft_Behaviors_EventCommandAction_CommandProperty.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6937198a-df06-40a7-8dc8-a9b7771f0f3c" Title="EventCommandAction Methods" Url="html/Methods_T_MakCraft_Behaviors_EventCommandAction.htm">
+          <HelpTOCNode Title="Invoke Method " Url="html/M_MakCraft_Behaviors_EventCommandAction_Invoke.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e702c2d0-de21-4d19-a254-f6e293a61689" Title="EventCommandAction Properties" Url="html/Properties_T_MakCraft_Behaviors_EventCommandAction.htm">
+          <HelpTOCNode Title="Command Property " Url="html/P_MakCraft_Behaviors_EventCommandAction_Command.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="EventCommandAction Events" Url="html/Events_T_MakCraft_Behaviors_EventCommandAction.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="69b8419c-ab08-4b2f-9a8c-960af9e84239" Title="MessageDialogAction Class" Url="html/T_MakCraft_Behaviors_MessageDialogAction.htm">
+        <HelpTOCNode Title="MessageDialogAction Constructor " Url="html/M_MakCraft_Behaviors_MessageDialogAction__ctor.htm" />
+        <HelpTOCNode Id="329906e7-3543-4d14-a157-6b477bbf8e7c" Title="MessageDialogAction Fields" Url="html/Fields_T_MakCraft_Behaviors_MessageDialogAction.htm">
+          <HelpTOCNode Title="ActionCallBackProperty Field" Url="html/F_MakCraft_Behaviors_MessageDialogAction_ActionCallBackProperty.htm" />
+          <HelpTOCNode Title="ParameterProperty Field" Url="html/F_MakCraft_Behaviors_MessageDialogAction_ParameterProperty.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1643969c-e880-4330-890b-e690617a15ba" Title="MessageDialogAction Methods" Url="html/Methods_T_MakCraft_Behaviors_MessageDialogAction.htm">
+          <HelpTOCNode Title="Invoke Method " Url="html/M_MakCraft_Behaviors_MessageDialogAction_Invoke.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="eb950a92-5544-42c4-8877-508853719a92" Title="MessageDialogAction Properties" Url="html/Properties_T_MakCraft_Behaviors_MessageDialogAction.htm">
+          <HelpTOCNode Title="ActionCallBack Property " Url="html/P_MakCraft_Behaviors_MessageDialogAction_ActionCallBack.htm" />
+          <HelpTOCNode Title="Parameter Property " Url="html/P_MakCraft_Behaviors_MessageDialogAction_Parameter.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MessageDialogAction Events" Url="html/Events_T_MakCraft_Behaviors_MessageDialogAction.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b3e65584-0218-414f-a6bb-0d070b5b2f03" Title="MakCraft.Behaviors.Interfaces" Url="html/N_MakCraft_Behaviors_Interfaces.htm">
+      <HelpTOCNode Title="DialogModes Enumeration" Url="html/T_MakCraft_Behaviors_Interfaces_DialogModes.htm" />
+      <HelpTOCNode Id="0fdb1fc9-b257-4003-9012-2e37016acfff" Title="IDialogTransferContainer Interface" Url="html/T_MakCraft_Behaviors_Interfaces_IDialogTransferContainer.htm">
+        <HelpTOCNode Id="c94439fc-8942-46a8-9d0b-c6140c1079fa" Title="IDialogTransferContainer Properties" Url="html/Properties_T_MakCraft_Behaviors_Interfaces_IDialogTransferContainer.htm">
+          <HelpTOCNode Title="Container Property " Url="html/P_MakCraft_Behaviors_Interfaces_IDialogTransferContainer_Container.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="37d474eb-6d00-4080-9da8-53bfc2e91759" Title="IMessageDialogActionParameter Interface" Url="html/T_MakCraft_Behaviors_Interfaces_IMessageDialogActionParameter.htm">
+        <HelpTOCNode Id="ce85d519-6898-4fd7-aefa-9e03885829d4" Title="IMessageDialogActionParameter Properties" Url="html/Properties_T_MakCraft_Behaviors_Interfaces_IMessageDialogActionParameter.htm">
+          <HelpTOCNode Title="Button Property " Url="html/P_MakCraft_Behaviors_Interfaces_IMessageDialogActionParameter_Button.htm" />
+          <HelpTOCNode Title="Caption Property " Url="html/P_MakCraft_Behaviors_Interfaces_IMessageDialogActionParameter_Caption.htm" />
+          <HelpTOCNode Title="IsDialog Property " Url="html/P_MakCraft_Behaviors_Interfaces_IMessageDialogActionParameter_IsDialog.htm" />
+          <HelpTOCNode Title="Message Property " Url="html/P_MakCraft_Behaviors_Interfaces_IMessageDialogActionParameter_Message.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c7aef81c-00a8-4228-bad3-e5f71051dd9b" Title="IViewModelStatus Interface" Url="html/T_MakCraft_Behaviors_Interfaces_IViewModelStatus.htm">
+        <HelpTOCNode Id="3c8bcf8b-a111-4947-a91e-3425cb7e74be" Title="IViewModelStatus Properties" Url="html/Properties_T_MakCraft_Behaviors_Interfaces_IViewModelStatus.htm">
+          <HelpTOCNode Title="CurrentStatus Property " Url="html/P_MakCraft_Behaviors_Interfaces_IViewModelStatus_CurrentStatus.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ViewModelStatus Enumeration" Url="html/T_MakCraft_Behaviors_Interfaces_ViewModelStatus.htm" />
+      <HelpTOCNode Title="WindowAction Enumeration" Url="html/T_MakCraft_Behaviors_Interfaces_WindowAction.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f1ce425f-066f-40b5-973c-bbc010cde742" Title="MakCraft.ViewModels" Url="html/N_MakCraft_ViewModels.htm">
+      <HelpTOCNode Id="f53a983c-42ef-438d-8fbb-a0ce2c7e3764" Title="DialogViewModelBase Class" Url="html/T_MakCraft_ViewModels_DialogViewModelBase.htm">
+        <HelpTOCNode Title="DialogViewModelBase Constructor " Url="html/M_MakCraft_ViewModels_DialogViewModelBase__ctor.htm" />
+        <HelpTOCNode Id="fc3dc251-e574-4b41-9dcc-7498c83bc0e7" Title="DialogViewModelBase Methods" Url="html/Methods_T_MakCraft_ViewModels_DialogViewModelBase.htm">
+          <HelpTOCNode Title="OnContainerReceived Method " Url="html/M_MakCraft_ViewModels_DialogViewModelBase_OnContainerReceived.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="816cf8d0-170f-4a57-b048-783c591a7965" Title="DialogViewModelBase Properties" Url="html/Properties_T_MakCraft_ViewModels_DialogViewModelBase.htm">
+          <HelpTOCNode Title="CommunicationDialog Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_CommunicationDialog.htm" />
+          <HelpTOCNode Title="Container Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_Container.htm" />
+          <HelpTOCNode Title="DialogActionCallback Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_DialogActionCallback.htm" />
+          <HelpTOCNode Title="DialogType Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_DialogType.htm" />
+          <HelpTOCNode Title="MessageDialogActionCallback Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_MessageDialogActionCallback.htm" />
+          <HelpTOCNode Title="MessageDialogActionParam Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_MessageDialogActionParam.htm" />
+          <HelpTOCNode Title="ResultViewModel Property " Url="html/P_MakCraft_ViewModels_DialogViewModelBase_ResultViewModel.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="DialogViewModelBase Events" Url="html/Events_T_MakCraft_ViewModels_DialogViewModelBase.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="fa0b32a4-33a3-4cef-89a9-85bcb44fa593" Title="INotifyWeakPropertyChanged Interface" Url="html/T_MakCraft_ViewModels_INotifyWeakPropertyChanged.htm">
+        <HelpTOCNode Id="2d86f9be-296c-4671-8534-c25d6d9e4016" Title="INotifyWeakPropertyChanged Events" Url="html/Events_T_MakCraft_ViewModels_INotifyWeakPropertyChanged.htm">
+          <HelpTOCNode Title="WeakPropertyChanged Event" Url="html/E_MakCraft_ViewModels_INotifyWeakPropertyChanged_WeakPropertyChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a4677b00-ffa8-4af1-80ac-795a2085c78b" Title="IPropertyChangedWeakEventListener Interface" Url="html/T_MakCraft_ViewModels_IPropertyChangedWeakEventListener.htm">
+        <HelpTOCNode Title="IPropertyChangedWeakEventListener Methods" Url="html/Methods_T_MakCraft_ViewModels_IPropertyChangedWeakEventListener.htm" />
+        <HelpTOCNode Title="IPropertyChangedWeakEventListener Events" Url="html/Events_T_MakCraft_ViewModels_IPropertyChangedWeakEventListener.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="32671b4f-728e-42ed-878a-05e575b8a3e2" Title="ITransContainer Interface" Url="html/T_MakCraft_ViewModels_ITransContainer.htm">
+        <HelpTOCNode Id="7f96fd3f-e580-4da9-80df-b2d09ff98712" Title="ITransContainer Properties" Url="html/Properties_T_MakCraft_ViewModels_ITransContainer.htm">
+          <HelpTOCNode Title="Key Property " Url="html/P_MakCraft_ViewModels_ITransContainer_Key.htm" />
+          <HelpTOCNode Title="PreviousViewModel Property " Url="html/P_MakCraft_ViewModels_ITransContainer_PreviousViewModel.htm" />
+          <HelpTOCNode Title="TransStartViewModel Property " Url="html/P_MakCraft_ViewModels_ITransContainer_TransStartViewModel.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="09c24f02-9ee4-4723-b255-9c69274b8b60" Title="IValidationDictionary Interface" Url="html/T_MakCraft_ViewModels_IValidationDictionary.htm">
+        <HelpTOCNode Id="9301918b-78d8-40fc-9fe8-e1b4b0ffc323" Title="IValidationDictionary Methods" Url="html/Methods_T_MakCraft_ViewModels_IValidationDictionary.htm">
+          <HelpTOCNode Title="AddError Method " Url="html/M_MakCraft_ViewModels_IValidationDictionary_AddError.htm" />
+          <HelpTOCNode Title="GetValidationError Method " Url="html/M_MakCraft_ViewModels_IValidationDictionary_GetValidationError.htm" />
+          <HelpTOCNode Title="RemoveErrorByKey Method " Url="html/M_MakCraft_ViewModels_IValidationDictionary_RemoveErrorByKey.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="cbfb4a5f-7682-4e66-8ea5-472589ffc27f" Title="IValidationDictionary Properties" Url="html/Properties_T_MakCraft_ViewModels_IValidationDictionary.htm">
+          <HelpTOCNode Title="IsValid Property " Url="html/P_MakCraft_ViewModels_IValidationDictionary_IsValid.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e4855256-7075-486d-8f12-f6c54827544d" Title="IWindowCloseCommand Interface" Url="html/T_MakCraft_ViewModels_IWindowCloseCommand.htm">
+        <HelpTOCNode Id="cb92a018-e313-448b-bcf8-1e968afcea30" Title="IWindowCloseCommand Methods" Url="html/Methods_T_MakCraft_ViewModels_IWindowCloseCommand.htm">
+          <HelpTOCNode Title="WindowClose Method " Url="html/M_MakCraft_ViewModels_IWindowCloseCommand_WindowClose.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7e42610d-6732-4b57-b33b-edf415e851ae" Title="IWindowCloseCommand Properties" Url="html/Properties_T_MakCraft_ViewModels_IWindowCloseCommand.htm">
+          <HelpTOCNode Title="CanCloseWindow Property " Url="html/P_MakCraft_ViewModels_IWindowCloseCommand_CanCloseWindow.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="69f4a313-caa0-4357-894f-99b12d754e8b" Title="MessageDialogActionParameter Class" Url="html/T_MakCraft_ViewModels_MessageDialogActionParameter.htm">
+        <HelpTOCNode Id="2bbc713d-cafc-488e-b25f-86c5b019ddae" Title="MessageDialogActionParameter Constructor " Url="html/Overload_MakCraft_ViewModels_MessageDialogActionParameter__ctor.htm">
+          <HelpTOCNode Title="MessageDialogActionParameter Constructor (String, String)" Url="html/M_MakCraft_ViewModels_MessageDialogActionParameter__ctor.htm" />
+          <HelpTOCNode Title="MessageDialogActionParameter Constructor (String, String, MessageBoxButton)" Url="html/M_MakCraft_ViewModels_MessageDialogActionParameter__ctor_1.htm" />
+          <HelpTOCNode Title="MessageDialogActionParameter Constructor (String, String, MessageBoxButton, Boolean)" Url="html/M_MakCraft_ViewModels_MessageDialogActionParameter__ctor_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MessageDialogActionParameter Methods" Url="html/Methods_T_MakCraft_ViewModels_MessageDialogActionParameter.htm" />
+        <HelpTOCNode Id="7ff7a4ac-0493-4dfc-81b7-4974a01850be" Title="MessageDialogActionParameter Properties" Url="html/Properties_T_MakCraft_ViewModels_MessageDialogActionParameter.htm">
+          <HelpTOCNode Title="Button Property " Url="html/P_MakCraft_ViewModels_MessageDialogActionParameter_Button.htm" />
+          <HelpTOCNode Title="Caption Property " Url="html/P_MakCraft_ViewModels_MessageDialogActionParameter_Caption.htm" />
+          <HelpTOCNode Title="IsDialog Property " Url="html/P_MakCraft_ViewModels_MessageDialogActionParameter_IsDialog.htm" />
+          <HelpTOCNode Title="Message Property " Url="html/P_MakCraft_ViewModels_MessageDialogActionParameter_Message.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="884557a3-f18d-4778-a889-71747f6a22b8" Title="ModalViewModelBase Class" Url="html/T_MakCraft_ViewModels_ModalViewModelBase.htm">
+        <HelpTOCNode Title="ModalViewModelBase Constructor " Url="html/M_MakCraft_ViewModels_ModalViewModelBase__ctor.htm" />
+        <HelpTOCNode Id="a3eff3f6-772c-4750-85bf-61eccb59a583" Title="ModalViewModelBase Methods" Url="html/Methods_T_MakCraft_ViewModels_ModalViewModelBase.htm">
+          <HelpTOCNode Title="OkCanExecute Method " Url="html/M_MakCraft_ViewModels_ModalViewModelBase_OkCanExecute.htm" />
+          <HelpTOCNode Title="OkExecute Method " Url="html/M_MakCraft_ViewModels_ModalViewModelBase_OkExecute.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="26a2c62f-1c60-4b53-868c-3ed99d2cea53" Title="ModalViewModelBase Properties" Url="html/Properties_T_MakCraft_ViewModels_ModalViewModelBase.htm">
+          <HelpTOCNode Title="OkCommand Property " Url="html/P_MakCraft_ViewModels_ModalViewModelBase_OkCommand.htm" />
+          <HelpTOCNode Title="Result Property " Url="html/P_MakCraft_ViewModels_ModalViewModelBase_Result.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ModalViewModelBase Events" Url="html/Events_T_MakCraft_ViewModels_ModalViewModelBase.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="cfbd6669-66e6-493c-bba1-e4a0980b8375" Title="NotifyObject Class" Url="html/T_MakCraft_ViewModels_NotifyObject.htm">
+        <HelpTOCNode Title="NotifyObject Constructor " Url="html/M_MakCraft_ViewModels_NotifyObject__ctor.htm" />
+        <HelpTOCNode Id="438322e0-9e99-483e-9ee6-16dd17ed153c" Title="NotifyObject Methods" Url="html/Methods_T_MakCraft_ViewModels_NotifyObject.htm">
+          <HelpTOCNode Id="e684c0b4-a4ba-469f-bc70-70d86f9c5e5e" Title="RaisePropertyChanged Method " Url="html/Overload_MakCraft_ViewModels_NotifyObject_RaisePropertyChanged.htm">
+            <HelpTOCNode Title="RaisePropertyChanged(T) Method (Expression(Func(T)))" Url="html/M_MakCraft_ViewModels_NotifyObject_RaisePropertyChanged__1.htm" />
+            <HelpTOCNode Title="RaisePropertyChanged Method (String)" Url="html/M_MakCraft_ViewModels_NotifyObject_RaisePropertyChanged.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="SetProperty(T) Method " Url="html/M_MakCraft_ViewModels_NotifyObject_SetProperty__1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b510fc31-7288-4f8b-b704-263c71e96890" Title="NotifyObject Events" Url="html/Events_T_MakCraft_ViewModels_NotifyObject.htm">
+          <HelpTOCNode Title="PropertyChanged Event" Url="html/E_MakCraft_ViewModels_NotifyObject_PropertyChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="141168bb-9f6e-40e9-b18d-d3594d694f50" Title="PropertyChangedWeakEventListener Class" Url="html/T_MakCraft_ViewModels_PropertyChangedWeakEventListener.htm">
+        <HelpTOCNode Title="PropertyChangedWeakEventListener Constructor " Url="html/M_MakCraft_ViewModels_PropertyChangedWeakEventListener__ctor.htm" />
+        <HelpTOCNode Id="02ad56cc-c8fd-44c1-950c-49c14c9672f8" Title="PropertyChangedWeakEventListener Methods" Url="html/Methods_T_MakCraft_ViewModels_PropertyChangedWeakEventListener.htm">
+          <HelpTOCNode Title="Finalize Method " Url="html/M_MakCraft_ViewModels_PropertyChangedWeakEventListener_Finalize.htm" />
+          <HelpTOCNode Title="ReceiveWeakEvent Method " Url="html/M_MakCraft_ViewModels_PropertyChangedWeakEventListener_ReceiveWeakEvent.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2c468106-c558-48d2-9b02-daf3a5a59e90" Title="PropertyChangedWeakEventListener Events" Url="html/Events_T_MakCraft_ViewModels_PropertyChangedWeakEventListener.htm">
+          <HelpTOCNode Title="WeakPropertyChanged Event" Url="html/E_MakCraft_ViewModels_PropertyChangedWeakEventListener_WeakPropertyChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="4be83b79-7341-48c2-bf3f-b310648cc97b" Title="PropertyHelper Class" Url="html/T_MakCraft_ViewModels_PropertyHelper.htm">
+        <HelpTOCNode Id="fff15254-21b8-43a0-97cb-aa5f7ce99745" Title="PropertyHelper Methods" Url="html/Methods_T_MakCraft_ViewModels_PropertyHelper.htm">
+          <HelpTOCNode Title="GetName(T) Method " Url="html/M_MakCraft_ViewModels_PropertyHelper_GetName__1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c7411972-690b-453d-b716-50bfe2191514" Title="RelayCommand Class" Url="html/T_MakCraft_ViewModels_RelayCommand.htm">
+        <HelpTOCNode Id="2b4884c9-c910-4dc1-8fd3-0086658d9ef0" Title="RelayCommand Constructor " Url="html/Overload_MakCraft_ViewModels_RelayCommand__ctor.htm">
+          <HelpTOCNode Title="RelayCommand Constructor (Action)" Url="html/M_MakCraft_ViewModels_RelayCommand__ctor.htm" />
+          <HelpTOCNode Title="RelayCommand Constructor (Action(Object))" Url="html/M_MakCraft_ViewModels_RelayCommand__ctor_2.htm" />
+          <HelpTOCNode Title="RelayCommand Constructor (Action, Predicate(Object))" Url="html/M_MakCraft_ViewModels_RelayCommand__ctor_1.htm" />
+          <HelpTOCNode Title="RelayCommand Constructor (Action(Object), Predicate(Object))" Url="html/M_MakCraft_ViewModels_RelayCommand__ctor_3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="38d7d4fe-c7dc-43fe-9156-7691d688c466" Title="RelayCommand Methods" Url="html/Methods_T_MakCraft_ViewModels_RelayCommand.htm">
+          <HelpTOCNode Title="CanExecute Method " Url="html/M_MakCraft_ViewModels_RelayCommand_CanExecute.htm" />
+          <HelpTOCNode Title="Execute Method " Url="html/M_MakCraft_ViewModels_RelayCommand_Execute.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6006cbed-e3ee-49a0-b568-d9937ee97218" Title="RelayCommand Events" Url="html/Events_T_MakCraft_ViewModels_RelayCommand.htm">
+          <HelpTOCNode Title="CanExecuteChanged Event" Url="html/E_MakCraft_ViewModels_RelayCommand_CanExecuteChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="716fb23d-9666-4062-9e18-14dc6e4c3903" Title="RelayCommand(T) Class" Url="html/T_MakCraft_ViewModels_RelayCommand_1.htm">
+        <HelpTOCNode Id="dbefc864-8392-402a-a622-40a230405540" Title="RelayCommand(T) Constructor " Url="html/Overload_MakCraft_ViewModels_RelayCommand_1__ctor.htm">
+          <HelpTOCNode Title="RelayCommand(T) Constructor (Action(T))" Url="html/M_MakCraft_ViewModels_RelayCommand_1__ctor.htm" />
+          <HelpTOCNode Title="RelayCommand(T) Constructor (Action(T), Predicate(Object))" Url="html/M_MakCraft_ViewModels_RelayCommand_1__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6d9b2c1c-39d4-487d-b0f7-c989f4b53553" Title="RelayCommand(T) Methods" Url="html/Methods_T_MakCraft_ViewModels_RelayCommand_1.htm">
+          <HelpTOCNode Title="CanExecute Method " Url="html/M_MakCraft_ViewModels_RelayCommand_1_CanExecute.htm" />
+          <HelpTOCNode Title="Execute Method " Url="html/M_MakCraft_ViewModels_RelayCommand_1_Execute.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ff57fed5-18fe-4396-b643-feb6fcef0943" Title="RelayCommand(T) Events" Url="html/Events_T_MakCraft_ViewModels_RelayCommand_1.htm">
+          <HelpTOCNode Title="CanExecuteChanged Event" Url="html/E_MakCraft_ViewModels_RelayCommand_1_CanExecuteChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="ded290be-f189-48f0-b731-c341aa2b9bef" Title="TransitionContainerBase Class" Url="html/T_MakCraft_ViewModels_TransitionContainerBase.htm">
+        <HelpTOCNode Title="TransitionContainerBase Constructor " Url="html/M_MakCraft_ViewModels_TransitionContainerBase__ctor.htm" />
+        <HelpTOCNode Title="TransitionContainerBase Methods" Url="html/Methods_T_MakCraft_ViewModels_TransitionContainerBase.htm" />
+        <HelpTOCNode Id="c5a2d6ea-5574-471b-9de4-5c26ac5d9ae0" Title="TransitionContainerBase Properties" Url="html/Properties_T_MakCraft_ViewModels_TransitionContainerBase.htm">
+          <HelpTOCNode Title="Key Property " Url="html/P_MakCraft_ViewModels_TransitionContainerBase_Key.htm" />
+          <HelpTOCNode Title="PreviousViewModel Property " Url="html/P_MakCraft_ViewModels_TransitionContainerBase_PreviousViewModel.htm" />
+          <HelpTOCNode Title="TransStartViewModel Property " Url="html/P_MakCraft_ViewModels_TransitionContainerBase_TransStartViewModel.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f934d184-b09f-4ebe-bbf7-79c18251aa8d" Title="TransitionViewModelBase Class" Url="html/T_MakCraft_ViewModels_TransitionViewModelBase.htm">
+        <HelpTOCNode Title="TransitionViewModelBase Constructor " Url="html/M_MakCraft_ViewModels_TransitionViewModelBase__ctor.htm" />
+        <HelpTOCNode Id="1de127ad-e84d-4f73-8e47-a3c831219a34" Title="TransitionViewModelBase Methods" Url="html/Methods_T_MakCraft_ViewModels_TransitionViewModelBase.htm">
+          <HelpTOCNode Title="OnFinished Method " Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_OnFinished.htm" />
+          <HelpTOCNode Title="OnWindowClosed Method " Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_OnWindowClosed.htm" />
+          <HelpTOCNode Title="TransitionComplete Method " Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_TransitionComplete.htm" />
+          <HelpTOCNode Title="WindowClose Method " Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_WindowClose.htm" />
+          <HelpTOCNode Title="WindowCloseCanExecute Method " Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_WindowCloseCanExecute.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="857919d7-0ffd-4e36-88aa-033f020d5ebe" Title="TransitionViewModelBase Properties" Url="html/Properties_T_MakCraft_ViewModels_TransitionViewModelBase.htm">
+          <HelpTOCNode Title="CanCloseWindow Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_CanCloseWindow.htm" />
+          <HelpTOCNode Title="Container Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_Container.htm" />
+          <HelpTOCNode Title="CurrentStatus Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_CurrentStatus.htm" />
+          <HelpTOCNode Title="DisplayMode Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_DisplayMode.htm" />
+          <HelpTOCNode Title="PreviousViewModel Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_PreviousViewModel.htm" />
+          <HelpTOCNode Title="WindowCloseCommand Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_WindowCloseCommand.htm" />
+          <HelpTOCNode Title="WindowClosedCommand Property " Url="html/P_MakCraft_ViewModels_TransitionViewModelBase_WindowClosedCommand.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="TransitionViewModelBase Events" Url="html/Events_T_MakCraft_ViewModels_TransitionViewModelBase.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="46e7996a-7058-4a8b-9e3b-6778b1d82d9c" Title="ValidateConditionalAttribute Class" Url="html/T_MakCraft_ViewModels_ValidateConditionalAttribute.htm">
+        <HelpTOCNode Title="ValidateConditionalAttribute Constructor " Url="html/M_MakCraft_ViewModels_ValidateConditionalAttribute__ctor.htm" />
+        <HelpTOCNode Title="ValidateConditionalAttribute Methods" Url="html/Methods_T_MakCraft_ViewModels_ValidateConditionalAttribute.htm" />
+        <HelpTOCNode Id="925f29a8-55e0-4dd8-a9e1-9d9f534b22f8" Title="ValidateConditionalAttribute Properties" Url="html/Properties_T_MakCraft_ViewModels_ValidateConditionalAttribute.htm">
+          <HelpTOCNode Title="ComparedProperty Property " Url="html/P_MakCraft_ViewModels_ValidateConditionalAttribute_ComparedProperty.htm" />
+          <HelpTOCNode Title="Value Property " Url="html/P_MakCraft_ViewModels_ValidateConditionalAttribute_Value.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b14c2c4b-595c-47be-8b0c-09c3b02c2c3c" Title="ValidationViewModelBase Class" Url="html/T_MakCraft_ViewModels_ValidationViewModelBase.htm">
+        <HelpTOCNode Title="ValidationViewModelBase Constructor " Url="html/M_MakCraft_ViewModels_ValidationViewModelBase__ctor.htm" />
+        <HelpTOCNode Id="3061ac4b-a4e9-4a4c-9460-949e34f33ccf" Title="ValidationViewModelBase Methods" Url="html/Methods_T_MakCraft_ViewModels_ValidationViewModelBase.htm">
+          <HelpTOCNode Id="a826e943-a34e-4c24-8b8a-68e20d7e9d18" Title="IsPropertyAnnotationError Method " Url="html/Overload_MakCraft_ViewModels_ValidationViewModelBase_IsPropertyAnnotationError.htm">
+            <HelpTOCNode Title="IsPropertyAnnotationError(T) Method (Expression(Func(T)))" Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_IsPropertyAnnotationError__1.htm" />
+            <HelpTOCNode Title="IsPropertyAnnotationError Method (String)" Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_IsPropertyAnnotationError.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="7d8ad5b3-f9e6-4c7e-8aae-67a83794ccf4" Title="RaisePropertyChangedWithRemoveItemValidationError Method " Url="html/Overload_MakCraft_ViewModels_ValidationViewModelBase_RaisePropertyChangedWithRemoveItemValidationError.htm">
+            <HelpTOCNode Title="RaisePropertyChangedWithRemoveItemValidationError(T) Method (Expression(Func(T)))" Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_RaisePropertyChangedWithRemoveItemValidationError__1.htm" />
+            <HelpTOCNode Title="RaisePropertyChangedWithRemoveItemValidationError Method (String)" Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_RaisePropertyChangedWithRemoveItemValidationError.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="287bef8f-fd0e-4b6d-8718-81fe8eda60d6" Title="RemoveItemValidationError Method " Url="html/Overload_MakCraft_ViewModels_ValidationViewModelBase_RemoveItemValidationError.htm">
+            <HelpTOCNode Title="RemoveItemValidationError(T) Method (Expression(Func(T)))" Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_RemoveItemValidationError__1.htm" />
+            <HelpTOCNode Title="RemoveItemValidationError Method (String)" Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_RemoveItemValidationError.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="SetPropertyWithRemoveItemValidationError(T) Method " Url="html/M_MakCraft_ViewModels_ValidationViewModelBase_SetPropertyWithRemoveItemValidationError__1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e5487d13-7f1b-4c2a-8e96-3a0a439d584f" Title="ValidationViewModelBase Properties" Url="html/Properties_T_MakCraft_ViewModels_ValidationViewModelBase.htm">
+          <HelpTOCNode Title="Error Property " Url="html/P_MakCraft_ViewModels_ValidationViewModelBase_Error.htm" />
+          <HelpTOCNode Title="IsValid Property " Url="html/P_MakCraft_ViewModels_ValidationViewModelBase_IsValid.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_MakCraft_ViewModels_ValidationViewModelBase_Item.htm" />
+          <HelpTOCNode Title="ViewModelState Property " Url="html/P_MakCraft_ViewModels_ValidationViewModelBase_ViewModelState.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ValidationViewModelBase Events" Url="html/Events_T_MakCraft_ViewModels_ValidationViewModelBase.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="53a03ca2-b413-41fc-839e-b09a1f97cc3c" Title="ViewModelBase Class" Url="html/T_MakCraft_ViewModels_ViewModelBase.htm">
+        <HelpTOCNode Title="ViewModelBase Constructor " Url="html/M_MakCraft_ViewModels_ViewModelBase__ctor.htm" />
+        <HelpTOCNode Id="9740ee58-d400-437f-b98c-f8847eb152a6" Title="ViewModelBase Methods" Url="html/Methods_T_MakCraft_ViewModels_ViewModelBase.htm">
+          <HelpTOCNode Id="2377d76a-4a3d-4102-b6c7-e06fefbc587d" Title="Dispose Method " Url="html/Overload_MakCraft_ViewModels_ViewModelBase_Dispose.htm">
+            <HelpTOCNode Title="Dispose Method " Url="html/M_MakCraft_ViewModels_ViewModelBase_Dispose.htm" />
+            <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_MakCraft_ViewModels_ViewModelBase_Dispose_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="Finalize Method " Url="html/M_MakCraft_ViewModels_ViewModelBase_Finalize.htm" />
+          <HelpTOCNode Title="InvalidateRequerySuggested Method " Url="html/M_MakCraft_ViewModels_ViewModelBase_InvalidateRequerySuggested.htm" />
+          <HelpTOCNode Title="IsUiThread Method " Url="html/M_MakCraft_ViewModels_ViewModelBase_IsUiThread.htm" />
+          <HelpTOCNode Id="7525eeed-d46a-4a24-b72e-e07ec57ddc6d" Title="RaisePropertyChanged Method " Url="html/Overload_MakCraft_ViewModels_ViewModelBase_RaisePropertyChanged.htm">
+            <HelpTOCNode Title="RaisePropertyChanged Method (String)" Url="html/M_MakCraft_ViewModels_ViewModelBase_RaisePropertyChanged.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="8e0bf7eb-ea71-4af2-adc5-8667b418b600" Title="ViewModelBase Properties" Url="html/Properties_T_MakCraft_ViewModels_ViewModelBase.htm">
+          <HelpTOCNode Title="UiDispatcher Property " Url="html/P_MakCraft_ViewModels_ViewModelBase_UiDispatcher.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ViewModelBase Events" Url="html/Events_T_MakCraft_ViewModels_ViewModelBase.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="062fa3fe-b9b8-4fab-bd54-737c819f73cc" Title="ViewModelUtility Class" Url="html/T_MakCraft_ViewModels_ViewModelUtility.htm">
+        <HelpTOCNode Id="88105193-3014-4129-a089-654d7d53e271" Title="ViewModelUtility Methods" Url="html/Methods_T_MakCraft_ViewModels_ViewModelUtility.htm">
+          <HelpTOCNode Title="CloseViewModels Method " Url="html/M_MakCraft_ViewModels_ViewModelUtility_CloseViewModels.htm" />
+          <HelpTOCNode Title="Count Method " Url="html/M_MakCraft_ViewModels_ViewModelUtility_Count.htm" />
+          <HelpTOCNode Title="GetMainWindowViewModel Method " Url="html/M_MakCraft_ViewModels_ViewModelUtility_GetMainWindowViewModel.htm" />
+          <HelpTOCNode Title="GetViewModels Method " Url="html/M_MakCraft_ViewModels_ViewModelUtility_GetViewModels.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8b6430e0-6987-4657-a474-01d9f3e8c081" Title="ViewModelUtility Properties" Url="html/Properties_T_MakCraft_ViewModels_ViewModelUtility.htm">
+          <HelpTOCNode Title="IsReadyCloseAllWindows Property " Url="html/P_MakCraft_ViewModels_ViewModelUtility_IsReadyCloseAllWindows.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="478121e3-c4dd-465c-b566-b672f76aad1f" Title="WeakEventViewModelBase Class" Url="html/T_MakCraft_ViewModels_WeakEventViewModelBase.htm">
+        <HelpTOCNode Title="WeakEventViewModelBase Constructor " Url="html/M_MakCraft_ViewModels_WeakEventViewModelBase__ctor.htm" />
+        <HelpTOCNode Id="01cbc824-5220-46b1-9f61-35c96b28814a" Title="WeakEventViewModelBase Methods" Url="html/Methods_T_MakCraft_ViewModels_WeakEventViewModelBase.htm">
+          <HelpTOCNode Title="AddListener Method " Url="html/M_MakCraft_ViewModels_WeakEventViewModelBase_AddListener.htm" />
+          <HelpTOCNode Title="RemoveListener Method " Url="html/M_MakCraft_ViewModels_WeakEventViewModelBase_RemoveListener.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WeakEventViewModelBase Properties" Url="html/Properties_T_MakCraft_ViewModels_WeakEventViewModelBase.htm" />
+        <HelpTOCNode Title="WeakEventViewModelBase Events" Url="html/Events_T_MakCraft_ViewModels_WeakEventViewModelBase.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4185864f-3508-4024-a5df-cfae52e919e3" Title="WindowPendingProcessException Class" Url="html/T_MakCraft_ViewModels_WindowPendingProcessException.htm">
+        <HelpTOCNode Id="471cd22f-2997-41ce-bf89-a75f8e73116f" Title="WindowPendingProcessException Constructor " Url="html/Overload_MakCraft_ViewModels_WindowPendingProcessException__ctor.htm">
+          <HelpTOCNode Title="WindowPendingProcessException Constructor " Url="html/M_MakCraft_ViewModels_WindowPendingProcessException__ctor.htm" />
+          <HelpTOCNode Title="WindowPendingProcessException Constructor (String)" Url="html/M_MakCraft_ViewModels_WindowPendingProcessException__ctor_2.htm" />
+          <HelpTOCNode Title="WindowPendingProcessException Constructor (SerializationInfo, StreamingContext)" Url="html/M_MakCraft_ViewModels_WindowPendingProcessException__ctor_1.htm" />
+          <HelpTOCNode Title="WindowPendingProcessException Constructor (String, Exception)" Url="html/M_MakCraft_ViewModels_WindowPendingProcessException__ctor_3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="WindowPendingProcessException Methods" Url="html/Methods_T_MakCraft_ViewModels_WindowPendingProcessException.htm" />
+        <HelpTOCNode Title="WindowPendingProcessException Properties" Url="html/Properties_T_MakCraft_ViewModels_WindowPendingProcessException.htm" />
+        <HelpTOCNode Title="WindowPendingProcessException Events" Url="html/Events_T_MakCraft_ViewModels_WindowPendingProcessException.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
