@@ -6,17 +6,17 @@ using System.Runtime.CompilerServices;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// プロパティ変更通知を実装した基底クラス
+    /// プロパティ変更通知を実装した基底クラス。
     /// </summary>
     public abstract class NotifyObject : INotifyPropertyChanged
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public NotifyObject() {}
 
         /// <summary>
-        /// PropertyChanged イベント処理用のデリゲート
+        /// PropertyChanged イベント処理用のデリゲート。
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 

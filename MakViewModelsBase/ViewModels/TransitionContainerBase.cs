@@ -3,7 +3,7 @@
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// 画面遷移の際のデータコンテナの基底クラス
+    /// 画面遷移の際のデータコンテナの基底クラス。
     /// </summary>
     public class TransitionContainerBase : ITransContainer
     {
@@ -26,7 +26,7 @@ namespace MakCraft.ViewModels
         private readonly string _key;
         /// <summary>
         /// 遷移を区別するためのキーを取得します。
-        /// 一つのビューモデルで複数の画面遷移を持つ場合の処理の分岐用
+        /// 一つのビューモデルで複数の画面遷移を持つ場合の処理の分岐用。
         /// </summary>
         public string Key
         {

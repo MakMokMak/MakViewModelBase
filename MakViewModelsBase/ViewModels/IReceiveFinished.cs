@@ -6,7 +6,7 @@
     interface IReceiveFinished
     {
         /// <summary>
-        /// 画面遷移操作完了時に実行されるメソッド
+        /// 画面遷移操作完了時に実行されるメソッド。
         /// </summary>
         void OnFinished(ITransContainer container);
     }

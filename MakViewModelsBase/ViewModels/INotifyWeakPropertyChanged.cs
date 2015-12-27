@@ -8,7 +8,7 @@ namespace MakCraft.ViewModels
     public interface INotifyWeakPropertyChanged
     {
         /// <summary>
-        /// 弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラ
+        /// 弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラ。
         /// </summary>
         event PropertyChangedEventHandler WeakPropertyChanged;
     }

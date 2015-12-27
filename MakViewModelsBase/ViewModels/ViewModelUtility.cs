@@ -6,7 +6,7 @@ using System.Windows;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// ViewModel 関連のユーティリティクラス
+    /// ViewModel 関連のユーティリティクラス。
     /// </summary>
     public static class ViewModelUtility
     {

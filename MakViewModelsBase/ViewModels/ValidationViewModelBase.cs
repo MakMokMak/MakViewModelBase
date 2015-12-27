@@ -11,14 +11,14 @@ using MakCraft.ViewModels.Validations;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// データ検証を実装したビューモデルの基底クラス(WeakEventViewModelBase を継承)
+    /// データ検証を実装したビューモデルの基底クラス。
     /// </summary>
     public abstract class ValidationViewModelBase : WeakEventViewModelBase, IDataErrorInfo
     {
         private IValidationDictionary _validationDic;
 
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public ValidationViewModelBase()
         {

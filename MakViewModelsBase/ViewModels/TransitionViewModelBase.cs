@@ -11,14 +11,15 @@ namespace MakCraft.ViewModels
     public abstract class TransitionViewModelBase : DialogViewModelBase, IWindowCloseCommand, IViewModelStatus, IReceiveFinished
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public TransitionViewModelBase() { }
 
         private WindowAction _windowAction;
         /// <summary>
         /// ウィンドウの表示状態を取得・設定します。
-        /// View 側で PropertyChangedTrigger の Binding と DisplayModeAction の DisplayMode にバインドしてください。
+        /// View 側で <see cref="Microsoft.Expression.Interactivity.Core.PropertyChangedTrigger"/> の Binding と
+        /// <see cref="MakCraft.Behaviors.DisplayModeAction"/> の DisplayMode にバインドしてください。
         /// </summary>
         public WindowAction DisplayMode
         {
@@ -36,7 +37,7 @@ namespace MakCraft.ViewModels
         protected TransitionViewModelBase PreviousViewModel { get; private set; }
 
         /// <summary>
-        /// ウィンドウ作成元からのデータ受け取り用プロパティ
+        /// ウィンドウ作成元からのデータ受け取り用プロパティ。
         /// </summary>
         public override object Container
         {
@@ -71,7 +72,9 @@ namespace MakCraft.ViewModels
         }
         private ICommand _windowCloseCommand;
         /// <summary>
-        /// ウィンドウを閉じるコマンド
+        /// ウィンドウを閉じるコマンド。
+        /// ボタンの有効・無効は <see cref="WindowCloseCanExecute(object)"/>、
+        /// コマンド処理の実体は <see cref="WindowClose"/> を設定します。
         /// </summary>
         public ICommand WindowCloseCommand
         {
@@ -84,7 +87,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// ウィンドウがクローズされた際の操作
+        /// ウィンドウがクローズされた際の操作。
         /// </summary>
         protected virtual void OnWindowClosed()
         {
@@ -114,8 +117,9 @@ namespace MakCraft.ViewModels
         }
         private ICommand _windowClosedCommand;
         /// <summary>
-        /// ウィンドウがクローズされた際の操作コマンド
+        /// ウィンドウがクローズされた際の操作コマンド。
         /// ウィンドウの Closed イベントが発生した際に呼び出されるようにしてください。
+        /// コマンド処理の実体は <see cref="OnWindowClosed"/> を設定します。
         /// </summary>
         public ICommand WindowClosedCommand
         {
@@ -128,7 +132,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// 一連の画面遷移の完了を設定します。
+        /// 一連の画面遷移の完了を通知します。
         /// </summary>
         protected virtual void TransitionComplete()
         {

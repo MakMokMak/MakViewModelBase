@@ -8,14 +8,15 @@ namespace MakCraft.ViewModels
     public abstract class ModalViewModelBase : DialogViewModelBase
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public ModalViewModelBase() { }
 
         private bool? _result;
         /// <summary>
-        /// View 側の DialogResult セット用の PropertyChangedTrigger へバインドします。
-        /// View 側で PropertyChangedTrigger の Binding と ChangePropertyAction の Value にバインドしてください。
+        /// View 側の <see cref="System.Windows.Window.DialogResult"/> セットのトリガーとなるプロパティです。
+        /// View 側で <see cref="Microsoft.Expression.Interactivity.Core.PropertyChangedTrigger"/> の Binding と
+        /// <see cref="Microsoft.Expression.Interactivity.Core.ChangePropertyAction"/> の Value にバインドしてください。
         /// </summary>
         public bool? Result
         {
@@ -28,7 +29,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// モーダルダイアログの OK ボタンクリック時の処理
+        /// モーダルダイアログの OK ボタンクリック時の処理。
         /// 仮想メソッドは Window の DialogResult プロパティに true をセットする動作のみです。制御が必要な場合はオーバーライドしてください。
         /// </summary>
         protected virtual void OkExecute()
@@ -49,7 +50,7 @@ namespace MakCraft.ViewModels
         private ICommand _okCommand;
         /// <summary>
         /// OK ボタン用のコマンドです。
-        /// ボタンの有効・無効をコントロールするため、コマンドで Window の DialogResult を設定します。
+        /// ボタンの有効・無効は <see cref="OkCanExecute(object)"/>、コマンド処理の実体は <see cref="OkExecute"/> を設定します。
         /// </summary>
         public ICommand OkCommand
         {

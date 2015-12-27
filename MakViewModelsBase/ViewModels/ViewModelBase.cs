@@ -7,12 +7,12 @@ using System.Windows.Threading;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// プロパティ変更通知を実装したビューモデルの基底クラス
+    /// プロパティ変更通知を実装したビューモデルの基底クラス。
     /// </summary>
     public abstract class ViewModelBase : NotifyObject, IDisposable
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public ViewModelBase()
         {
@@ -23,7 +23,7 @@ namespace MakCraft.ViewModels
 
         private readonly Dispatcher _uiDispatcher;
         /// <summary>
-        /// UI スレッドのディスパッチャ
+        /// UI スレッドのディスパッチャ。
         /// </summary>
         protected Dispatcher UiDispatcher
         {
@@ -31,7 +31,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// UI スレッドからのアクセスかどうかを判定する
+        /// UI スレッドからのアクセスかどうかを判定する。
         /// </summary>
         /// <returns></returns>
         protected bool IsUiThread()
@@ -104,7 +104,7 @@ namespace MakCraft.ViewModels
         #endregion
 
         /// <summary>
-        /// デストラクタ
+        /// デストラクタ。
         /// </summary>
         ~ViewModelBase()
         {

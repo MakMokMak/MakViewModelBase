@@ -7,12 +7,12 @@ using MakCraft.Behaviors.Interfaces;
 namespace MakCraft.Behaviors
 {
     /// <summary>
-    /// モードレス ウィンドウの表示変更アクション
+    /// モードレス ウィンドウの表示変更アクション。
     /// </summary>
     public class DisplayModeAction : TriggerAction<FrameworkElement>
     {
         /// <summary>
-        /// 変更する表示状態
+        /// 変更する表示状態。
         /// </summary>
         public static readonly DependencyProperty DisplayModeProperty = DependencyProperty.Register(
             "DisplayMode", typeof(WindowAction), typeof(DisplayModeAction), new UIPropertyMetadata
@@ -20,7 +20,7 @@ namespace MakCraft.Behaviors
                 DefaultValue = WindowAction.Show
             });
         /// <summary>
-        /// 変更する表示状態
+        /// 変更する表示状態。
         /// </summary>
         public WindowAction DisplayMode
         {

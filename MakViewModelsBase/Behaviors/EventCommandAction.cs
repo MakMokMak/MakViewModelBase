@@ -6,7 +6,7 @@ using System.Windows.Interactivity;
 namespace MakCraft.Behaviors
 {
     /// <summary>
-    /// イベント発生時にコマンドを実行するアクション
+    /// イベント発生時にコマンドを実行するアクション。
     /// 実行するコマンドの引数に発生したイベントの EventArgs を設定します。
     /// </summary>
     public class EventCommandAction : TriggerAction<UIElement>

@@ -1,13 +1,13 @@
 ﻿namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// 画面遷移の際のデータコンテナのインターフェイス
+    /// 画面遷移の際のデータコンテナのインターフェイス。
     /// </summary>
     public interface ITransContainer
     {
         /// <summary>
         /// 遷移を区別するためのキーを取得します。
-        /// 一つのビューモデルで複数の画面遷移を持つ場合の処理の分岐用
+        /// 一つのビューモデルで複数の画面遷移を持つ場合の処理の分岐用。
         /// </summary>
         string Key { get; }
 

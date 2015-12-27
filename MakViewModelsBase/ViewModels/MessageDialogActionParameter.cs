@@ -5,38 +5,39 @@ using MakCraft.Behaviors.Interfaces;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// MessageDialogAction へ渡すパラメーター
-    /// IsDialog が false のときには Button の設定は反映されません。
+    /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> へ渡すパラメーター。
+    /// <see cref="IsDialog"/> が false のときには Button の設定は反映されません。
     /// </summary>
     public class MessageDialogActionParameter : IMessageDialogActionParameter
     {
         /// <summary>
-        /// MessageBoxに表示するメッセージ
+        /// MessageBoxに表示するメッセージ。
         /// </summary>
         public string Message { get; protected set; }
         /// <summary>
-        /// MessageBox に表示するタイトル
+        /// MessageBox に表示するタイトル。
         /// </summary>
         public string Caption { get; protected set; }
         /// <summary>
-        /// MessageBox に表示するボタン
+        /// MessageBox に表示するボタン。
         /// </summary>
         public MessageBoxButton Button { get; protected set; }
         /// <summary>
-        /// true:ダイアログ(ユーザ応答を処理する)、false:メッセージ
+        /// 表示するウィンドウの種別を取得します。
+        /// true:ダイアログ(ユーザ応答を処理する)、false:メッセージ。
         /// </summary>
         public bool IsDialog { get; protected set; }
 
         /// <summary>
-        /// MessageDialogActionへ 渡すパラメーター(メッセージ表示用)
-        /// ボタン表示は OK のみ
+        /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> へ渡すパラメーター(メッセージ表示用)。
+        /// ボタン表示は OK のみ。
         /// </summary>
         /// <param name="message"></param>
         /// <param name="caption"></param>
         public MessageDialogActionParameter(string message, string caption)
             : this(message, caption, MessageBoxButton.OK, false) { }
         /// <summary>
-        /// MessageDialogActionへ 渡すパラメーター(ダイアログ表示用)
+        /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> へ渡すパラメーター(ダイアログ表示用)。
         /// </summary>
         /// <param name="message"></param>
         /// <param name="caption"></param>
@@ -44,7 +45,7 @@ namespace MakCraft.ViewModels
         public MessageDialogActionParameter(string message, string caption, MessageBoxButton button)
             : this(message, caption, button, true) { }
         /// <summary>
-        /// MessageDialogActionへ 渡すパラメーター
+        /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> へ渡すパラメーター。
         /// </summary>
         /// <param name="message"></param>
         /// <param name="caption"></param>

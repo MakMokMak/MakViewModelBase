@@ -4,7 +4,7 @@ using System.Web.ModelBinding;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// サービス層とビューモデル層のデータ検証との間のインターフェイス
+    /// サービス層とビューモデル層のデータ検証との間のインターフェイス。
     /// </summary>
     public interface IValidationDictionary : IDictionary<string, ModelState>
     {

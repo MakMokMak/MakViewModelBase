@@ -11,26 +11,28 @@ namespace MakCraft.ViewModels
     public abstract class DialogViewModelBase : ValidationViewModelBase, IDialogTransferContainer
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public DialogViewModelBase() { }
 
         /// <summary>
         /// 作成する Dialog に渡すデータを取得・設定します。
-        /// View 側で DialogTransferDataAction の Parameter にバインドしてください。
+        /// View 側で <see cref="MakCraft.Behaviors.DialogTransferDataAction"/> の
+        /// Parameter にバインドしてください。
         /// </summary>
         public object CommunicationDialog { get; protected set; }
 
         /// <summary>
-        /// 表示するカスタムダイアログボックスの型の情報
-        /// View 側で DialogTransferDataAction の DialogType にバインドしてください。
+        /// 表示するカスタムダイアログボックスの型の情報。
+        /// View 側で <see cref="MakCraft.Behaviors.DialogTransferDataAction"/> の
+        /// DialogType にバインドしてください。
         /// </summary>
         public Type DialogType { get; protected set; }
 
         #region IDialogTransferContainer
         private object _container;
         /// <summary>
-        /// ウィンドウ作成元から渡されたデータの受取用
+        /// ウィンドウ作成元から渡されたデータの受取用。
         /// </summary>
         public virtual object Container
         {
@@ -46,19 +48,21 @@ namespace MakCraft.ViewModels
         #region DialogTransferContainer
         /// <summary>
         /// ダイアログが閉じられた後に実行するコールバックを取得・設定します。
-        /// View 側で DialogTransferDataAction の ActionCallBack にバインドしてください。
+        /// View 側で <see cref="MakCraft.Behaviors.DialogTransferDataAction"/> の
+        /// ActionCallBack にバインドしてください。
         /// </summary>
         public Action<bool?> DialogActionCallback { get; protected set; }
 
         /// <summary>
-        /// ダイアログ表示で生成されたダイアログのビューモデルへの参照を取得・設定します。
-        /// (ダイアログで設定された値の参照用)
-        /// View 側で DialogTransferDataAction の ResultViewModel にバインドしてください。
+        /// ダイアログ表示で生成されたダイアログのビューモデルへの参照を取得・設定します
+        /// (ダイアログで設定された値の参照用)。
+        /// View 側で <see cref="MakCraft.Behaviors.DialogTransferDataAction"/> の
+        /// ResultViewModel にバインドしてください。
         /// </summary>
         public object ResultViewModel { get; set; }
 
         /// <summary>
-        /// ウィンドウ作成元からのデータを受け取った際に行う処理
+        /// ウィンドウ作成元からのデータを受け取った際に行う処理。
         /// </summary>
         /// <param name="container"></param>
         protected virtual void OnContainerReceived(object container)
@@ -69,8 +73,10 @@ namespace MakCraft.ViewModels
         #region MessageDialogAction
         private IMessageDialogActionParameter _messageDialogActionParam;
         /// <summary>
-        /// MessageDialogActionに渡すパラメーター
-        /// View 側で PropertyChangedTrigger の Binding と MessageDialogAction の Parameter にバインドしてください。
+        /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> に渡すパラメーター。
+        /// View 側で <see cref="Microsoft.Expression.Interactivity.Core.PropertyChangedTrigger"/> の Binding と
+        /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> の
+        /// Parameter にバインドしてください。
         /// </summary>
         public IMessageDialogActionParameter MessageDialogActionParam
         {
@@ -79,8 +85,9 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// MessageDialogActionの実行後に呼ばれるCallBack
-        /// View 側で MessageDialogAction の ActionCallBack にバインドしてください。
+        /// <see cref="MakCraft.Behaviors.MessageDialogAction"/> の実行後に呼ばれるCallBack。
+        /// View 側で <see cref="MakCraft.Behaviors.MessageDialogAction"/> の
+        /// ActionCallBack にバインドしてください。
         /// </summary>
         public Action<MessageBoxResult> MessageDialogActionCallback { get; set; }
         #endregion MessageDialogAction

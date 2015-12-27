@@ -7,7 +7,7 @@ using System.Web.ModelBinding;
 namespace MakCraft.ViewModels.Validations
 {
     /// <summary>
-    /// データ検証に用いるディクショナリ
+    /// データ検証に用いるディクショナリ。
     /// </summary>
     class ValidationDictionary : IValidationDictionary
     {

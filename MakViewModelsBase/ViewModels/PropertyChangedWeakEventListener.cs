@@ -10,7 +10,7 @@ namespace MakCraft.ViewModels
     public class PropertyChangedWeakEventListener : IPropertyChangedWeakEventListener
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public PropertyChangedWeakEventListener()
         {
@@ -18,7 +18,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// デストラクタ
+        /// デストラクタ。
         /// </summary>
         ~PropertyChangedWeakEventListener()
         {
@@ -26,7 +26,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// 弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラ
+        /// 弱いイベントパターンを用いたプロパティ変更通知のイベントハンドラ。
         /// </summary>
         public event PropertyChangedEventHandler WeakPropertyChanged;
 

@@ -1,12 +1,12 @@
 ﻿namespace MakCraft.Behaviors.Interfaces
 {
     /// <summary>
-    /// 画面遷移を行うビューモデルの処理状況のプロパティのインターフェイス
+    /// 画面遷移を行うビューモデルの処理状況のプロパティのインターフェイス。
     /// </summary>
     public interface IViewModelStatus
     {
         /// <summary>
-        /// 画面遷移を行うビューモデルの処理状況
+        /// 画面遷移を行うビューモデルの処理状況。
         /// </summary>
         ViewModelStatus CurrentStatus { get; set; }
     }
@@ -17,11 +17,11 @@
     public enum ViewModelStatus
     {
         /// <summary>
-        /// 未完了
+        /// 未完了。
         /// </summary>
         Halfway,
         /// <summary>
-        /// 完了
+        /// 完了。
         /// </summary>
         Completed
     }
@@ -32,21 +32,21 @@
     public enum WindowAction
     {
         /// <summary>
-        /// 表示する
+        /// 表示する。
         /// </summary>
         Show,
         /// <summary>
-        /// 非表示にする
+        /// 非表示にする。
         /// </summary>
         Hide,
         /// <summary>
-        /// 閉じる
+        /// 閉じる。
         /// </summary>
         Close
     }
 
     /// <summary>
-    /// ダイアログの表示種別
+    /// ダイアログの表示種別。
     /// </summary>
     public enum DialogModes
     {

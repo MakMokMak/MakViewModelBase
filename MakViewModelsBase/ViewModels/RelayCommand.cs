@@ -19,20 +19,20 @@ namespace MakCraft.ViewModels
         #region Constructor
 
         /// <summary>
-        /// 実行可否判定のないコマンドを作成
+        /// 実行可否判定のないコマンドを作成。
         /// </summary>
         /// <param name="execute"></param>
         [Obsolete("RelayCommand(Action execute) または RelayCommand(Action<T> execute) を使用してください。")]
         public RelayCommand(Action<object> execute) : this(execute, null) { }
 
         /// <summary>
-        /// 実行可否判定のないコマンドを作成
+        /// 実行可否判定のないコマンドを作成。
         /// </summary>
         /// <param name="execute"></param>
         public RelayCommand(Action execute) : this(execute, null) { }
 
         /// <summary>
-        /// コマンドを作成
+        /// コマンドを作成。
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
@@ -47,7 +47,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// コマンドを作成
+        /// コマンドを作成。
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
@@ -121,7 +121,7 @@ namespace MakCraft.ViewModels
         #region Constructor
 
         /// <summary>
-        /// 実行可否判定のないコマンドを作成
+        /// 実行可否判定のないコマンドを作成。
         /// </summary>
         /// <param name="execute"></param>
         public RelayCommand(Action<T> execute)
@@ -130,7 +130,7 @@ namespace MakCraft.ViewModels
         }
 
         /// <summary>
-        /// コマンドを作成
+        /// コマンドを作成。
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>

@@ -7,19 +7,19 @@ using MakCraft.Behaviors.Interfaces;
 namespace MakCraft.Behaviors
 {
     /// <summary>
-    /// MessageBox を表示するアクション
+    /// MessageBox を表示するアクション。
     /// </summary>
     public class MessageDialogAction : TriggerAction<FrameworkElement>
     {
         /// <summary>
-        /// メッセージボックスやダイアログを出すために必要となる情報を受け取る
+        /// メッセージボックスやダイアログを出すために必要となる情報を受け取る。
         /// </summary>
         public static readonly DependencyProperty ParameterProperty = DependencyProperty.Register(
             "Parameter", typeof(IMessageDialogActionParameter), typeof(MessageDialogAction),
             new UIPropertyMetadata()
             );
         /// <summary>
-        /// メッセージボックスやダイアログを出すために必要となる情報を受け取る
+        /// メッセージボックスやダイアログを出すために必要となる情報を受け取る。
         /// </summary>
         public IMessageDialogActionParameter Parameter
         {
@@ -28,14 +28,14 @@ namespace MakCraft.Behaviors
         }
 
         /// <summary>
-        /// ダイアログでの選択結果をViewModelに通知するコールバックメソッド
+        /// ダイアログでの選択結果をViewModelに通知するコールバックメソッド。
         /// </summary>
         public static readonly DependencyProperty ActionCallBackProperty = DependencyProperty.Register(
             "ActionCallBack", typeof(Action<MessageBoxResult>), typeof(MessageDialogAction),
             new UIPropertyMetadata(null)
             );
         /// <summary>
-        /// ダイアログでの選択結果をViewModelに通知するコールバックメソッド
+        /// ダイアログでの選択結果をViewModelに通知するコールバックメソッド。
         /// </summary>
         public Action<MessageBoxResult> ActionCallBack
         {

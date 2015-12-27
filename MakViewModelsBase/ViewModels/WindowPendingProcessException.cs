@@ -4,28 +4,28 @@ using System.Runtime.Serialization;
 namespace MakCraft.ViewModels
 {
     /// <summary>
-    /// ウィンドウを閉じようとした際にビューモデルが処理途中等で閉じることができない場合にスローされる例外
+    /// ウィンドウを閉じようとした際にビューモデルが処理途中等で閉じることができない場合にスローされる例外。
     /// </summary>
     [Serializable]
     public class WindowPendingProcessException : Exception
     {
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         public WindowPendingProcessException() : base() { }
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         /// <param name="message"></param>
         public WindowPendingProcessException(string message) : base(message) { }
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         /// <param name="message"></param>
         /// <param name="inner"></param>
         public WindowPendingProcessException(string message, Exception inner) : base(message, inner) { }
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクタ。
         /// </summary>
         /// <param name="info"></param>
         /// <param name="context"></param>
