@@ -18,14 +18,11 @@ New BSD License(3-clause BSD license)
 
 クラス等の仕様は、次のページに記載しています。
 
-* [ViewModelBase クラス関連の仕様](http://www.makcraft.com/specification/30-viewmodelbaseclassspecs.html)
-* [WeakEventViewModelBase クラス関連の仕様](http://www.makcraft.com/specification/31-weakeventviewmodelbaseclassspecs.html)
-* [ValidationViewModelBase クラス関連の仕様](http://www.makcraft.com/specification/32-validationviewmodelbaseclassspecs.html)
-* [TransitionViewModelBase クラス関連の仕様](http://www.makcraft.com/specification/33-transitionviewmodelbaseclassspecs.html)
+* [MakCraft 名前空間の仕様](http://www.makcraft.com/specs/html/R_Project_Documentation.htm)
 
 ## 利用例
 
-それぞれの ViewModelBase の利用例は、ソリューション中の次のプロジェクトを御覧ください。
+それぞれの ViewModelBase の利用例は、ソリューション中の次のプロジェクトをご覧ください。
 
 * ViewModelBase: ViewModelBaseTestApp
 * WeakEventViewModelBase: WeakEventViewModelBaseTestApp
