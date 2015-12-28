@@ -1,36 +1,36 @@
 # MakViewModelBase version 5.1.3
 
-## ŠT—v
+## æ¦‚è¦
 
-WPF ‚ğ—˜—p‚µ‚½ MVVM ‚ÈƒVƒXƒeƒ€ì¬‚É—˜—p‚Å‚«‚é ViewModelBase ‚Å‚·BViewModelBase ‚Æ DataAnnotations ‚Ìƒf[ƒ^ŒŸØƒAƒgƒŠƒrƒ…[ƒg‚ğ—˜—p‚Å‚«‚é ValidationViewModelBase ‚ÆƒEƒBƒ“ƒhƒE‚Ì‘JˆÚ‚â•¡”ƒEƒBƒ“ƒhƒE‚Ì•\¦‚ğs‚¤‚±‚Æ‚ª‚Å‚«‚é TransitionViewModelBase ‚ª‚ ‚è‚Ü‚·B
+WPF ã‚’åˆ©ç”¨ã—ãŸ MVVM ãªã‚·ã‚¹ãƒ†ãƒ ä½œæˆã«åˆ©ç”¨ã§ãã‚‹ ViewModelBase ã§ã™ã€‚ViewModelBase ã¨ DataAnnotations ã®ãƒ‡ãƒ¼ã‚¿æ¤œè¨¼ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã‚’åˆ©ç”¨ã§ãã‚‹ ValidationViewModelBase ã¨ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é·ç§»ã‚„è¤‡æ•°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤ºã‚’è¡Œã†ã“ã¨ãŒã§ãã‚‹ TransitionViewModelBase ãŒã‚ã‚Šã¾ã™ã€‚
 
-## —˜—pŠÂ‹«
+## åˆ©ç”¨ç’°å¢ƒ
 
-.NET Framework Version 4.5 ˆÈã‚Å‚Ì—˜—p‚ğ‘O’ñ‚Æ‚µ‚Ä‚¢‚Ü‚·B
+.NET Framework Version 4.5 ä»¥ä¸Šã§ã®åˆ©ç”¨ã‚’å‰æã¨ã—ã¦ã„ã¾ã™ã€‚
 
-## ƒ‰ƒCƒZƒ“ƒX
+## ãƒ©ã‚¤ã‚»ãƒ³ã‚¹
 
-C³BSDƒ‰ƒCƒZƒ“ƒX(Oğ€BSDƒ‰ƒCƒZƒ“ƒX)
+ä¿®æ­£BSDãƒ©ã‚¤ã‚»ãƒ³ã‚¹(ä¸‰æ¡é …BSDãƒ©ã‚¤ã‚»ãƒ³ã‚¹)
 
 New BSD License(3-clause BSD license)
 
-## d—l
+## ä»•æ§˜
 
-ƒNƒ‰ƒX“™‚Ìd—l‚ÍAŸ‚Ìƒy[ƒW‚É‹LÚ‚µ‚Ä‚¢‚Ü‚·B
+ã‚¯ãƒ©ã‚¹ç­‰ã®ä»•æ§˜ã¯ã€æ¬¡ã®ãƒšãƒ¼ã‚¸ã«è¨˜è¼‰ã—ã¦ã„ã¾ã™ã€‚
 
-* [ViewModelBase ƒNƒ‰ƒXŠÖ˜A‚Ìd—l](http://www.makcraft.com/specification/30-viewmodelbaseclassspecs.html)
-* [WeakEventViewModelBase ƒNƒ‰ƒXŠÖ˜A‚Ìd—l](http://www.makcraft.com/specification/31-weakeventviewmodelbaseclassspecs.html)
-* [ValidationViewModelBase ƒNƒ‰ƒXŠÖ˜A‚Ìd—l](http://www.makcraft.com/specification/32-validationviewmodelbaseclassspecs.html)
-* [TransitionViewModelBase ƒNƒ‰ƒXŠÖ˜A‚Ìd—l](http://www.makcraft.com/specification/33-transitionviewmodelbaseclassspecs.html)
+* [ViewModelBase ã‚¯ãƒ©ã‚¹é–¢é€£ã®ä»•æ§˜](http://www.makcraft.com/specification/30-viewmodelbaseclassspecs.html)
+* [WeakEventViewModelBase ã‚¯ãƒ©ã‚¹é–¢é€£ã®ä»•æ§˜](http://www.makcraft.com/specification/31-weakeventviewmodelbaseclassspecs.html)
+* [ValidationViewModelBase ã‚¯ãƒ©ã‚¹é–¢é€£ã®ä»•æ§˜](http://www.makcraft.com/specification/32-validationviewmodelbaseclassspecs.html)
+* [TransitionViewModelBase ã‚¯ãƒ©ã‚¹é–¢é€£ã®ä»•æ§˜](http://www.makcraft.com/specification/33-transitionviewmodelbaseclassspecs.html)
 
-## —˜—p—á
+## åˆ©ç”¨ä¾‹
 
-‚»‚ê‚¼‚ê‚Ì ViewModelBase ‚Ì—˜—p—á‚ÍAƒ\ƒŠƒ…[ƒVƒ‡ƒ“’†‚ÌŸ‚ÌƒvƒƒWƒFƒNƒg‚ğŒä——‚­‚¾‚³‚¢B
+ãã‚Œãã‚Œã® ViewModelBase ã®åˆ©ç”¨ä¾‹ã¯ã€ã‚½ãƒªãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ä¸­ã®æ¬¡ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’å¾¡è¦§ãã ã•ã„ã€‚
 
 * ViewModelBase: ViewModelBaseTestApp
 * WeakEventViewModelBase: WeakEventViewModelBaseTestApp
 * ValidationViewModelBase: ValidationTestApp
 * TransitionViewModelBase: TransitionTestApp
 
-## XV—š—ğ
-[blog ‚ğ‚²——‚­‚¾‚³‚¢](http://www.makcraft.com/blog/meditation/category/viewmodelbase/)
+## æ›´æ–°å±¥æ­´
+[blog ã‚’ã”è¦§ãã ã•ã„](http://www.makcraft.com/blog/meditation/category/viewmodelbase/)
