@@ -32,8 +32,14 @@
   </HelpKINode>
   <HelpKINode Title="Close enumeration member" Url="html/T_MakCraft_Behaviors_Interfaces_WindowAction.htm" />
   <HelpKINode Title="CloseViewModels method" Url="html/M_MakCraft_ViewModels_ViewModelUtility_CloseViewModels.htm" />
-  <HelpKINode Title="Command property" Url="html/P_MakCraft_Behaviors_EventCommandAction_Command.htm" />
-  <HelpKINode Title="CommandProperty field" Url="html/F_MakCraft_Behaviors_EventCommandAction_CommandProperty.htm" />
+  <HelpKINode Title="Command property">
+    <HelpKINode Title="EventCommandAction.Command Property " Url="html/P_MakCraft_Behaviors_EventCommandAction_Command.htm" />
+    <HelpKINode Title="PowerModeChangedBehavior.Command Property " Url="html/P_MakCraft_Behaviors_PowerModeChangedBehavior_Command.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CommandProperty field">
+    <HelpKINode Title="EventCommandAction.CommandProperty Field" Url="html/F_MakCraft_Behaviors_EventCommandAction_CommandProperty.htm" />
+    <HelpKINode Title="PowerModeChangedBehavior.CommandProperty Field" Url="html/F_MakCraft_Behaviors_PowerModeChangedBehavior_CommandProperty.htm" />
+  </HelpKINode>
   <HelpKINode Title="CommunicationDialog property" Url="html/P_MakCraft_ViewModels_DialogViewModelBase_CommunicationDialog.htm" />
   <HelpKINode Title="ComparedProperty property" Url="html/P_MakCraft_ViewModels_ValidateConditionalAttribute_ComparedProperty.htm" />
   <HelpKINode Title="Completed enumeration member" Url="html/T_MakCraft_Behaviors_Interfaces_ViewModelStatus.htm" />
@@ -236,6 +242,7 @@
   <HelpKINode Title="MakCraft.Behaviors.Interfaces.ViewModelStatus enumeration" Url="html/T_MakCraft_Behaviors_Interfaces_ViewModelStatus.htm" />
   <HelpKINode Title="MakCraft.Behaviors.Interfaces.WindowAction enumeration" Url="html/T_MakCraft_Behaviors_Interfaces_WindowAction.htm" />
   <HelpKINode Title="MakCraft.Behaviors.MessageDialogAction class" Url="html/T_MakCraft_Behaviors_MessageDialogAction.htm" />
+  <HelpKINode Title="MakCraft.Behaviors.PowerModeChangedBehavior class" Url="html/T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
   <HelpKINode Title="MakCraft.ViewModels namespace" Url="html/N_MakCraft_ViewModels.htm" />
   <HelpKINode Title="MakCraft.ViewModels.DialogViewModelBase class" Url="html/T_MakCraft_ViewModels_DialogViewModelBase.htm" />
   <HelpKINode Title="MakCraft.ViewModels.INotifyWeakPropertyChanged interface" Url="html/T_MakCraft_ViewModels_INotifyWeakPropertyChanged.htm" />
@@ -322,7 +329,9 @@
   <HelpKINode Title="OkCanExecute method" Url="html/M_MakCraft_ViewModels_ModalViewModelBase_OkCanExecute.htm" />
   <HelpKINode Title="OkCommand property" Url="html/P_MakCraft_ViewModels_ModalViewModelBase_OkCommand.htm" />
   <HelpKINode Title="OkExecute method" Url="html/M_MakCraft_ViewModels_ModalViewModelBase_OkExecute.htm" />
+  <HelpKINode Title="OnAttached method" Url="html/M_MakCraft_Behaviors_PowerModeChangedBehavior_OnAttached.htm" />
   <HelpKINode Title="OnContainerReceived method" Url="html/M_MakCraft_ViewModels_DialogViewModelBase_OnContainerReceived.htm" />
+  <HelpKINode Title="OnDetaching method" Url="html/M_MakCraft_Behaviors_PowerModeChangedBehavior_OnDetaching.htm" />
   <HelpKINode Title="OnFinished method" Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_OnFinished.htm" />
   <HelpKINode Title="OnWindowClosed method" Url="html/M_MakCraft_ViewModels_TransitionViewModelBase_OnWindowClosed.htm" />
   <HelpKINode Title="Parameter property">
@@ -333,6 +342,20 @@
     <HelpKINode Title="DialogTransferDataAction.ParameterProperty Field" Url="html/F_MakCraft_Behaviors_DialogTransferDataAction_ParameterProperty.htm" />
     <HelpKINode Title="MessageDialogAction.ParameterProperty Field" Url="html/F_MakCraft_Behaviors_MessageDialogAction_ParameterProperty.htm" />
   </HelpKINode>
+  <HelpKINode Title="PowerModeChangedBehavior class">
+    <HelpKINode Title="PowerModeChangedBehavior Class" Url="html/T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
+    <HelpKINode Title="about PowerModeChangedBehavior class" Url="html/T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
+    <HelpKINode Title="constructor" Url="html/M_MakCraft_Behaviors_PowerModeChangedBehavior__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_MakCraft_Behaviors_PowerModeChangedBehavior.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PowerModeChangedBehavior.Command property" Url="html/P_MakCraft_Behaviors_PowerModeChangedBehavior_Command.htm" />
+  <HelpKINode Title="PowerModeChangedBehavior.CommandProperty field" Url="html/F_MakCraft_Behaviors_PowerModeChangedBehavior_CommandProperty.htm" />
+  <HelpKINode Title="PowerModeChangedBehavior.OnAttached method" Url="html/M_MakCraft_Behaviors_PowerModeChangedBehavior_OnAttached.htm" />
+  <HelpKINode Title="PowerModeChangedBehavior.OnDetaching method" Url="html/M_MakCraft_Behaviors_PowerModeChangedBehavior_OnDetaching.htm" />
+  <HelpKINode Title="PowerModeChangedBehavior.PowerModeChangedBehavior constructor" Url="html/M_MakCraft_Behaviors_PowerModeChangedBehavior__ctor.htm" />
   <HelpKINode Title="PreviousViewModel property">
     <HelpKINode Title="ITransContainer.PreviousViewModel Property " Url="html/P_MakCraft_ViewModels_ITransContainer_PreviousViewModel.htm" />
     <HelpKINode Title="TransitionContainerBase.PreviousViewModel Property " Url="html/P_MakCraft_ViewModels_TransitionContainerBase_PreviousViewModel.htm" />
