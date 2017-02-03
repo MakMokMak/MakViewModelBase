@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("MultiMonitorUtilTestApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("MakCraft")]
 [assembly: AssemblyProduct("MultiMonitorUtilTestApp")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©MakCraft  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
