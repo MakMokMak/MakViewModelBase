@@ -21,7 +21,8 @@
             <TextBox
                 FontSize="12" Margin="4" IsReadOnly="True"
                 MaxHeight="40" MinHeight="10" MaxWidth="450" MinWidth="450" TextWrapping="Wrap"
-                HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+                HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                Text="{Binding TextPosition}" />
         </StackPanel>
 
         <Button
@@ -31,7 +32,7 @@
             Margin="4" Padding="10 4" Content="仮想表示ボタン" />
 
         <TextBlock
-            Margin="4" />
+            Margin="4" Text="{Binding TextNotice}" />
 
         <Button
             Margin="4" Padding="40 4" Content="表示範囲内チェック(_K)" />
