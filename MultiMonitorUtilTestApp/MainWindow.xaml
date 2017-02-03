@@ -10,8 +10,32 @@
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
-    
-    <Grid>
-        
-    </Grid>
+
+    <StackPanel>
+        <TextBlock
+            FontSize="18" HorizontalAlignment="Center" Margin="8" Text="マルチモニター ユーティリティのテスト" />
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock
+                FontSize="12" Margin="4" Text="座標:" />
+            <TextBox
+                FontSize="12" Margin="4" IsReadOnly="True"
+                MaxHeight="40" MinHeight="10" MaxWidth="450" MinWidth="450" TextWrapping="Wrap"
+                HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+        </StackPanel>
+
+        <Button
+            Margin="4" Padding="10 4" Content="仮想クローズボタン" />
+
+        <Button
+            Margin="4" Padding="10 4" Content="仮想表示ボタン" />
+
+        <TextBlock
+            Margin="4" />
+
+        <Button
+            Margin="4" Padding="40 4" Content="表示範囲内チェック(_K)" />
+        <TextBlock
+            Margin="4" />
+    </StackPanel>
 </Window>
