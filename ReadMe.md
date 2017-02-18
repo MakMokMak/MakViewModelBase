@@ -29,5 +29,9 @@ New BSD License(3-clause BSD license)
 * ValidationViewModelBase: ValidationTestApp
 * TransitionViewModelBase: TransitionTestApp
 
+## プロジェクトへの導入
+
+[NuGet Pachage](https://www.nuget.org/packages/MakCraft.MakViewModelBase/) をご利用ください。
+
 ## 更新履歴
 [blog をご覧ください](http://www.makcraft.com/blog/meditation/category/viewmodelbase/)
