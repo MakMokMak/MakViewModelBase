@@ -20,6 +20,7 @@ namespace MakCraft.Utils
             return instance;
         });
 
+        private object _lockScreens = new object();
         private FORM::Screen[] _screens;
 
         /// <summary>
@@ -60,33 +61,36 @@ namespace MakCraft.Utils
         {
             var temp = FORM::Screen.AllScreens;
 
-            if (_screens == null)
+            lock (_lockScreens)
             {
-                _screens = temp;
-                return false;
-            }
+                if (_screens == null)
+                {
+                    _screens = temp;
+                    return false;
+                }
 
-            if (_screens.Length != temp.Length)
-            {
-                _screens = temp;
-                return true;
-            }
-
-            for (var i = 0; i < _screens.Length; i++)
-            {
-                if (_screens[i].DeviceName != temp[i].DeviceName)
+                if (_screens.Length != temp.Length)
                 {
                     _screens = temp;
                     return true;
                 }
 
-                if (_screens[i].WorkingArea.Left != temp[i].WorkingArea.Left ||
-                    _screens[i].WorkingArea.Top != temp[i].WorkingArea.Top ||
-                    _screens[i].WorkingArea.Right != temp[i].WorkingArea.Right ||
-                    _screens[i].WorkingArea.Bottom != temp[i].WorkingArea.Bottom)
+                for (var i = 0; i < _screens.Length; i++)
                 {
-                    _screens = temp;
-                    return true;
+                    if (_screens[i].DeviceName != temp[i].DeviceName)
+                    {
+                        _screens = temp;
+                        return true;
+                    }
+
+                    if (_screens[i].WorkingArea.Left != temp[i].WorkingArea.Left ||
+                        _screens[i].WorkingArea.Top != temp[i].WorkingArea.Top ||
+                        _screens[i].WorkingArea.Right != temp[i].WorkingArea.Right ||
+                        _screens[i].WorkingArea.Bottom != temp[i].WorkingArea.Bottom)
+                    {
+                        _screens = temp;
+                        return true;
+                    }
                 }
             }
 
@@ -110,7 +114,11 @@ namespace MakCraft.Utils
         /// <exception cref="System.ArgumentException">モニター名(デバイス名)が存在しない場合に発生します。</exception>
         public Rect GetWorkingArea(string monitorName)
         {
-            var screen = _screens.FirstOrDefault(p => p.DeviceName == monitorName);
+            FORM::Screen screen;
+            lock (_lockScreens)
+            {
+                screen = _screens.FirstOrDefault(p => p.DeviceName == monitorName);
+            }
             if (screen == null)
             {
                 throw new ArgumentException("モニター名(デバイス名)が存在しません。");
@@ -151,18 +159,21 @@ namespace MakCraft.Utils
 
         private string getInRangeMonitorName(Rect target, double margin)
         {
-            foreach (var n in _screens)
+            lock (_lockScreens)
             {
-                // ** このままだと、ふたつのモニターにまたがった表示が false になる!
-                //if (target.Left >= n.Bounds.Left && target.Right <= n.Bounds.Right &&
-                //    target.Top >= n.Bounds.Top && target.Bottom <= n.Bounds.Bottom)
-                //{
-                //    return true;
-                //}
-                if (target.Right - margin >= n.WorkingArea.Left && target.Left + margin <= n.WorkingArea.Right &&
-                    target.Bottom - margin >= n.WorkingArea.Top && target.Top + margin <= n.WorkingArea.Bottom)
+                foreach (var n in _screens)
                 {
-                    return n.DeviceName;
+                    // ** このままだと、ふたつのモニターにまたがった表示が false になる!
+                    //if (target.Left >= n.Bounds.Left && target.Right <= n.Bounds.Right &&
+                    //    target.Top >= n.Bounds.Top && target.Bottom <= n.Bounds.Bottom)
+                    //{
+                    //    return true;
+                    //}
+                    if (target.Right - margin >= n.WorkingArea.Left && target.Left + margin <= n.WorkingArea.Right &&
+                        target.Bottom - margin >= n.WorkingArea.Top && target.Top + margin <= n.WorkingArea.Bottom)
+                    {
+                        return n.DeviceName;
+                    }
                 }
             }
 
@@ -179,12 +190,15 @@ namespace MakCraft.Utils
             var x = target.Left + ((target.Right - target.Left) / 2);
             var y = target.Top + ((target.Bottom - target.Top) / 2);
 
-            foreach (var n in _screens)
+            lock (_lockScreens)
             {
-                if (x >= n.WorkingArea.Left && x <= n.WorkingArea.Right &&
-                    y >= n.WorkingArea.Top && y <= n.WorkingArea.Bottom)
+                foreach (var n in _screens)
                 {
-                    return n.DeviceName;
+                    if (x >= n.WorkingArea.Left && x <= n.WorkingArea.Right &&
+                        y >= n.WorkingArea.Top && y <= n.WorkingArea.Bottom)
+                    {
+                        return n.DeviceName;
+                    }
                 }
             }
 
@@ -274,12 +288,22 @@ namespace MakCraft.Utils
 
         private FORM::Screen getScreenByName(string monitorname)
         {
-            return _screens.FirstOrDefault(p => p.DeviceName == monitorname);
+            FORM::Screen screen;
+            lock (_lockScreens)
+            {
+                screen = _screens.FirstOrDefault(p => p.DeviceName == monitorname);
+            }
+            return screen;
         }
 
         private FORM::Screen getPrimaryMinitor()
         {
-            return _screens.First(p => p.Primary == true);
+            FORM::Screen screen;
+            lock (_lockScreens)
+            {
+                screen = _screens.First(p => p.Primary == true);
+            }
+            return screen;
         }
 
         private Rect rectangle2rect(System.Drawing.Rectangle rectangle)
