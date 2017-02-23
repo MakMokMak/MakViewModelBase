@@ -10,30 +10,46 @@ namespace MakCraft.Utils
     /// </summary>
     public class MutiMonitorUtil : IMutiMonitorUtil
     {
-        /// <summary>
-        /// モニターの表示エリアへの表示マージンを 0 として初期化します。
-        /// </summary>
-        public MutiMonitorUtil() : this(0.0) { }
-        /// <summary>
-        /// モニターの表示エリアへの表示マージンを指定されたサイズとして初期化します。
-        /// </summary>
-        /// <param name="marginSize"></param>
-        public MutiMonitorUtil(double marginSize)
-        {
-            CHECK_MARGIN = marginSize;
+        static MutiMonitorUtil() { } // コンパイラによる beforefieldinit フラグの付加を抑止する
+        private MutiMonitorUtil() { } //外部からのインスタンス生成を抑止
 
-            Refresh();
-        }
+        private static Lazy<MutiMonitorUtil> _instance = new Lazy<MutiMonitorUtil>(() =>
+        {
+            var instance = new MutiMonitorUtil();
+            instance.Refresh();
+            return instance;
+        });
 
         private FORM::Screen[] _screens;
-        private readonly double CHECK_MARGIN;
 
         /// <summary>
-        /// 表示可能座標の確認で利用するマージン値を取得します。
+        /// MutiMonitorUtil のインスタンスを取得します。
+        /// </summary>
+        public static IMutiMonitorUtil Instance => _instance.Value;
+
+        private double? _margin;
+        /// <summary>
+        /// 表示可能座標の確認で利用するマージン値を取得・設定します。
+        /// 値の設定は初回のみ可能です。
         /// </summary>
         public double Margin
         {
-            get { return CHECK_MARGIN; }
+            get
+            {
+                if (!_margin.HasValue)
+                {
+                    throw new InvalidOperationException("MutiMonitorUtil.Margin は初期化されていません。");
+                }
+                return _margin.Value;
+            }
+            set
+            {
+                if (_margin.HasValue)
+                {
+                    throw new InvalidOperationException("MutiMonitorUtil.Margin は既に初期化されています。");
+                }
+                _margin = value;
+            }
         }
 
         /// <summary>
@@ -119,7 +135,7 @@ namespace MakCraft.Utils
         /// <returns></returns>
         public string GetInRangeMonitorName(Rect target)
         {
-            return getInRangeMonitorName(target, CHECK_MARGIN);
+            return getInRangeMonitorName(target, Margin);
         }
 
         /// <summary>

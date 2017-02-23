@@ -8,9 +8,10 @@ namespace MakCraft.Utils
     public interface IMutiMonitorUtil
     {
         /// <summary>
-        /// 表示可能座標の確認で利用するマージン値を取得します。
+        /// 表示可能座標の確認で利用するマージン値を取得・設定します。
+        /// 値の設定は初回のみ可能です。
         /// </summary>
-        double Margin { get; }
+        double Margin { get; set; }
 
         /// <summary>
         /// スクリーン情報をリフレッシュします。
