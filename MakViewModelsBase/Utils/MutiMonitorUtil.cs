@@ -163,12 +163,6 @@ namespace MakCraft.Utils
             {
                 foreach (var n in _screens)
                 {
-                    // ** このままだと、ふたつのモニターにまたがった表示が false になる!
-                    //if (target.Left >= n.Bounds.Left && target.Right <= n.Bounds.Right &&
-                    //    target.Top >= n.Bounds.Top && target.Bottom <= n.Bounds.Bottom)
-                    //{
-                    //    return true;
-                    //}
                     if (target.Right - margin >= n.WorkingArea.Left && target.Left + margin <= n.WorkingArea.Right &&
                         target.Bottom - margin >= n.WorkingArea.Top && target.Top + margin <= n.WorkingArea.Bottom)
                     {
