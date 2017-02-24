@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 
@@ -34,6 +35,7 @@ namespace MakCraft.Behaviors
 
             Microsoft.Win32.SystemEvents.PowerModeChanged +=
                 new Microsoft.Win32.PowerModeChangedEventHandler(onPowerModeChanged);
+            AssociatedObject.Closed += new EventHandler(onClosed); // OnDetaching が呼ばれない場合に備えて Closed イベントでもイベントへのフックを解除する
         }
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace MakCraft.Behaviors
 
             Microsoft.Win32.SystemEvents.PowerModeChanged -=
                 new Microsoft.Win32.PowerModeChangedEventHandler(onPowerModeChanged);
+            AssociatedObject.Closed -= new EventHandler(onClosed);
         }
 
         private void onPowerModeChanged(object sender, Microsoft.Win32.PowerModeChangedEventArgs e)
@@ -52,6 +55,13 @@ namespace MakCraft.Behaviors
             if (Command == null) return;
 
             Command.Execute(e);
+        }
+
+        private void onClosed(object sender, EventArgs e)
+        {
+            Microsoft.Win32.SystemEvents.PowerModeChanged -=
+                new Microsoft.Win32.PowerModeChangedEventHandler(onPowerModeChanged);
+            AssociatedObject.Closed -= new EventHandler(onClosed);
         }
     }
 }
