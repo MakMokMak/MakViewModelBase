@@ -3,13 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mb="clr-namespace:MakCraft.Behaviors;assembly=MakViewModelsBase"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:vm="clr-namespace:MultiMonitorUtilTestApp.ViewModels"
         xmlns:local="clr-namespace:MultiMonitorUtilTestApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="{Binding Height,Mode=TwoWay}" Width="{Binding Width,Mode=TwoWay}"
+        Top="{Binding Top,Mode=TwoWay}" Left="{Binding Left,Mode=TwoWay}">
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
+    <i:Interaction.Behaviors>
+        <mb:MultiMonitorUtilBehavior
+            IMutiMonitorUtil="{Binding MultiMonitorUtil,Mode=OneWayToSource}"
+            OnSourceInitializedCommand="{Binding OnSourceInitializedCommand}"
+            OnDisplaySettingsChangedCommand="{Binding OnDisplaySettingChangedCommand}" />
+    </i:Interaction.Behaviors>
+
 
     <StackPanel>
         <TextBlock
@@ -26,10 +36,10 @@
         </StackPanel>
 
         <Button
-            Margin="4" Padding="10 4" Content="仮想クローズボタン" />
+            Margin="4" Padding="10 4" Content="仮想クローズボタン" Command="{Binding VirtualCloseCommand}" />
 
         <Button
-            Margin="4" Padding="10 4" Content="仮想表示ボタン" />
+            Margin="4" Padding="10 4" Content="仮想表示ボタン" Command="{Binding VirtualOpenCommand}" />
 
         <TextBlock
             Margin="4" Text="{Binding TextNotice}" />
