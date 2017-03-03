@@ -1,3 +1,8 @@
+Version 5.3.0 2017/03/03
+ライセンスを修正 BSD ライセンスから MIT ライセンスへ変更
+マルチモニターへの表示に関するユーティリティ(MutiMonitorUtil クラスを追加)
+PowerModeChangedBehavior のイベントへのフックの解除を Window の Closed イベント発生時にも行うように変更
+
 Version 5.2.0 2016/01/22
 PowerModeChangedEvent 発生時にコマンドを実行する PowerModeChangedBehavior を追加。
 
