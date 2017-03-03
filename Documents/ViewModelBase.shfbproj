@@ -23,9 +23,9 @@
     </DocumentationSources>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="MakCraft.Behaviors" isDocumented="True">MakCraft.Behaviors 名前空間には、Behavior が含まれます。</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="MakCraft.Behaviors.Interfaces" isDocumented="True">MakCraft.Behaviors.Interfaces 名前空間には、ViewModel と Behavior との間のインターフェイスが含まれます。</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="MakCraft.ViewModels" isDocumented="True">MakCraft.ViewModels 名前空間には、ViewModel の作成に利用するクラス等が含まれます。</NamespaceSummaryItem>
-    </NamespaceSummaries>
+<NamespaceSummaryItem name="MakCraft.Behaviors.Interfaces" isDocumented="True">MakCraft.Behaviors.Interfaces 名前空間には、ViewModel と Behavior との間のインターフェイスが含まれます。</NamespaceSummaryItem>
+<NamespaceSummaryItem name="MakCraft.ViewModels" isDocumented="True">MakCraft.ViewModels 名前空間には、ViewModel の作成に利用するクラス等が含まれます。</NamespaceSummaryItem>
+<NamespaceSummaryItem name="MakCraft.Utils" isDocumented="True">MakCraft.Utils 名前空間には、MVVM パターンのアプリケーションの作成に利用できるユーティリティ・クラス等が含まれます。</NamespaceSummaryItem></NamespaceSummaries>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>Website</HelpFileFormat>
     <IndentHtml>False</IndentHtml>
