@@ -107,6 +107,25 @@ namespace MultiMonitorUtilTestApp.ViewModels
             }
         }
 
+        private void isInRangeExecute()
+        {
+            var rect = new System.Windows.Rect(Left, Top, Width, Height);
+            var text = $"{_multiMonitorUtil.IsInRange(rect)}, In monitor: {_multiMonitorUtil.GetMoniterNameCenterPosition(rect)}";
+            TextNotice = text;
+        }
+        private ICommand _isRangeCommand;
+        public ICommand IsRangeCommand
+        {
+            get
+            {
+                if (_isRangeCommand == null)
+                {
+                    _isRangeCommand = new RelayCommand(isInRangeExecute);
+                }
+                return _isRangeCommand;
+            }
+        }
+
         private void onSourceInitializedExecute()
         {
             _multiMonitorUtil.Margin = 0;

@@ -45,7 +45,7 @@
             Margin="4" Text="{Binding TextNotice}" />
 
         <Button
-            Margin="4" Padding="40 4" Content="表示範囲内チェック(_K)" />
+            Margin="4" Padding="40 4" Content="表示範囲内チェック(_K)" Command="{Binding IsRangeCommand}" />
         <TextBlock
             Margin="4" />
     </StackPanel>
