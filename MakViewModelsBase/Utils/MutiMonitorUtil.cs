@@ -171,32 +171,20 @@ namespace MakCraft.Utils
                 }
             }
 
-            return string.Empty;
+            return null;
         }
 
         /// <summary>
         /// 与えられた Rect 構造体の座標の中心が位置するモニター名を返します。
         /// </summary>
         /// <param name="target">判別する表示座標を格納したRect 構造体</param>
-        /// <returns>モニター名(座標の中心がモニターの表示範囲から外れている場合は string.Empty)</returns>
+        /// <returns>モニター名(座標の中心がすべてのモニターの表示範囲から外れている場合は null)</returns>
         public string GetMoniterNameCenterPosition(Rect target)
         {
             var x = target.Left + ((target.Right - target.Left) / 2);
             var y = target.Top + ((target.Bottom - target.Top) / 2);
-
-            lock (_lockScreens)
-            {
-                foreach (var n in _screens)
-                {
-                    if (x >= n.WorkingArea.Left && x <= n.WorkingArea.Right &&
-                        y >= n.WorkingArea.Top && y <= n.WorkingArea.Bottom)
-                    {
-                        return n.DeviceName;
-                    }
-                }
-            }
-
-            return string.Empty;
+            var rect = new Rect(x, y, 0, 0);
+            return getInRangeMonitorName(rect, 0);
         }
 
         /// <summary>
@@ -233,11 +221,7 @@ namespace MakCraft.Utils
         /// <returns>相対座標情報を格納した RelativePointInfo クラスのインスタンス</returns>
         public RelativePointInfo GetRelativePointInfo(Rect target)
         {
-            var monitorName = GetMoniterNameCenterPosition(target);
-            if (monitorName == string.Empty)
-            {
-                monitorName = GetInRangeMonitorName(target);
-            }
+            var monitorName = GetMoniterNameCenterPosition(target) ?? GetInRangeMonitorName(target);
 
             var screen = getScreenByName(monitorName);
             var point = new Point(target.Left - screen.WorkingArea.Left, target.Top - screen.WorkingArea.Top);

@@ -58,7 +58,7 @@ namespace MakCraft.Utils
         /// 与えられた Rect 構造体の座標の中心が位置するモニター名を返します。
         /// </summary>
         /// <param name="target">判別する表示座標を格納したRect 構造体</param>
-        /// <returns>モニター名(座標の中心がモニターの表示範囲から外れている場合は string.Empty)</returns>
+        /// <returns>モニター名(座標の中心がすべてのモニターの表示範囲から外れている場合は null)</returns>
         string GetMoniterNameCenterPosition(Rect target);
 
         /// <summary>

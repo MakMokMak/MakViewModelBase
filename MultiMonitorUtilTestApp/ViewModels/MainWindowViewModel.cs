@@ -110,7 +110,10 @@ namespace MultiMonitorUtilTestApp.ViewModels
         private void isInRangeExecute()
         {
             var rect = new System.Windows.Rect(Left, Top, Width, Height);
-            var text = $"{_multiMonitorUtil.IsInRange(rect)}, In monitor: {_multiMonitorUtil.GetMoniterNameCenterPosition(rect)}";
+            var monitorName = (_multiMonitorUtil.GetMoniterNameCenterPosition(rect) ??
+                _multiMonitorUtil.GetInRangeMonitorNameExcludingMargin(rect)) ??
+                "表示範囲外です。";
+            var text = $"{_multiMonitorUtil.IsInRange(rect)}, In monitor: {monitorName}";
             TextNotice = text;
         }
         private ICommand _isRangeCommand;
