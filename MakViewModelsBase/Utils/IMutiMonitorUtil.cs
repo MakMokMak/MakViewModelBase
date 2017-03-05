@@ -22,7 +22,7 @@ namespace MakCraft.Utils
         /// <summary>
         /// プライマリモニターとなっているモニターの名前(デバイス名)を返します。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>モニターの名前(デバイス名)</returns>
         string GetPrimaryMonitorName();
 
         /// <summary>
@@ -42,16 +42,16 @@ namespace MakCraft.Utils
         /// <summary>
         /// 与えられた Rect 構造体の座標が表示範囲内に収まっているモニター名を返します。
         /// </summary>
-        /// <param name="target"></param>
-        /// <returns></returns>
+        /// <param name="target">判別する表示座標を格納したRect 構造体</param>
+        /// <returns>モニター名(座標がすべてのモニターの表示範囲から外れている場合は null)</returns>
         string GetInRangeMonitorName(Rect target);
 
         /// <summary>
         /// 与えられた Rect 構造体の座標が表示範囲内に収まっているモニター名を返します。
         /// このメソッドはマージン値を考慮せずに判定します。
         /// </summary>
-        /// <param name="target"></param>
-        /// <returns></returns>
+        /// <param name="target">判別する表示座標を格納したRect 構造体</param>
+        /// <returns>モニター名(座標がすべてのモニターの表示範囲から外れている場合は null)</returns>
         string GetInRangeMonitorNameExcludingMargin(Rect target);
 
         /// <summary>
