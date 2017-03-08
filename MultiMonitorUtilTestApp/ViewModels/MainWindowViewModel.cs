@@ -131,7 +131,7 @@ namespace MultiMonitorUtilTestApp.ViewModels
 
         private void onSourceInitializedExecute()
         {
-            _multiMonitorUtil.Margin = 0;
+            _multiMonitorUtil.Margin = 100.0;
 
             // プライマリモニタの中央に表示させる
             var rect = _multiMonitorUtil.GetWorkingArea(_multiMonitorUtil.GetPrimaryMonitorName());
