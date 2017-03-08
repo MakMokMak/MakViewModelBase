@@ -133,7 +133,7 @@ namespace MakCraft.Utils
         /// <returns>真偽値(真であれば表示範囲内)</returns>
         public bool IsInRange(Rect target)
         {
-            return GetInRangeMonitorName(target) != string.Empty;
+            return GetInRangeMonitorName(target) != null;
         }
 
         /// <summary>
