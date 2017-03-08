@@ -1,4 +1,4 @@
-# MakViewModelBase version 5.3.1
+# MakViewModelBase version 5.3.2
 
 ## 概要
 
