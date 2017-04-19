@@ -199,9 +199,9 @@ namespace MakCraft.ViewModels
                 else
                 {
                     // 比較対象プロパティの動的な型が持つ Equals メソッドを呼び出して条件値と比較する
-                    condition = (bool)target.GetType()
-                        .InvokeMember("Equals", System.Reflection.BindingFlags.InvokeMethod,
-                        null, target, new object[] { conditional.Value });
+                    // (動的型付け変数を利用することで毎回リフレクションを呼び出すコストを回避)
+                    dynamic equalsObj = target;
+                    condition = (bool)equalsObj.Equals(conditional.Value);
                 }
                 if (!condition)
                 {
