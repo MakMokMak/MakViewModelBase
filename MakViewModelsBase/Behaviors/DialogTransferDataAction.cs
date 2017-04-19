@@ -109,10 +109,10 @@ namespace MakCraft.Behaviors
                 string.Format("表示するように指定された {0} は Window の派生クラスではありません。", DialogType.Name));
             // ダイアログの型からダイアログのインスタンスを作成
             var instance = Activator.CreateInstance(DialogType);
-            // 生成したダイアログの Owner プロパティを設定
+            // 表示する Window の設定
             var window = instance as Window;
             var current = Window.GetWindow(AssociatedObject);
-            window.Owner = current;
+            window.Owner = current; // 生成したダイアログの Owner プロパティを設定
             Mouse.OverrideCursor = null;
             ResultViewModel = window.DataContext;   // ビューモデルをプロパティへセット
             // Parameter がある場合には ViewModel の Container へデータをセットする
@@ -130,20 +130,17 @@ namespace MakCraft.Behaviors
                 // モーダル ダイアログを表示する
                 if (ActionCallBack != null)
                 {
-                    ActionCallBack((bool?)DialogType.InvokeMember("ShowDialog", System.Reflection.BindingFlags.InvokeMethod,
-                        null, window, null));
+                    ActionCallBack(window.ShowDialog());
                 }
                 else
                 {
-                    DialogType.InvokeMember("ShowDialog", System.Reflection.BindingFlags.InvokeMethod,
-                        null, window, null);
+                    window.ShowDialog();
                 }
             }
             else
             {
                 // モードレス ダイアログを表示する
-                DialogType.InvokeMember("Show", System.Reflection.BindingFlags.InvokeMethod,
-                    null, window, null);
+                window.Show();
             }
 
             ResultViewModel = null;    // 作成された ViewModel オブジェクトへの参照をクリアしておく。
