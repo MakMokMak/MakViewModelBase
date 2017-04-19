@@ -16,6 +16,8 @@ namespace MakCraft.ViewModels
     public abstract class ValidationViewModelBase : WeakEventViewModelBase, IDataErrorInfo
     {
         private IValidationDictionary _validationDic;
+        // 式木のキャッシュ
+        private static Dictionary<string, Func<object, object>> _cacheExpTree = new Dictionary<string, Func<object, object>>();
 
         /// <summary>
         /// コンストラクタ。
@@ -186,7 +188,16 @@ namespace MakCraft.ViewModels
                         columnName, conditional.ComparedProperty);
                     throw new MissingMemberException(message);
                 }
-                var target = targetAttrib.GetValue(this);
+                // 式木を使って columnName の条件の比較対象となるプロパティ値を取得(作成した式木はキャッシュしておく)
+                var t = this.GetType();
+                Func<object, object> f;
+                if (!_cacheExpTree.TryGetValue(columnName, out f))
+                {
+                    f = CreateMethod(t, targetAttrib.Name);
+                    _cacheExpTree[columnName] = f;
+                }
+                var target = f(this);
+
                 bool condition = false;
                 if (target == null)
                 {
@@ -209,6 +220,22 @@ namespace MakCraft.ViewModels
                     RemoveItemValidationError(columnName);
                 }
             }
+        }
+
+        private static Func<object, object> CreateMethod(Type t, string columnName)
+        {
+            var x = Expression.Parameter(typeof(object));
+            var p = Expression.Parameter(t);
+
+            var exp = Expression.Lambda(
+                Expression.Block(
+                    new[] { p },
+                    Expression.Assign(p, Expression.Convert(x, t)),
+                    Expression.Convert(Expression.Property(p, columnName), typeof(object))),
+                x
+                );
+            var d = (Func<object, object>)exp.Compile();
+            return d;
         }
 
         #endregion IDataErrorInfo
