@@ -191,10 +191,11 @@ namespace MakCraft.ViewModels
                 // 式木を使って columnName の条件の比較対象となるプロパティ値を取得(作成した式木はキャッシュしておく)
                 var t = this.GetType();
                 Func<object, object> f;
-                if (!_cacheExpTree.TryGetValue(columnName, out f))
+                var key = $"{t.FullName}.{columnName}";
+                if (!_cacheExpTree.TryGetValue(key, out f))
                 {
                     f = CreateMethod(t, targetAttrib.Name);
-                    _cacheExpTree[columnName] = f;
+                    _cacheExpTree[key] = f;
                 }
                 var target = f(this);
 
@@ -232,7 +233,7 @@ namespace MakCraft.ViewModels
                     new[] { p },
                     Expression.Assign(p, Expression.Convert(x, t)),
                     Expression.Convert(Expression.Property(p, columnName), typeof(object))),
-                x
+                new ParameterExpression[] { x }
                 );
             var d = (Func<object, object>)exp.Compile();
             return d;
