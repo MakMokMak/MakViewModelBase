@@ -132,6 +132,31 @@ namespace ValidationTestApp.ViewModels
             }
         }
 
+        private bool _option2;
+        public bool Option2
+        {
+            get { return _option2; }
+            set
+            {
+                base.SetProperty(ref _option2, value);
+                base.RaisePropertyChanged(nameof(Remark2));
+            }
+        }
+
+        private string _remark2;
+        [ValidateConditional("Option2", true)]
+        [Required(ErrorMessage = "この項目は必須項目です。")]
+        [MaxLength(5, ErrorMessage = "備考2の長さは5文字までにしてください。")]
+        public string Remark2
+        {
+            get { return _remark2; }
+            set
+            {
+                // 属性での検証のみであれば、検証エラー削除付きのプロパティ変更が使える
+                base.SetPropertyWithRemoveItemValidationError(ref _remark2, value);
+            }
+        }
+
         private void addMemoComamndExecute()
         {
             var memo = new Memo
@@ -143,6 +168,10 @@ namespace ValidationTestApp.ViewModels
             if (Option)
             {
                 memo.Remark = Remark;
+            }
+            if (Option2)
+            {
+                memo.Remark2 = Remark2;
             }
             _service.AddMemo(memo);
             base.RaisePropertyChanged(() => Memos);

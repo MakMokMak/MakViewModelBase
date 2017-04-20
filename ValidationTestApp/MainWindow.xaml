@@ -79,6 +79,15 @@
                      Style="{StaticResource textBoxInError}"
                      Text="{Binding Remark, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
+        <CheckBox Content="オプション2" IsChecked="{Binding Option2}" Margin="120 10" />
+        <StackPanel Orientation="Horizontal" IsEnabled="{Binding Option2}">
+            <Label Content="備考" FontSize="14" Target="{Binding ElementName=RemarkBox2}"
+                   Width="{Binding ElementName=LabelTitle, Path=ActualWidth}"/>
+            <TextBox Name="RemarkBox2" MinWidth="300" FontSize="14"
+                     Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                     Style="{StaticResource textBoxInError}"
+                     Text="{Binding Remark2, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
         <TextBlock Text="{Binding Path=Error}" FontSize="12" Foreground="Red" />
         <Button Content="追加" FontSize="14" Command="{Binding Path=AddMemoCommand}" Margin="5 10" />
     </StackPanel>

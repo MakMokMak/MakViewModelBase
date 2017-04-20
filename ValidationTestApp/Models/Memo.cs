@@ -7,5 +7,6 @@
         public string Note { get; set; }
         public int Age { get; set; }
         public string Remark { get; set; }
+        public string Remark2 { get; set; }
     }
 }

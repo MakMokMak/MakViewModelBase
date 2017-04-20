@@ -40,6 +40,7 @@ namespace ValidationTestApp.DAL
             dbMemo.Note = memo.Note;
             dbMemo.Age = memo.Age;
             dbMemo.Remark = memo.Remark;
+            dbMemo.Remark2 = memo.Remark2;
         }
 
         public void Delete(int id)
