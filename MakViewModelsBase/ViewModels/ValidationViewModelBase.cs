@@ -172,54 +172,53 @@ namespace MakCraft.ViewModels
             }
         }
 
-        // データ検証を行う条件を確認して条件が成立しなかったら検証エラーを削除する
+        // データ検証を行う条件を確認して条件が成立しなかったら検証エラーを削除する(ValidateConditionalAttribute が設定されている場合)
         private void conditionalValidate(string columnName)
         {
             var attrib = Attribute.GetCustomAttribute(this.GetType().GetProperty(columnName),
                 typeof(ValidateConditionalAttribute));
-            if (attrib != null)
-            {
-                var conditional = attrib as ValidateConditionalAttribute;
-                var targetAttrib = this.GetType().GetProperty(conditional.ComparedProperty);
-                if (targetAttrib == null)
-                {
-                    var message = string.Format(
-                        "データ検証を行う比較対象として指定されたプロパティが見つかりませんでした(検証プロパティ名: {0}, 比較対象プロパティ名: {1})。",
-                        columnName, conditional.ComparedProperty);
-                    throw new MissingMemberException(message);
-                }
-                // 式木を使って columnName の条件の比較対象となるプロパティ値を取得(作成した式木はキャッシュしておく)
-                var t = this.GetType();
-                Func<object, object> f;
-                var key = $"{t.FullName}.{columnName}";
-                if (!_cacheExpTree.TryGetValue(key, out f))
-                {
-                    f = CreateMethod(t, targetAttrib.Name);
-                    _cacheExpTree[key] = f;
-                }
-                var target = f(this);
+            if (attrib == null) return; // ValidateConditionalAttribute が設定されていない
 
-                bool condition = false;
-                if (target == null)
+            var conditional = attrib as ValidateConditionalAttribute;
+            var targetAttrib = this.GetType().GetProperty(conditional.ComparedProperty);
+            if (targetAttrib == null)
+            {
+                var message = string.Format(
+                    "データ検証を行う比較対象として指定されたプロパティが見つかりませんでした(検証プロパティ名: {0}, 比較対象プロパティ名: {1})。",
+                    columnName, conditional.ComparedProperty);
+                throw new MissingMemberException(message);
+            }
+            // 式木を使って columnName の条件の比較対象となるプロパティ値を取得(作成した式木はキャッシュしておく)
+            var t = this.GetType();
+            Func<object, object> f;
+            var key = $"{t.FullName}.{columnName}";
+            if (!_cacheExpTree.TryGetValue(key, out f))
+            {
+                f = CreateMethod(t, targetAttrib.Name);
+                _cacheExpTree[key] = f;
+            }
+            var target = f(this);
+
+            bool condition = false;
+            if (target == null)
+            {
+                // 比較対象プロパティが null なので、条件値が null であるか比較する
+                if (conditional.Value == null)
                 {
-                    // 比較対象プロパティが null なので、条件値が null であるか比較する
-                    if (conditional.Value == null)
-                    {
-                        condition = true;
-                    }
+                    condition = true;
                 }
-                else
-                {
-                    // 比較対象プロパティの動的な型が持つ Equals メソッドを呼び出して条件値と比較する
-                    // (動的型付け変数を利用することで毎回リフレクションを呼び出すコストを回避)
-                    dynamic equalsObj = target;
-                    condition = (bool)equalsObj.Equals(conditional.Value);
-                }
-                if (!condition)
-                {
-                    // 条件が成立しないので検証エラーを削除
-                    RemoveItemValidationError(columnName);
-                }
+            }
+            else
+            {
+                // 比較対象プロパティの動的な型が持つ Equals メソッドを呼び出して条件値と比較する
+                // (動的型付け変数を利用することで毎回リフレクションを呼び出すコストを回避)
+                dynamic equalsObj = target;
+                condition = (bool)equalsObj.Equals(conditional.Value);
+            }
+            if (!condition)
+            {
+                // 条件が成立しないので検証エラーを削除
+                RemoveItemValidationError(columnName);
             }
         }
 
