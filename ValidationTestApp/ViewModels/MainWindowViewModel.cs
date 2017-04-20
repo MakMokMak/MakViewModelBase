@@ -180,6 +180,8 @@ namespace ValidationTestApp.ViewModels
             MemoAge = string.Empty;
             Option = false;
             Remark = string.Empty;
+            Option2 = false;
+            Remark2 = string.Empty;
         }
         private bool addMemoComamndCanExecute(object param)
         {
