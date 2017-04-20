@@ -191,7 +191,7 @@ namespace MakCraft.ViewModels
             // 式木を使って columnName の条件の比較対象となるプロパティ値を取得(作成した式木はキャッシュしておく)
             var t = this.GetType();
             Func<object, object> f;
-            var key = $"{t.FullName}.{columnName}";
+            var key = $"{t.FullName}.{targetAttrib.Name}";
             if (!_cacheExpTree.TryGetValue(key, out f))
             {
                 f = CreateMethod(t, targetAttrib.Name);
