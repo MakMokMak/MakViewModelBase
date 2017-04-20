@@ -222,6 +222,7 @@ namespace MakCraft.ViewModels
             }
         }
 
+        // columnName のプロパティ値を取得する式木を生成する
         private static Func<object, object> CreateMethod(Type t, string columnName)
         {
             var x = Expression.Parameter(typeof(object));
