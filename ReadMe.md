@@ -1,4 +1,4 @@
-# MakViewModelBase version 5.3.2
+# MakViewModelBase
 
 ## 概要
 
@@ -16,7 +16,7 @@ MIT License
 
 クラス等の仕様は、次のページに記載しています。
 
-* [MakCraft 名前空間の仕様](http://www.makcraft.com/specs/html/R_Project_Documentation.htm)
+* [MakCraft 名前空間の仕様](http://www.makcraft.com/specs/makviewmodelbase/html/R_Project_Documentation.htm)
 
 ## 利用例
 
