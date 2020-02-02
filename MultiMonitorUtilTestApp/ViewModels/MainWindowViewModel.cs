@@ -89,10 +89,20 @@ namespace MultiMonitorUtilTestApp.ViewModels
 
         private void virtualOpenExecute()
         {
-            Top = _saveTop;
-            Left = _saveLeft;
-            Height = _saveHeight;
-            Width = _saveWidth;
+            if (isInRange(new System.Windows.Rect(new System.Windows.Point(_saveLeft, _saveTop), new System.Windows.Size(_saveWidth, _saveHeight))))
+            {
+                Top = _saveTop;
+                Left = _saveLeft;
+                Height = _saveHeight;
+                Width = _saveWidth;
+            }
+            else
+            {
+                var screemWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+                var screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+                Top = (screenHeight / 2) - (_saveHeight / 2);
+                Left = (screemWidth / 2) - (_saveWidth / 2);
+            }
         }
         private ICommand _virtualOpenCommand;
         public ICommand VirtualOpenCommand
@@ -107,6 +117,7 @@ namespace MultiMonitorUtilTestApp.ViewModels
             }
         }
 
+        private bool isInRange(System.Windows.Rect rect) => _multiMonitorUtil.IsInRange(rect);
         private void isInRangeExecute()
         {
             var rect = new System.Windows.Rect(Left, Top, Width, Height);

@@ -100,6 +100,7 @@ namespace MakCraft.Behaviors
         private void onDisplaySettingsChanged(object sender, EventArgs e)
         {
             var multiMonitorUtil = Utils.MutiMonitorUtil.Instance;
+            multiMonitorUtil.Refresh();
 
             if (OnDisplaySettingsChangedCommand == null) return;
             OnDisplaySettingsChangedCommand.Execute(e);

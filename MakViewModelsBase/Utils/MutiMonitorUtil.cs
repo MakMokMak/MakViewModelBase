@@ -21,7 +21,7 @@ namespace MakCraft.Utils
         });
 
         private object _lockScreens = new object();
-        private FORM::Screen[] _screens;
+        private static FORM::Screen[] _screens;
 
         /// <summary>
         /// MutiMonitorUtil のインスタンスを取得します。
