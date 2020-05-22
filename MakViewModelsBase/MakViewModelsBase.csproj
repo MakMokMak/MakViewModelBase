@@ -70,8 +70,6 @@
     <Compile Include="Utils\MutiMonitorUtil.cs" />
     <Compile Include="Utils\RelativePointInfo.cs" />
     <Compile Include="ViewModels\DialogViewModelBase.cs" />
-    <Compile Include="ViewModels\INotifyWeakPropertyChanged.cs" />
-    <Compile Include="ViewModels\IPropertyChangedWeakEventListener.cs" />
     <Compile Include="ViewModels\IReceiveFinished.cs" />
     <Compile Include="ViewModels\ITransContainer.cs" />
     <Compile Include="ViewModels\IValidationDictionary.cs" />
@@ -79,7 +77,6 @@
     <Compile Include="ViewModels\MessageDialogActionParameter.cs" />
     <Compile Include="ViewModels\ModalViewModelBase.cs" />
     <Compile Include="ViewModels\NotifyObject.cs" />
-    <Compile Include="ViewModels\PropertyChangedWeakEventListener.cs" />
     <Compile Include="ViewModels\PropertyHelper.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\TransitionContainerBase.cs" />
