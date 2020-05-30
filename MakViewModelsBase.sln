@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakViewModelsBase", "MakViewModelsBase\MakViewModelsBase.csproj", "{E7AB1DA9-1633-4CEE-A9F7-444A7D4B56D1}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransitionTestApp", "TransitionTestApp\TransitionTestApp.csproj", "{873979D6-FC0A-4769-AD5B-D5BC93156057}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiMonitorUtilTestApp", "MultiMonitorUtilTestApp\MultiMonitorUtilTestApp.csproj", "{7E6F7405-4FD7-49C3-93A2-81DBD4C818CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSettingsSample", "AppSettingsSample\AppSettingsSample.csproj", "{B66429E2-3B37-40F8-BD54-11EAB22C10A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,8 +47,15 @@ Global
 		{7E6F7405-4FD7-49C3-93A2-81DBD4C818CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E6F7405-4FD7-49C3-93A2-81DBD4C818CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E6F7405-4FD7-49C3-93A2-81DBD4C818CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66429E2-3B37-40F8-BD54-11EAB22C10A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66429E2-3B37-40F8-BD54-11EAB22C10A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66429E2-3B37-40F8-BD54-11EAB22C10A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66429E2-3B37-40F8-BD54-11EAB22C10A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F23A2E2C-5A89-4D07-95F5-DD13D0B2C8D6}
 	EndGlobalSection
 EndGlobal
