@@ -23,9 +23,9 @@ MIT License
 それぞれの ViewModelBase の利用例は、ソリューション中の次のプロジェクトをご覧ください。
 
 * ViewModelBase: ViewModelBaseTestApp
-* WeakEventViewModelBase: WeakEventViewModelBaseTestApp
+* WeakEventViewModelBase: WeakEventViewModelBaseTestApp, AppSettingsSample
 * ValidationViewModelBase: ValidationTestApp
-* TransitionViewModelBase: TransitionTestApp
+* TransitionViewModelBase: TransitionTestApp, AppSettingsSample
 
 ## プロジェクトへの導入
 
