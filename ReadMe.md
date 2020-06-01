@@ -29,7 +29,7 @@ MIT License
 
 ## プロジェクトへの導入
 
-[NuGet Pachage](https://www.nuget.org/packages/MakCraft.MakViewModelBase/) をご利用ください。
+[NuGet Package](https://www.nuget.org/packages/MakCraft.MakViewModelBase/) をご利用ください。
 
 ## 更新履歴
 [blog をご覧ください](http://www.makcraft.com/blog/meditation/category/viewmodelbase/)
